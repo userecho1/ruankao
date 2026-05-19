@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python -c \"\nimport pymupdf\ndoc = pymupdf\\.open\\(r'd:\\\\ruankao\\\\resource\\\\近五年真题\\\\2024上\\\\2024年上半年信息系统项目管理师综合知识真题（第二批次）_加水印\\.pdf'\\)\nprint\\(f'总页数: \\{len\\(doc\\)\\}'\\)\nfor i, page in enumerate\\(doc\\):\n    print\\(f'=== 第\\{i\\+1\\}页 ==='\\)\n    print\\(page\\.get_text\\(\\)\\)\n\"\n$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
