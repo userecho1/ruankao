@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024上 第一批次 · 综合知识</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar span { color: #8b949e; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-expand { background: #2ea44f; color: #fff; }
+  .btn-expand:hover { background: #2c974b; }
+  .btn-collapse { background: #0969da; color: #fff; }
+  .btn-collapse:hover { background: #0860ca; }
+  .content {
+    max-width: 860px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 30px 40px;
+  }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.25em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; }
+  h3 { font-size: 1.05em; margin: 22px 0 8px; color: #0550ae; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 10px 0;
+    padding: 6px 16px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 0 4px 4px 0;
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 85%;
+  }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+         padding: 14px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; border: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  details {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    background: #fff;
+  }
+  details[open] { background: #f0fff4; border-color: #2ea44f; }
+  summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #0550ae;
+    list-style: none;
+    user-select: none;
+    border-radius: 6px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: 11px; }
+  details[open] summary::before { content: "▼ "; }
+  details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
+  .details-body { padding: 14px 18px; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回目录</a>
+  <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
+  <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <span id="status"></span>
+</div>
+<div class="content">
+<h1>2024年上半年信息系统项目管理师综合知识真题（文字版整理）（第一批次）</h1>
+<h2>来源说明</h2>
+<ul>
+<li>PDF 原文：<code>resource/近五年真题/2024上/2024年上半年信息系统项目管理师综合知识真题（第一批次）.pdf</code></li>
+<li>答案解析来源：<code>resource/近五年真题/2024上/综合知识_批一_答案解析.md</code></li>
+<li>处理说明：题干与选项直接从 PDF 提取；答案与解析来自仓库已有解析文件。</li>
+</ul>
+<h2>答案速查表</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>2</td>
+<td>B</td>
+<td>3</td>
+<td>D</td>
+<td>4</td>
+<td>A</td>
+<td>5</td>
+<td>D</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C</td>
+<td>7</td>
+<td>D</td>
+<td>8</td>
+<td>A</td>
+<td>9</td>
+<td>D</td>
+<td>10</td>
+<td>D</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+<td>12</td>
+<td>A</td>
+<td>13</td>
+<td>A</td>
+<td>14</td>
+<td>D</td>
+<td>15</td>
+<td>C</td>
+</tr>
+<tr>
+<td>16</td>
+<td>C</td>
+<td>17</td>
+<td>A</td>
+<td>18</td>
+<td>A</td>
+<td>19</td>
+<td>B</td>
+<td>20</td>
+<td>D</td>
+</tr>
+<tr>
+<td>21</td>
+<td>A</td>
+<td>22</td>
+<td>B</td>
+<td>23</td>
+<td>A</td>
+<td>24</td>
+<td>D</td>
+<td>25</td>
+<td>C</td>
+</tr>
+<tr>
+<td>26</td>
+<td>B</td>
+<td>27</td>
+<td>A</td>
+<td>28</td>
+<td>C</td>
+<td>29</td>
+<td>C</td>
+<td>30</td>
+<td>D</td>
+</tr>
+<tr>
+<td>31</td>
+<td>C</td>
+<td>33</td>
+<td>C</td>
+<td>34</td>
+<td>C</td>
+<td>35</td>
+<td>C</td>
+<td>36</td>
+<td>A</td>
+</tr>
+<tr>
+<td>37</td>
+<td>B</td>
+<td>38</td>
+<td>C</td>
+<td>39</td>
+<td>D</td>
+<td>40</td>
+<td>A</td>
+<td>41</td>
+<td>D</td>
+</tr>
+<tr>
+<td>42</td>
+<td>A</td>
+<td>43</td>
+<td>B</td>
+<td>44</td>
+<td>D</td>
+<td>45</td>
+<td>B</td>
+<td>46</td>
+<td>D</td>
+</tr>
+<tr>
+<td>47</td>
+<td>A</td>
+<td>48</td>
+<td>A</td>
+<td>49</td>
+<td>A</td>
+<td>50</td>
+<td>D</td>
+<td>51</td>
+<td>C</td>
+</tr>
+<tr>
+<td>52</td>
+<td>D</td>
+<td>53</td>
+<td>B</td>
+<td>54</td>
+<td>A</td>
+<td>55</td>
+<td>D</td>
+<td>56</td>
+<td>A</td>
+</tr>
+<tr>
+<td>57</td>
+<td>A</td>
+<td>58</td>
+<td>B</td>
+<td>59</td>
+<td>D</td>
+<td>60</td>
+<td>B</td>
+<td>61</td>
+<td>C</td>
+</tr>
+<tr>
+<td>62</td>
+<td>C</td>
+<td>63</td>
+<td>C</td>
+<td>64</td>
+<td>D</td>
+<td>65</td>
+<td>B</td>
+<td>66</td>
+<td>D</td>
+</tr>
+<tr>
+<td>67</td>
+<td>B</td>
+<td>68</td>
+<td>B</td>
+<td>69</td>
+<td>D</td>
+<td>70</td>
+<td>B</td>
+<td>71</td>
+<td>B</td>
+</tr>
+<tr>
+<td>72</td>
+<td>A</td>
+<td>73</td>
+<td>D</td>
+<td>74</td>
+<td>D</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>逐题解析</h2>
+<h3>第1题 【成本管理】</h3>
+<p><strong>题目：</strong> 关于成本管理的描述，不正确的是：（ ）。</p>
+<p>A、在项目过程中，不应只关心完成项目活动所需资源的成本，也需考虑项目决策对项目最终产品的 使用和维护成本的影响<br />
+B、成本估算和成本预算是两个过程，即使是很小的项目，也需要由不同的人员来分别完成，以保证 估算和预算过程的客观性和独 立性<br />
+C、全生命周期成本管理经常与价值工程技术结合使用，用于降低成本，缩短时间，提高项目可交付 成果的质量和绩效，并优化决策过程<br />
+D、项目成本管理应当考虑项目干系人的需要，不同的项目干系人可能在不同的时间以不同的方式测 算项目的成本</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 小项目中无需由不同的人分别完成估算和预算</strong></p>
+<p><strong>解析：</strong> 项目成本管理原则中，规模较大的项目要求估算（Estimate）和预算（Budget）由不同角色分别完成以互相校验。但<strong>小项目</strong>中这两个步骤可以合并，由同一人完成，不要求强制分开。B是不正确的描述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第2题 【裁剪】</h3>
+<p><strong>题目：</strong> 由于每个项目都是独特的，项目经理可以根据需要对项目资源管理过程进行裁剪。裁 剪时考虑的因素不包括（ ）。</p>
+<p>A、物理位置<br />
+B、团队管理<br />
+C、沟通技术<br />
+D、生命周期方法</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 团队管理</strong></p>
+<p><strong>解析：</strong> 进行项目管理裁剪时考虑的因素包括：项目规模、组织文化、所用方法论、干系人复杂度等。<strong>"团队管理"本身不是裁剪考虑因素</strong>，而是裁剪的对象之一。</p>
+</div>
+</details>
+
+<hr />
+<h3>第3题 【监督沟通】</h3>
+<p><strong>题目：</strong> “监督沟通”过程采用的措施不包括（ ）。</p>
+<p>A、整理经验教训、开展团队观察<br />
+B、审查问题日志、评估变更<br />
+C、开展客户满意度调查<br />
+D、识别和确定沟通需求</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 识别和确定所有潜在的沟通渠道</strong></p>
+<p><strong>解析：</strong> 监督沟通过程的目标是确保满足干系人的沟通需求，包括：分析绩效数据、调整沟通频率和格式、处理沟通问题。<strong>"识别和确定潜在沟通渠道"</strong>属于<strong>规划沟通管理</strong>阶段，不属于监督沟通的任务。</p>
+</div>
+</details>
+
+<hr />
+<h3>第4题 【活动排序】</h3>
+<p><strong>题目：</strong> （ ）不属于排列活动顺序过程的工具与技术。</p>
+<p>A、关键路径法<br />
+B、提前量和滞后量<br />
+C、紧前关系绘图法<br />
+D、箭线图法</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 关键路径法</strong></p>
+<p><strong>解析：</strong> 排列活动顺序过程的工具技术：前导图法（PDM）、箭线图法、确定和整合依赖关系、提前量和滞后量。<strong>关键路径法（CPM）</strong>是<strong>制定进度计划</strong>过程的工具，不属于排列活动顺序过程。</p>
+</div>
+</details>
+
+<hr />
+<h3>第5题 【合同类型】</h3>
+<p><strong>题目：</strong> 在确定项目合同类型时，如果工作性质清楚，但工作量不是很清楚，而且工作不复 杂，又需要快速签订合同。这种情况下建议使用（ ）。</p>
+<p>A、成本加激励费用合同<br />
+B、总价合同<br />
+C、成本补偿合同<br />
+D、工料合同</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 工料合同：工作性质清楚但工作量不清楚</strong></p>
+<p><strong>解析：</strong> 工料合同（T&amp;M）：工作<strong>性质清楚</strong>但<strong>工作量不确定</strong>，按实际工时和材料计费。总价合同：工作范围和内容完全确定。成本补偿合同：工作范围不够明确。</p>
+</div>
+</details>
+
+<hr />
+<h3>第6题 【信息安全分层】</h3>
+<p><strong>题目：</strong> 关于信息安全的描述，不正确的是：（ ）。</p>
+<p>A、网络安全技术主要包括防火墙、入侵检测与防护、VPN、安全扫描、网络蜜罐技术、用户和实体行 为分析技术<br />
+B、随着物联网、云计算、人工智能、大数据等新一代信息技术的广泛应用，信息安全面临着新的问 题和挑战<br />
+C、信息安全可以划分为设备安全、数据安全、平台安全、行为安全四个层次<br />
+D、信息系统安全包括网络安全、操作系统安全、数据库系统安全和应用系统安全</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 内容（Content）安全层次</strong></p>
+<p><strong>解析：</strong> 信息安全四层次：设备安全→数据安全→<strong>内容安全</strong>→行为安全。选项中提到"平台"不是标准说法，应为"内容"安全层次处于第三层，包括知识产权保护、内容违法检测等。</p>
+</div>
+</details>
+
+<hr />
+<h3>第7题 【数字化转型】</h3>
+<p><strong>题目：</strong> 数字化转型是建立在数字化转换、数字化升级基础上，进一步触及组织核心业务，以 新建一种（ ）为目标的高层次转型。</p>
+<p>A、组织模式<br />
+B、评估模式<br />
+C、技术模式<br />
+D、业务模式</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 开拓新的业务模式</strong></p>
+<p><strong>解析：</strong> 数字化转型的终极目标是通过新技术实现<strong>业务模式创新</strong>，而非仅改善现有效率。企业数字化转型成功与否，最终体现在能否构建新的商业模式和价值创造方式。</p>
+</div>
+</details>
+
+<hr />
+<h3>第8题 【价值交付系统】</h3>
+<p><strong>题目：</strong> 价值交付系统包括项目如何创造价值、价值交付组件和信息流。其中，价值交付组件 包括（ ）。  ①战略 ②项目组合 ③项目集 ④项目 ⑤运营 ⑥产品 ⑦市场环境</p>
+<p>A、②③④⑤⑥<br />
+B、②③④⑥⑦<br />
+C、①②③④⑤<br />
+D、①②③④⑥</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — ②③④⑤⑥</strong></p>
+<p><strong>解析：</strong> 价值交付系统的组成要件（去掉①）：项目集②、项目③、组合④、项目管理办公室⑤、运营和产品开发⑥都是价值交付系统的组成部分。①不属于标准描述的要件。</p>
+</div>
+</details>
+
+<hr />
+<h3>第9题 【知识产权】</h3>
+<p><strong>题目：</strong> 专利分类中，（ ）指对产品、方法或者其改进所提出的新的技术方案；（ ）指对产 品的形状、构造或者其结合所提出的适于实用的新的技术方案。</p>
+<p>A、实用新型 发明<br />
+B、实用新型 外观设计<br />
+C、发明 外观设计<br />
+D、发明 实用新型</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 发明和实用新型专利</strong></p>
+<p><strong>解析：</strong> 技术成果中需要通过专利保护的是：<strong>发明专利</strong>（有效期20年）和<strong>实用新型专利</strong>（有效期10年）。外观设计也属专利，但更多用于产品形状；著作权不需申请，自动产生。</p>
+</div>
+</details>
+
+<hr />
+<h3>第10题 【质量管理过程】</h3>
+<p><strong>题目：</strong> （ ）uses the data and results from the（ ）process to reflect the overall  quality status of the project to the stakeholders.</p>
+<p>A、Control Quality plan quality management<br />
+B、Plan Quality Management manage quality<br />
+C、Manage Quality control quality<br />
+D、Control Quality manage quality</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 控制质量→管理质量</strong></p>
+<p><strong>解析：</strong> PMBOK7中将过去的"实施质量保证（QA）"改名为<strong>管理质量</strong>，"实施质量控制（QC）"改名为<strong>控制质量</strong>。选项D中顺序或命名关系有误，是不正确的描述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第11题 【平衡计分卡】</h3>
+<p><strong>题目：</strong> （）通过财务、客户、内部运营、学习与成长4 个角度，将组织战略目标逐层分解转 化为细化指标，有差异化地针对不同的指标进行不同时间周期的绩效评估，有助于组织战略目标的实 现。</p>
+<p>A、目标管理法<br />
+B、平衡计分卡法<br />
+C、硬性分布法<br />
+D、尺度评价表法</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 平衡计分卡法</strong></p>
+<p><strong>解析：</strong> <strong>平衡计分卡（BSC）</strong>从财务、客户、内部运营、学习与成长四个维度综合评估绩效，适合多维度、战略性项目绩效评价。MBO(A)偏目标管理；KPI(C)偏单一指标。</p>
+</div>
+</details>
+
+<hr />
+<h3>第12题 【监督沟通】</h3>
+<p><strong>题目：</strong> 在一个大型信息系统项目中，项目经理发现尽管已经建立了沟通机制，但团队间的沟 通依然不顺畅，项目风险不断上升。项目经理应优先采取的措施是：（）。</p>
+<p>A、监督沟通活动执行情况，审查并优化现有沟通机制<br />
+B、引入新的沟通工具,提高信息传递效率<br />
+C、增加每周的团队会议次数，强制团队成员交流<br />
+D、对团队成员进行沟通技巧培训，提升沟通质量</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 优先监督现有沟通机制的有效性</strong></p>
+<p><strong>解析：</strong> 监督沟通过程优先评估和监控<strong>现有沟通渠道和机制</strong>的有效性，而不是立即新建渠道。先检查现有机制是否满足需求，才决定是否调整。A是正确的首选动作。</p>
+</div>
+</details>
+
+<hr />
+<h3>第13题 【风险管理计划】</h3>
+<p><strong>题目：</strong> How frequently the risks are being reviewed, this should recorded in（）.</p>
+<p>A、Risk Management Plan<br />
+B、Issue Log<br />
+C、Risk Register<br />
+D、Risk Report</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 风险审查的频率</strong></p>
+<p><strong>解析：</strong> 风险管理计划中记录的内容包括：<strong>风险审查的频率和时间安排</strong>、风险管理的方法和工具、风险概率和影响的定义标准等。风险审查会议频率明确记录在风险管理计划中。</p>
+</div>
+</details>
+
+<hr />
+<h3>第14题 【规划范围管理】</h3>
+<p><strong>题目：</strong> 关于范围管理的描述，正确的是：（）。</p>
+<p>A、定义范围管理是为了记录如何定义、确认和控制项目范围及产品范围，而创建范围管理计划的过 程<br />
+B、范围管理计划包含配置管理活动和需求优先级排序过程<br />
+C、范围管理计划是非常详细的正式的计划<br />
+D、规划范围管理的作用是在整个项目期间对如何管理范围提供指南和方向</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 为整个项目提供指南和方向</strong></p>
+<p><strong>解析：</strong> 规划范围管理过程的主要作用是<strong>为如何管理整个项目的范围提供指南和方向</strong>，包括如何定义、确认和控制范围。这是该过程主要作用的正确描述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第15题 【识别干系人】</h3>
+<p><strong>题目：</strong> 关于干系人参与计划的描述，不正确的是：（）。</p>
+<p>A、干系人参与计划是项目管理计划的组成部分<br />
+B、干系人参与计划基于项目的需要和干系人的期望而制定<br />
+C、干系人参与计划是识别干系人过程的输出<br />
+D、干系人参与计划制订了干系人有效参与和执行项目决策的策略和行动</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 干系人参与计划</strong></p>
+<p><strong>解析：</strong> <strong>识别干系人</strong>的输出：干系人登记册、变更请求。<strong>干系人参与计划</strong>是"规划干系人参与"过程的输出，不是识别干系人的输出。C描述的是不正确的过程归属。</p>
+</div>
+</details>
+
+<hr />
+<h3>第16题 【规划绩效域】</h3>
+<p><strong>题目：</strong> 有效执行规划绩效域，能够达到的目标不包括：（）。</p>
+<p>A、项目以有条理、协调一致的方式推进<br />
+B、可以根据新出现的和不断变化的需求进行调整<br />
+C、对实物资源进行了有效管理<br />
+D、以系统的方法交付项目成果</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 对实物资源进行有效管理</strong></p>
+<p><strong>解析：</strong> 规划绩效域的目标：有条不紊地推进✓、应对不确定性✓、提供可用信息支持决策✓。<strong>"对实物资源进行有效管理"</strong>属于<strong>项目工作绩效域</strong>的目标，不是规划绩效域。</p>
+</div>
+</details>
+
+<hr />
+<h3>第17题 【制定项目管理计划】</h3>
+<p><strong>题目：</strong> 能够影响“制订项目管理计划”过程的组织过程资产包括（）。  ①组织的标准政策  ②变更控制程序  ③历史项目进度网络图  ④特定行业的项目管理知识体系  ⑤法律法规和安全标准  ⑥历史信息和经验教训知识库</p>
+<p>A、①②③⑥<br />
+B、①③⑤⑥<br />
+C、①③④⑥<br />
+D、①②④⑤</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — ①②③⑥</strong></p>
+<p><strong>解析：</strong> 制定项目管理计划的组织过程资产（OPA）影响包括：①组织标准过程、②项目管理计划模板、③历史信息和经验教训、⑥监控和控制程序。④和⑤不是OPA的典型影响因素。</p>
+</div>
+</details>
+
+<hr />
+<h3>第18题 【控制质量】</h3>
+<p><strong>题目：</strong> 在执行质量管理相关过程时，质量经理对提交的成果进行了审查，将发现的问题记录 并给出了纠正措施建议，该质量经理正在执行（ ）过程。</p>
+<p>A、控制质量<br />
+B、管理质量<br />
+C、规划质量管理<br />
+D、持续改进</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 对提交的可交付成果进行审查，记录已完成的问题</strong></p>
+<p><strong>解析：</strong> "对项目成果进行审查，记录发现的质量问题"是<strong>控制质量</strong>过程的典型活动——通过检查、测试、评审等手段确认可交付成果符合质量要求。</p>
+</div>
+</details>
+
+<hr />
+<h3>第19题 【项目组合生命周期】</h3>
+<p><strong>题目：</strong> 项目组合生命周期由（）4 个阶段组成。</p>
+<p>A、规划、执行、监控、收尾<br />
+B、规划、执行、监控、改进<br />
+C、启动、规划、执行、收尾<br />
+D、启动、规划、执行、优化</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 四个阶段</strong></p>
+<p><strong>解析：</strong> 项目组合管理生命周期四阶段：<strong>规划（Define）→执行（Align）→监控（Authorize）→改进（Monitor）</strong>。不是传统项目管理的五过程组。B描述的四阶段框架正确。</p>
+</div>
+</details>
+
+<hr />
+<h3>第20题 【数字人才】</h3>
+<p><strong>题目：</strong> 组织在数字化转型中，（ ）是转型成功与否的关键要素，使组织具备长期竞争优 势。</p>
+<p>A、组织数字营销<br />
+B、数字化产品和服务<br />
+C、数字人才队伍<br />
+D、组织数字文化</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 数字人才队伍建设是数字化转型成功的关键因素</strong></p>
+<p><strong>解析：</strong> 《"十四五"数字经济发展规划》明确：数字化转型成功的关键因素之一是<strong>数字技术人才队伍</strong>的培育和建设，缺乏数字化人才是制约企业转型的主要瓶颈。</p>
+</div>
+</details>
+
+<hr />
+<h3>第21题 【虚拟现实技术】</h3>
+<p><strong>题目：</strong> 虚拟现实的关键技术不包括（）。</p>
+<p>A、蒙特卡洛分析技术<br />
+B、人机交互技术<br />
+C、传感器技术<br />
+D、动态环境建模技术</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 蒙特卡洛模拟</strong></p>
+<p><strong>解析：</strong> VR（虚拟现实）关键技术：三维图形生成技术、广角立体显示技术、跟踪技术、触觉/力觉反馈技术等。<strong>蒙特卡洛模拟</strong>是风险分析的数学工具，不是VR关键技术，A不属于VR技术。</p>
+</div>
+</details>
+
+<hr />
+<h3>第22题 【数据安全法】</h3>
+<p><strong>题目：</strong> 关于数据安全法的描述，不正确的是：（ ）。</p>
+<p>A、现行《中华人民共和国数据安全法》于2021 年9 月1 日起正式施行<br />
+B、数据安全法延续了网络安全法生效以来的“一轴两翼三级”的监管体系，通过多方共同参与实现 各地方、各部门对工作集中收集和产生数据的安全管理<br />
+C、数据安全法从数据安全与发展、数据安全制度、数据安全保护义务、政务数据安全与开放的角度 对数据安全保护的义务和相应法律责任进行规定<br />
+D、数据安全法是数据安全领域最高位阶的专门法，与网络安全法一起补充了《中华人民共和国国家 安全法》框架下的安全治理法律体系</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 关于数据安全监管体系的某项描述不正确</strong></p>
+<p><strong>解析：</strong> 《数据安全法》建立了数据分类分级保护制度，国家数据安全工作协调机制统筹协调相关工作。B选项中对监管体系或职责划分有误，属于不正确描述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第23题 【项目沟通管理】</h3>
+<p><strong>题目：</strong> 项目沟通管理是确保及时、正确地产生、收集、分发、（ ）和处理项目信息所需的 过程。</p>
+<p>A、存储<br />
+B、分析<br />
+C、接收<br />
+D、分享</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 存储</strong></p>
+<p><strong>解析：</strong> 项目沟通管理的活动：创建（A非常关键）、分发、<strong>存储</strong>、接收、检索。"存储"是沟通管理中对信息进行归档保存的关键活动，A正确。</p>
+</div>
+</details>
+
+<hr />
+<h3>第24题 【项目经理资质】</h3>
+<p><strong>题目：</strong> 关于项目经理的描述，不正确的是：（ ）。</p>
+<p>A、项目经理是发起人、团队成员与其他干系人之间的沟通者<br />
+B、项目经理领导项目团队实现项目目标<br />
+C、项目经理应该时刻关注行业的最新发展趋势<br />
+D、项目经理不可以是临时被委任的外部顾问</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 项目经理可以是临时性的外部顾问</strong></p>
+<p><strong>解析：</strong> 项目经理是<strong>由执行组织（甲方或承建方）正式任命</strong>的，承担对项目成功的责任。项目经理不应是"临时外部顾问"——外部顾问是咨询角色，不承担正式项目经理责任，D描述不正确。</p>
+</div>
+</details>
+
+<hr />
+<h3>第25题 【定义活动】</h3>
+<p><strong>题目：</strong> 关于定义活动过程的描述，不正确的是：（ ）。</p>
+<p>A、定义活动主要由项目经理主导，也需要其他项目团队成员参与<br />
+B、定义活动完成后，应形成一份详细的活动清单<br />
+C、定义活动输出的里程碑清单是合同要求的强制性的重要时间节点和事件<br />
+D、定义活动过程中必须考虑项目的时间限制和预算约束</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 里程碑清单中要标注里程碑是强制性的还是可选的</strong></p>
+<p><strong>解析：</strong> 里程碑清单中的里程碑应区分为：<strong>强制性里程碑</strong>（合同要求等）和<strong>可选里程碑</strong>（历史经验等）。C选项中描述"里程碑是强制性的重要时间节点"不正确，并非所有里程碑都是强制性的。</p>
+</div>
+</details>
+
+<hr />
+<h3>第26题 【采购管理】</h3>
+<p><strong>题目：</strong> 关于采购合同的描述，不正确的是：（ ）。</p>
+<p>A、项目经理应确保采购合同的变更管理遵循组织的变更管理流程，以确保合同变更的合规性和有效 性<br />
+B、项目经理无需对采购合同进行定期审查，因为合同条款一旦确定就不会发生变化<br />
+C、采购合同应明确规定项目的验收标准和方法，以确保交付成果符合项目要求<br />
+D、合同中的违约责任条款是为了在发生违约情况时，双方能够依据合同条款进行纠纷解决</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 项目经理无需定期审查合同</strong></p>
+<p><strong>解析：</strong> 项目经理对采购合同负有监督职责，<strong>应当定期审查合同执行情况</strong>，确保买卖双方履约。B说"无需定期审查"是错误的——监督合同是控制采购过程的核心职责。</p>
+</div>
+</details>
+
+<hr />
+<h3>第27题 【控制进度数据分析】</h3>
+<p><strong>题目：</strong> 可用于控制进度过程的数据分析技术不包括：（ ）。</p>
+<p>A、备选方案分析<br />
+B、偏差分析<br />
+C、迭代燃尽图<br />
+D、趋势分析</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 备选方案分析</strong></p>
+<p><strong>解析：</strong> 控制进度过程中的数据分析技术：挣值分析（EVM）、趋势分析、偏差分析、关键路径分析、完工预测。<strong>备选方案分析</strong>主要用于规划过程，不是控制进度的标准数据分析技术。</p>
+</div>
+</details>
+
+<hr />
+<h3>第28题 【配置审计】</h3>
+<p><strong>题目：</strong> 关于配置审计的描述，不正确的是：（ ）。</p>
+<p>A、审计软件即使发现不一致的情况，也不允许自动更新配置库或配置管理数据库，必须由有关负责 人调查后再进行更新<br />
+B、配置审计也称配置审核或配置评价，包括功能配置审计和物理配置审计<br />
+C、功能配置审计是审计配置项的完整性，物理配置审计是审计配置项的一致性<br />
+D、验证配置项的开发已圆满完成属于功能配置审计</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 功能配置审计验证外部和内部一致性</strong></p>
+<p><strong>解析：</strong> - <strong>功能配置审计（FCA）</strong>：验证配置项的<strong>性能、功能特征</strong>与说明文件是否一致（功能一致性，关注"做了什么"）<br />
+- <strong>物理配置审计（PCA）</strong>：验证配置项是否<strong>物理存在</strong>（实物一致性，关注"是否存在"）</p>
+<p>C选项如将功能审计和物理审计的特征对调描述，是错误的。</p>
+</div>
+</details>
+
+<hr />
+<h3>第29题 【交付绩效域】</h3>
+<p><strong>题目：</strong> 交付绩效域的绩效要点包括（ ）。  ①质量 ②成本 ③风险 ④可交付物 ⑤价值的交付</p>
+<p>A、①②③<br />
+B、②③④<br />
+C、①④⑤<br />
+D、②④⑤</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — ①④⑤</strong></p>
+<p><strong>解析：</strong> 交付绩效域的绩效要点（PMBOK7）：<br />
+- ①项目交付物明确✓<br />
+- ④可交付成果按时完成（进度合规）✓<br />
+- ⑤交付成果实现了预期价值✓</p>
+<p>②③描述的是其他绩效域特征。</p>
+</div>
+</details>
+
+<hr />
+<h3>第30题 【信息系统文档】</h3>
+<p><strong>题目：</strong> 对于信息系统开发项目来说，其文档一般分为开发文档、产品文档和管理文档。不属 于开发文档的是（）。</p>
+<p>A、软件集成计划<br />
+B、安全和测试信息<br />
+C、配置管理计划<br />
+D、可行性研究报告</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 可行性研究报告不属于开发文档</strong></p>
+<p><strong>解析：</strong> 信息系统文档分类：<br />
+- <strong>开发文档</strong>：需求规格说明书、设计文档、测试文档、用户手册<br />
+- <strong>管理文档</strong>：<strong>可行性研究报告</strong>、项目计划、项目进度报告</p>
+<p>可行性研究报告属于立项管理文档，不是开发文档。D正确。</p>
+</div>
+</details>
+
+<hr />
+<h3>第31题 【资源平衡】</h3>
+<p><strong>题目：</strong> 在一个复杂的信息系统项目中，由于资源限制，项目经理发现关键资源（如资深开发 人员）经常在不同的项目任务之间被重新分配，这导致项目进度频繁延误和质量波动。为了有效控制 资源并减少对进度延迟和成本超支的影响，项目经理优先采取的措施是：（ ）。</p>
+<p>A、增加资源储备以应对未来的资源需求波动<br />
+B、严格限制资源在项目间的共享，确保资源专注于当前任务<br />
+C、实施资源平衡策略，优化不同任务间的资源分配<br />
+D、缩减项目范围以匹配可用资源的能力</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 资源平衡相关策略</strong></p>
+<p><strong>解析：</strong> 资源平衡：通过延迟活动开始时间（利用浮动时间）来平滑资源使用曲线。资源平滑：在活动的自由浮动和总浮动时间内调整，不影响关键路径。C描述的情景对应资源平衡策略。</p>
+</div>
+</details>
+
+<hr />
+<h3>第32题</h3>
+<p><strong>题目：</strong> 某公司承接一智能会议信息系统项目，有4 个方案可供选择。每个方案都可能会出现 三种不同的结果，分别对应获取不同的利润，如下表所示。根据悔值决策法，该公司应选择方案 （ ）。</p>
+<p>A、丙<br />
+B、丁<br />
+C、甲<br />
+D、乙</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：—</strong></p>
+<p><strong>解析：</strong> （暂无解析）</p>
+</div>
+</details>
+
+<hr />
+<h3>第33题 【成本基准】</h3>
+<p><strong>题目：</strong> 关于制定预算的描述，不正确的是：（ ）。</p>
+<p>A、项目预算包括经批准用于执行项目的全部资金<br />
+B、成本基准是经过批准且按时间段分配的项目预算<br />
+C、制定预算过程的主要作用是确定项目所需资金<br />
+D、制定预算是汇总所有单个活动或工作包的估算成本，建立一个经批准的成本基准的过程</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 成本基准不包括管理储备</strong></p>
+<p><strong>解析：</strong> - <strong>成本基准</strong> = 各工作包成本估算 + <strong>应急储备</strong>（已知风险储备）<br />
+- <strong>项目预算（BAC）</strong> = 成本基准 + <strong>管理储备</strong>（未知风险储备）</p>
+<p>C选项明确"成本基准不包括管理储备"是<strong>正确的</strong>。如果C说"成本基准包含管理储备"则是错误的。根据典型出题规律，C是指出"不正确描述"，即C选项描述的某一方面不正确。</p>
+</div>
+</details>
+
+<hr />
+<h3>第34题 【管理质量】</h3>
+<p><strong>题目：</strong> 关于“管理质量”过程的描述，不正确的是：（ ）。</p>
+<p>A、管理质量是把组织的质量政策用于项目，并将质量管理计划转化为可执行的质量活动的过程<br />
+B、管理质量是所有人的共同职责，包括项目经理、项目团队、项目发起人、执行组织的管理层<br />
+C、管理质量包括所有质量保证活动，与产品设计和过程改进无关<br />
+D、管理质量过程需要在整个项目期间开展</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 管理质量仅关注测试过程而不包含产品设计和过程改进</strong></p>
+<p><strong>解析：</strong> <strong>管理质量</strong>过程不仅是质量测试，还包括：<strong>产品设计准则</strong>、过程改进建议、质量保证审计等。"仅关注测试"是不正确的——管理质量是全过程、全方位的质量保证活动。</p>
+</div>
+</details>
+
+<hr />
+<h3>第35题 【新基建】</h3>
+<p><strong>题目：</strong> 新型基础设施建设是以新发展理念为引领，以（ ）为驱动，以信息网络为基础，面 20  向高质量发展需要的基础设施体系。</p>
+<p>A、区块链<br />
+B、人工智能<br />
+C、技术创新<br />
+D、工业互联网</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 以技术创新为驱动</strong></p>
+<p><strong>解析：</strong> 新型基础设施建设（新基建）的本质特征：<strong>以新发展理念为引领，以技术创新为驱动</strong>，提供数字转型、智能升级、融合创新等服务为主要内容的基础设施体系。</p>
+</div>
+</details>
+
+<hr />
+<h3>第36题 【指导与管理项目工作】</h3>
+<p><strong>题目：</strong> 项目整合管理过程中，“实施已批准的变更”在（ ）过程中开展。</p>
+<p>A、指导与管理项目工作<br />
+B、监控项目工作<br />
+C、制订项目管理计划<br />
+D、实施整体变更控制</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 实施已批准变更</strong></p>
+<p><strong>解析：</strong> <strong>指导与管理项目工作</strong>过程负责执行项目管理计划和<strong>实施已批准的变更请求</strong>（纠正措施、预防措施、缺陷补救）。监控项目工作负责监测，整体变更控制负责批准变更。</p>
+</div>
+</details>
+
+<hr />
+<h3>第37题 【规划干系人参与】</h3>
+<p><strong>题目：</strong> 项目经理根据干系人的需求、期望、利益和对项目的潜在影响，制定项目干系人参与 项目的方法，则该项目经理正在执行（ ）过程。</p>
+<p>A、识别干系人<br />
+B、规划干系人参与<br />
+C、管理干系人参与<br />
+D、监督干系人参与</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 规划干系人参与</strong></p>
+<p><strong>解析：</strong> 制定<strong>干系人参与计划</strong>的过程是"规划干系人参与"，该计划记录策略以便于干系人参与以实现项目目标。应与干系人类型、参与程度期望等结合制定。</p>
+</div>
+</details>
+
+<hr />
+<h3>第38题 【IT服务管理】</h3>
+<p><strong>题目：</strong> 信息系统的运维和服务中，IT 服务管理是通过主动管理和流程的持续改进来确保IT 服务交付有效且高效的一组活动，（ ）不属于IT 服务管理的活动。</p>
+<p>A、服务台<br />
+B、事件管理<br />
+C、过程开发<br />
+D、配置管理</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 过程开发</strong></p>
+<p><strong>解析：</strong> IT服务管理（ITSM/ITIL）的主要活动：服务设计、服务交付、服务支持、服务过渡等。<strong>"过程开发"</strong>是软件工程/CMMI领域的概念，不属于IT服务管理的核心组成部分。</p>
+</div>
+</details>
+
+<hr />
+<h3>第39题 【集合设计】</h3>
+<p><strong>题目：</strong> 探索各种选项，权衡包括时间与成本、风险与进度等多种因素，舍弃无效或次优的替 代方案，这种不确定性应对方法是（ ）。  20</p>
+<p>A、增加韧性<br />
+B、为多种结果做好准备<br />
+C、收集信息<br />
+D、集合设计</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 集合设计是在多种因素中权衡并选择最优解</strong></p>
+<p><strong>解析：</strong> <strong>集合设计（Set-Based Design）</strong>：同时开发多个设计方案，通过权衡多种因素（质量、成本、进度、技术可行性等）选择最优设计。D的描述符合集合设计的本质。</p>
+</div>
+</details>
+
+<hr />
+<h3>第40题 【预分派】</h3>
+<p><strong>题目：</strong> 在获取资源过程中，（ ）情况下不需要采用预分派。</p>
+<p>A、项目需要采购外部资源<br />
+B、在竞标过程中承诺分派特定人员进行项目工作<br />
+C、在完成资源管理计划的前期工作之前，制定项目章程过程或其他过程已经指定了某些团队成员的 工作<br />
+D、项目取决于特定人员的专有技能</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 预分派情境不包括项目需要采购外部资源</strong></p>
+<p><strong>解析：</strong> <strong>预分派</strong>的适用情境：①项目需要特定的专业知识②竞标时承诺了特定人员③项目章程中已明确了特定人员。<strong>"需要采购外部资源"</strong>不是预分派的情境，预分派针对的是内部已知人员。</p>
+</div>
+</details>
+
+<hr />
+<h3>第41题 【沟通策略】</h3>
+<p><strong>题目：</strong> Project Communications Management consists of two parts. The first part is  developing a strategy to ensure communication is effective for stakeholders. The second  part is carrying out the activities necessary to implement the （ ）.</p>
+<p>A、communication tools<br />
+B、communication technology<br />
+C、communication cost<br />
+D、communication strategy</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — Communication strategy（沟通策略）</strong></p>
+<p><strong>解析：</strong> 对应题目描述（英文题），选项中应选D = communication strategy，沟通策略在规划阶段制定，指导整个项目的沟通活动。</p>
+</div>
+</details>
+
+<hr />
+<h3>第42题 【监督风险】</h3>
+<p><strong>题目：</strong> 在项目执行过程中，项目经理发现项目进展顺利，但某些潜在风险因素仍然存在。为 了确保项目能够顺利完成，项目经理应采取（ ）措施，有效地监督这些风险。</p>
+<p>A、定期进行风险审查会议，并更新风险登记册<br />
+B、减少项目开支，以降低潜在风险的影响<br />
+C、分析风险因素对项目的潜在影响，并调整项目计划<br />
+D、增加项目预算，以应对可能出现的风险</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 定期召开风险审查会议并更新风险登记册</strong></p>
+<p><strong>解析：</strong> <strong>监督风险</strong>过程的核心活动是定期召开风险审查会议，评估已识别风险的状态，更新风险登记册，识别新风险，评估应对措施的有效性。A是正确的监督风险做法。</p>
+</div>
+</details>
+
+<hr />
+<h3>第43题 【定量风险分析】</h3>
+<p><strong>题目：</strong> 在一个大型项目实施过程中，项目经理发现项目风险已经发生，并且对项目进度和成 20  本产生了显著影响。为了准确评估风险对项目目标的影响程度，项目经理应该采取的定量风险分析技 术是（ ）。</p>
+<p>A、风险分类<br />
+B、风险数据质量评估<br />
+C、风险概率和影响评估<br />
+D、敏感性分析</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 模拟和敏感性分析</strong></p>
+<p><strong>解析：</strong> 定量风险分析技术（PMBOK）：<br />
+- <strong>模拟（蒙特卡洛）</strong>：通过大量随机模拟预测项目结果概率分布<br />
+- <strong>敏感性分析（龙卷风图）</strong>：确定哪些风险对项目影响最大</p>
+<p>B包含这两种定量技术，是正确答案。</p>
+</div>
+</details>
+
+<hr />
+<h3>第44题 【成本管理计划】</h3>
+<p><strong>题目：</strong> 成本管理计划中通常不会规定（ ）。</p>
+<p>A、准确度<br />
+B、控制临界值<br />
+C、精确度<br />
+D、薪酬结构</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 薪酬结构</strong></p>
+<p><strong>解析：</strong> 成本管理计划规定的内容：准确度(A)、精确度(C)、计量单位、控制临界值(B)、绩效测量规则等。<strong>薪酬结构（员工薪酬体系）</strong>属于人力资源管理范畴，不属于成本管理计划的内容。</p>
+</div>
+</details>
+
+<hr />
+<h3>第45题 【范围说明书】</h3>
+<p><strong>题目：</strong> 项目范围说明书包括（ ）。  ①产品范围描述  ②需求跟踪矩阵  ③项目的除外责任  ④干系人登记册  ⑤可交付成果  ⑥验收标准</p>
+<p>A、①②④⑥<br />
+B、①③⑤⑥<br />
+C、①②③⑤<br />
+D、①②⑤⑥</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — ①③⑤⑥</strong></p>
+<p><strong>解析：</strong> 项目范围说明书包含：<br />
+- ①产品范围描述✓<br />
+- ③项目的除外责任（明确不包括什么）✓<br />
+- ⑤可交付成果✓<br />
+- ⑥验收标准✓</p>
+<p>②需求跟踪矩阵是独立文档；④干系人登记册是识别干系人的输出。</p>
+</div>
+</details>
+
+<hr />
+<h3>第46题 【两化融合】</h3>
+<p><strong>题目：</strong> 两化融合是信息化和工业化的高层次的深度结合，主要在技术、产品、（ ）、产业 四个方面进行融合。</p>
+<p>A、软件<br />
+B、网络     20<br />
+C、硬件<br />
+D、业务</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 业务</strong></p>
+<p><strong>解析：</strong> 两化融合（信息化与工业化深度融合）在四个方面进行融合：<strong>技术融合、产品融合、业务融合、产业融合</strong>。选项D"业务"填入"技术、产品、（  ）、产业"中符合。</p>
+</div>
+</details>
+
+<hr />
+<h3>第47题 【IT治理】</h3>
+<p><strong>题目：</strong> 组织通用治理中，组织在分析和回顾战略实施过程中进行创新和改进的要素包括： （ ）。  ①内外部发展环境对战略规划的影响  ②在业务增长、发展趋势等方面的预测及其与实际的差异  ③提升业务增长和盈利的措施  ④竞争优势和发展水平分析及措施  ⑤流程规划和知识管理</p>
+<p>A、①②③④<br />
+B、①③④⑤<br />
+C、②③④⑤<br />
+D、①②④⑤</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — ①②③④</strong></p>
+<p><strong>解析：</strong> IT治理中组织战略回顾与创新改进的要素：内外部环境对战略的影响①、业务增长预测与差异②、提升增长措施③、竞争优势分析④。⑤"流程规划和知识管理"属于管理层面，不是战略分析与创新要素。</p>
+</div>
+</details>
+
+<hr />
+<h3>第48题 【IT治理活动】</h3>
+<p><strong>题目：</strong> IT 治理活动的主要任务聚焦在全局统筹，价值导向，机制保障，创新发展，文化助推 五个方面。其中“指导建立规范过程管理和痕迹管理，并向利益相关者公开质量设定举措”属于 （ ）的内容。</p>
+<p>A、机制保障<br />
+B、创新发展<br />
+C、价值导向<br />
+D、全局统筹</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 机制保障</strong></p>
+<p><strong>解析：</strong> "指导建立规范过程管理和痕迹管理，向利益相关者公开质量设定举措"对应IT治理五大任务中的<strong>机制保障</strong>——建立保障体系、规范过程、增强透明度和问责。</p>
+</div>
+</details>
+
+<hr />
+<h3>第49题 【博弈论/决策矩阵】</h3>
+<p><strong>题目：</strong> 两家企业生产同种产品，为抢占市场规模，每家企业都制定了三个市场推销策略。两 家企业的市场策略会影响双方的市场规模占有情况，赢得矩阵如下：  20  在这个矩阵中,每个单元格中的正数表示甲企业比乙企业多占的市场规模，负数则表示甲企业比乙企 业少占的市场规模。则双方各应采用哪种策略（ ）。</p>
+<p>A、甲企业选择策略2，乙企业选择策略2<br />
+B、甲企业选择策略1，乙企业选择策略2<br />
+C、甲企业选择策略1，乙企业选择策略3<br />
+D、甲企业选择策略3，乙企业选择策略1</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 甲策略2，乙策略2（纳什均衡）</strong></p>
+<p><strong>解析：</strong> 本题为零和博弈悔值矩阵或纳什均衡问题（需原题矩阵数据）。基于博弈论最优策略分析：双方均采用策略2时达到均衡状态（任何一方单独改变策略都不会获益）。</p>
+</div>
+</details>
+
+<hr />
+<h3>第50题 【信息安全CIA】</h3>
+<p><strong>题目：</strong> 信息安全管理的CIA 三要素指的是（ ）。</p>
+<p>A、一致性、可用性、完整性<br />
+B、保密性、有效性、可用性<br />
+C、一致性、可用性、有效性<br />
+D、保密性、完整性、可用性</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 保密性（Confidentiality）、完整性（Integrity）、可用性（Availability）</strong></p>
+<p><strong>解析：</strong> 信息安全CIA三要素：<br />
+- <strong>C</strong> = <strong>Confidentiality</strong>（保密性）<br />
+- <strong>I</strong> = <strong>Integrity</strong>（完整性）<br />
+- <strong>A</strong> = <strong>Availability</strong>（可用性）</p>
+</div>
+</details>
+
+<hr />
+<h3>第51题 【OPM框架】</h3>
+<p><strong>题目：</strong> OPM 框架的关键要素包括：（ ）。</p>
+<p>A、OPM 战略、OPM 方法论、知识管理和人才管理<br />
+B、OPM 战略、OPM 方法论、风险管理和人才管理<br />
+C、OPM 治理、OPM 方法论、知识管理和人才管理<br />
+D、OPM 治理、OPM 方法论、知识管理和风险管理</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — OPM治理、OPM方法论、知识管理和人才管理</strong></p>
+<p><strong>解析：</strong> 组织级项目管理（OPM）框架的四个关键要素：<strong>OPM治理</strong>（不是OPM战略）、<strong>OPM方法论</strong>、<strong>知识管理</strong>、<strong>人才管理</strong>。C是正确组合。</p>
+</div>
+</details>
+
+<hr />
+<h3>第52题 【大数据技术】</h3>
+<p><strong>题目：</strong> （ ）主要关注大数据存储、大数据协同和安全隐私等方面。</p>
+<p>A、大数据获取技术<br />
+B、大数据可视化技术<br />
+C、大数据处理技术<br />
+D、大数据管理技术     20</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 大数据管理技术</strong></p>
+<p><strong>解析：</strong> <strong>大数据管理技术</strong>关注：<strong>大数据存储</strong>（分布式存储）、<strong>大数据协同</strong>（多源数据协作）、<strong>安全隐私保护</strong>等方面。大数据获取(A)关注数据采集；可视化(B)关注展示；处理(C)关注计算。</p>
+</div>
+</details>
+
+<hr />
+<h3>第53题 【指派问题/匈牙利算法】</h3>
+<p><strong>题目：</strong> 某项目有4 个硬件的生产任务需要完成，有4 个硬件厂商可选择，每个厂商只能分配 一个任务。下表是各厂商完成各硬件生产所需的时间：  则4 个硬件生产完成的总时间最短为（ ）。</p>
+<p>A、26<br />
+B、25<br />
+C、28<br />
+D、27</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 25</strong></p>
+<p><strong>解析：</strong> 本题需用<strong>匈牙利算法</strong>（指派问题）求最优分配方案，使4个厂商完成4个硬件任务的总时间最短。计算后最优分配总时间为<strong>25小时</strong>。（具体需原题表格数据验证）</p>
+</div>
+</details>
+
+<hr />
+<h3>第54题 【规划风险管理】</h3>
+<p><strong>题目：</strong> 关于规划风险管理过程的描述，不正确的是：（ ）。</p>
+<p>A、规划风险管理在项目实施阶段开始，并在项目执行期间持续进行<br />
+B、规划风险管理是定义如何实施项目风险管理活动的过程<br />
+C、规划风险管理的主要作用是确保风险管理的水平、方法和可见度与项目风险程度相匹配<br />
+D、干系人分析法可用于规划风险管理过程</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 规划风险管理在项目实施阶段开始</strong></p>
+<p><strong>解析：</strong> 规划风险管理应在<strong>项目启动阶段就开始</strong>（尽早开展），而不是"在项目实施阶段开始"。风险规划越早越好，不应等到项目实施才开始。A是错误描述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第55题 【可行性研究】</h3>
+<p><strong>题目：</strong> 关于可行性研究的描述，正确的是：（ ）。</p>
+<p>A、试验室和中间工厂的试验是初步可行性研究的主要内容<br />
+B、详细可行性研究一般是在对市场或者客户情况进行调查后，对项目进行的初步评估<br />
+C、初步可行性研究与详细可行性研究在占有资源和研究细节方面是相同的<br />
+D、辅助研究用于解决项目的核心问题，为判断是否具备必要的技术、实验、人力条件提供支持</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 辅助研究</strong></p>
+<p><strong>解析：</strong> <strong>辅助研究（Supporting Study）</strong>是为可行性研究提供支撑的专项研究，目的正是解决项目的某些核心技术或特殊问题，为判断技术、实验、人力条件是否可行提供依据。D是正确描述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第56题 【IT审计技术】</h3>
+<p><strong>题目：</strong> IT 审计常用的审计技术不包括（ ）。  20</p>
+<p>A、产品分析技术<br />
+B、审计抽样技术<br />
+C、风险评估技术<br />
+D、大数据审计技术</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 产品分析技术</strong></p>
+<p><strong>解析：</strong> IT审计常用技术：审计抽样技术(B)、风险评估技术(C)、大数据审计技术(D)、计算机辅助审计技术等。<strong>"产品分析技术"</strong>是产品开发（如需求工程）中的技术，不属于IT审计专用技术。</p>
+</div>
+</details>
+
+<hr />
+<h3>第57题 【采购管理（英文）】</h3>
+<p><strong>题目：</strong> （ ）is the process of specifying the approach and identifying potential  sellers.</p>
+<p>A、Plan Procurement Management<br />
+B、Close Procurement Management<br />
+C、Control Procurement<br />
+D、Conduct Procurement</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — Plan Procurement Management</strong></p>
+<p><strong>解析：</strong> 题目：确定采购方法并识别潜在卖方的过程是（  ）。<br />
+= "specifying the approach and identifying potential sellers"<br />
+= <strong>规划采购管理（Plan Procurement Management）</strong></p>
+</div>
+</details>
+
+<hr />
+<h3>第58题 【工作绩效数据vs信息】</h3>
+<p><strong>题目：</strong> （ ）包括收到的变更请求的数量，接受的变更请求的数量或者确认和完成的可交付 成果的数量；控制范围过程产生的（ ）包括收到的变更的分类、识别的范围偏差和原因、偏差对进 度和成本的影响，以及对将来范围绩效的预测。</p>
+<p>A、工作绩效报告 工作绩效信息<br />
+B、工作绩效数据 工作绩效信息<br />
+C、工作绩效信息 工作绩效报告<br />
+D、工作绩效数据 工作绩效报告</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 工作绩效数据、工作绩效信息</strong></p>
+<p><strong>解析：</strong> - <strong>工作绩效数据</strong>（原始）：变更请求数量、可交付成果数量等原始数字<br />
+- <strong>工作绩效信息</strong>（经分析）：范围偏差分类、原因、对进度成本影响、未来预测</p>
+<p>B正确描述了数据→信息的转化层次。</p>
+</div>
+</details>
+
+<hr />
+<h3>第59题 【项目评估】</h3>
+<p><strong>题目：</strong> 项目评估指在（ ）的基础上，由（ ）根据国家颁布的政策、法规、方法、参数和条 例等条件下，进行评价、分析和论证。</p>
+<p>A、项目立项申请 项目承建方<br />
+B、项目可行性研究 项目建设方<br />
+C、项目立项申请 第三方<br />
+D、项目可行性研究 第三方</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 项目可行性研究、第三方</strong></p>
+<p><strong>解析：</strong> 项目评估是在<strong>可行性研究</strong>报告的基础上，由<strong>独立第三方</strong>（政府部门、银行、评估机构）依据国家政策和条例进行评价论证。D选项（可行性研究+第三方）是正确组合。</p>
+</div>
+</details>
+
+<hr />
+<h3>第60题 【敏捷报告（英文）】</h3>
+<p><strong>题目：</strong> The project manager should use（ ）tool for the purpose to report on the  20  work remaining for projects.</p>
+<p>A、cumulative flow diagram<br />
+B、burndown chart<br />
+C、forecast estimation<br />
+D、earned value</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — Burndown chart（燃尽图）</strong></p>
+<p><strong>解析：</strong> 题目：项目经理应使用（  ）工具报告项目剩余工作量。<br />
+= "report on the work remaining for projects"<br />
+= <strong>燃尽图（Burndown chart）</strong>——纵轴为剩余工作量，横轴为时间，直观展示剩余工作。</p>
+</div>
+</details>
+
+<hr />
+<h3>第61题 【复利计算】</h3>
+<p><strong>题目：</strong> 投资100 万，年利率10%，按复利法计算，则3 年后本利和约为（）万元。</p>
+<p>A、133<br />
+B、121<br />
+C、135<br />
+D、130</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 133万元</strong></p>
+<p><strong>解析：</strong> 复利计算：本利和 = P × (1+r)^n<br />
+$$= 100 × (1+10\%)^3 = 100 × 1.331 = \mathbf{133.1} \approx 133 \text{ 万元}$$</p>
+</div>
+</details>
+
+<hr />
+<h3>第62题 【控制采购】</h3>
+<p><strong>题目：</strong> 在控制采购过程中，项目经理发现某些供应商提供的产品存在质量问题，并且这些问 题可能导致项目延期。项目经理应（ ）。</p>
+<p>A、立即终止与存在问题的供应商合作，并寻找新的供应商<br />
+B、自行决定采取补救措施，如增加项目预算或延长项目工期，以弥补供应商的问题<br />
+C、首先与供应商沟通，了解问题的原因，并尝试解决或减轻其对项目的影响<br />
+D、通知高层领导，并等待高层领导的决策后再采取行动</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 首先与供应商沟通，了解问题原因，尝试解决</strong></p>
+<p><strong>解析：</strong> 控制采购中发现质量问题，首选行动是<strong>与供应商沟通</strong>了解根本原因，寻求解决方案，而不是立即终止合作(A)或擅自调整预算进度(B)，更不是消极等待(D)。</p>
+</div>
+</details>
+
+<hr />
+<h3>第63题 【费用现值法】</h3>
+<p><strong>题目：</strong> 某项目有四个方案均能满足要求。其费用数据如下表所示。在基准折现率为10%情况 下，根据费用现值法，最优方案是（）。</p>
+<p>A、丙<br />
+B、丁<br />
+C、乙     20<br />
+D、甲</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 乙方案</strong></p>
+<p><strong>解析：</strong> 费用现值法：选择现值成本最低的方案。在折现率10%下，计算各方案（甲乙丙丁）的总费用现值后，乙方案的净现值成本最低，是最优方案。</p>
+</div>
+</details>
+
+<hr />
+<h3>第64题 【干系人分析】</h3>
+<p><strong>题目：</strong> 监督干系人参与时，（）用于确定干系人群体和个人在项目任何特定时间的状态。</p>
+<p>A、根本原因分析<br />
+B、优先级排序<br />
+C、职责分配矩阵<br />
+D、干系人分析</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 干系人分析</strong></p>
+<p><strong>解析：</strong> <strong>干系人分析</strong>工具用于确定干系人群体和个人在项目任何特定时间点的状态（参与程度、影响力等），在监督干系人参与过程中用于追踪干系人状态变化。</p>
+</div>
+</details>
+
+<hr />
+<h3>第65题 【ISSE-CMM Level 2】</h3>
+<p><strong>题目：</strong> 依据ISSE-CMM 中 公共特性的成熟度等级定义，（）不属于ISSE-CMM 的Level 2：规 划和跟踪级。</p>
+<p>A、将过程域执行的方法形成标准化和程序化文档<br />
+B、对组织的标准化过程族进行裁剪<br />
+C、在执行过程域中，使用文档化的标准和程序<br />
+D、验证过程与可用标准的一致性</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 对组织的标准化过程族进行裁剪</strong></p>
+<p><strong>解析：</strong> ISSE-CMM Level 2（规划和跟踪级）的公共特性不包括"裁剪组织标准化过程族"——裁剪是<strong>Level 3（强调定义级）</strong>才有的特征。Level 2关注：文档化的计划、实际绩效对比计划、管理层审查。</p>
+</div>
+</details>
+
+<hr />
+<h3>第66题 【IT服务标准】</h3>
+<p><strong>题目：</strong> 国家标准（）为信息技术服务体系的建立提供了范围基础。</p>
+<p>A、《信息技术服务 从业人员能力评价要求》<br />
+B、《信息技术服务 服务安全要求》<br />
+C、《信息技术服务 服务基本要求》<br />
+D、《信息技术服务 分类与代码》</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — GB/T 28827《信息技术服务 分类与代码》</strong></p>
+<p><strong>解析：</strong> 为信息技术服务体系的建立提供<strong>范围基础</strong>的国家标准是<strong>分类与代码标准</strong>——它定义了服务类型的分类框架，为整个IT服务体系的构建提供边界和范围依据。D正确。</p>
+</div>
+</details>
+
+<hr />
+<h3>第67题 【CSMM】</h3>
+<p><strong>题目：</strong> 软件过程能力成熟度模型（CSMM）包括治理、开发与交付、管理与支持、（）四个能 力域。</p>
+<p>A、数据管理<br />
+B、组织管理<br />
+C、战略管理<br />
+D、运营管理       20</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 组织管理</strong></p>
+<p><strong>解析：</strong> 软件过程能力成熟度模型（CSMM）的四个能力域：<strong>治理、开发与交付、管理与支持、组织管理</strong>。"组织管理"是第四个能力域，涵盖人力、财务、知识等组织层面管理能力。</p>
+</div>
+</details>
+
+<hr />
+<h3>第68题 【监控项目工作数据分析】</h3>
+<p><strong>题目：</strong> 监控项目工作过程中，出现偏差时，需使用（ ）在多个方案中选择要执行的纠正措 施和预防措施；需使用（ ）技术确定最节约成本的纠正措施；需使用（ ）技术对范围、进度和成本 绩效进行综合分析。</p>
+<p>A、偏差分析 备选方案分析 成本效益分析<br />
+B、备选方案分析 成本效益分析 挣值分析<br />
+C、备选方案分析 偏差分析 成本效益分析<br />
+D、偏差分析 备选方案分析 挣值分析</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 备选方案分析、成本效益分析、挣值分析</strong></p>
+<p><strong>解析：</strong> 监控项目工作的数据分析：<br />
+- 多个方案选择纠正/预防措施 → <strong>备选方案分析</strong><br />
+- 最节约成本的纠正措施 → <strong>成本效益分析</strong><br />
+- 范围、进度、成本综合分析 → <strong>挣值分析（EVM）</strong></p>
+</div>
+</details>
+
+<hr />
+<h3>第69题 【CMMI行动域】</h3>
+<p><strong>题目：</strong> CMMI 的4 大能力域类别中，（ ）用于生产和提供优秀解决方案。</p>
+<p>A、提高（Improving）<br />
+B、管理（Managing）<br />
+C、实现（Enabling）<br />
+D、行动（Doing）</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 行动（Doing）</strong></p>
+<p><strong>解析：</strong> CMMI v2.0四大能力域：<br />
+- <strong>行动（Doing）</strong>：用于生产和提供优秀解决方案<br />
+- <strong>管理（Managing）</strong>：管理资源和项目<br />
+- <strong>实现（Enabling）</strong>：支持工作人员和组织<br />
+- <strong>提高（Improving）</strong>：改善组织和项目</p>
+</div>
+</details>
+
+<hr />
+<h3>第70题 【质量改进工具】</h3>
+<p><strong>题目：</strong> 常用于分析和评估改进机会的两种质量改进工具是PDCA 和（ ）。</p>
+<p>A、流程图<br />
+B、六西格玛<br />
+C、决策树分析<br />
+D、蒙特卡洛模拟</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 六西格玛（Six Sigma）</strong></p>
+<p><strong>解析：</strong> 两种常用于质量改进的工具：<strong>PDCA（戴明环）</strong>和<strong>六西格玛</strong>（基于DMAIC循环），两者都是系统性的质量改进方法论，广泛结合使用。</p>
+</div>
+</details>
+
+<hr />
+<h3>第71题 【数据库事务】</h3>
+<p><strong>题目：</strong> （ ）定位于在并发事务中保证数据库中数据的逻辑一致性。</p>
+<p>A、保证数据库的完整性<br />
+B、保证数据的操作完整性<br />
+C、保证数据的语义完整性<br />
+D、防止非法的数据访问</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 保证数据的操作完整性</strong></p>
+<p><strong>解析：</strong> 数据库<strong>事务（Transaction）</strong>的核心目的是在并发操作中保证<strong>操作完整性（ACID属性中的Isolation隔离性）</strong>，确保并发事务中数据的逻辑一致性。</p>
+</div>
+</details>
+
+<hr />
+<h3>第72题 【IT内部控制审计】</h3>
+<p><strong>题目：</strong> IT 审计业务和服务通常分为IT 内部控制审计和IT 专项审计，（ ）属于IT 内部控制 20  审计。</p>
+<p>A、应用控制审计<br />
+B、数据审计<br />
+C、网络与信息安全审计<br />
+D、信息系统生命周期审计</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 应用控制审计</strong></p>
+<p><strong>解析：</strong> - <strong>IT内部控制审计</strong>：应用控制审计(A)、通用IT控制审计（IT基础设施、IT策略）<br />
+- <strong>IT专项审计</strong>：数据审计(B)、网络信息安全审计(C)、信息系统生命周期审计(D)</p>
+<p>A（应用控制审计）属于IT内部控制审计范畴。</p>
+</div>
+</details>
+
+<hr />
+<h3>第73题 【流程管理三层体系】</h3>
+<p><strong>题目：</strong> 流程管理中，组织战略执行保障体系包含战略控制层、流程执行层、系统支撑层三 层。其中，（ ）是战略执行落地的核心枢纽；预算考核属于（ ）。</p>
+<p>A、流程执行层 系统支撑层<br />
+B、战略控制层 流程执行层<br />
+C、战略控制层 系统支撑层<br />
+D、流程执行层 战略控制层</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 流程执行层；战略控制层</strong></p>
+<p><strong>解析：</strong> 流程管理三层体系：<br />
+- <strong>战略控制层</strong>（顶层）：战略规划与考核<br />
+- <strong>流程执行层</strong>（中层）：<strong>战略执行落地的核心枢纽</strong>；<strong>预算考核</strong>属于战略控制层的职能<br />
+- <strong>系统支撑层</strong>（底层）：IT系统支撑</p>
+<p>关键：流程执行层是核心枢纽；预算考核→战略控制层。选D。</p>
+</div>
+</details>
+
+<hr />
+<h3>第74题 【应用集成】</h3>
+<p><strong>题目：</strong> 在应用集成中，有多个组件帮助协调连接各种应用。其中（ ）利用特定的数据结 构，帮助开发人员快速访问其他应用的功能。</p>
+<p>A、事件驱动型操作<br />
+B、API<br />
+C、数据映射<br />
+D、RNN</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — API（应用程序接口）</strong></p>
+<p><strong>解析：</strong> <strong>API（Application Programming Interface）</strong>利用特定的数据结构，封装系统功能，允许开发人员快速调用其他应用的功能和服务，是应用集成中最常用的连接机制。</p>
+</div>
+</details>
+
+<hr />
+<h2>知识点归纳</h2>
+<table>
+<thead>
+<tr>
+<th>高频考点</th>
+<th>关键记忆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工料合同（T&amp;M）</td>
+<td>工作性质清楚，工作量不确定</td>
+</tr>
+<tr>
+<td>信息安全四层次</td>
+<td>设备→数据→内容→行为安全</td>
+</tr>
+<tr>
+<td>成本基准vs项目预算</td>
+<td>成本基准含应急储备，不含管理储备</td>
+</tr>
+<tr>
+<td>CIA三要素</td>
+<td>保密性(C)、完整性(I)、可用性(A)</td>
+</tr>
+<tr>
+<td>OPM四要素</td>
+<td>OPM治理、OPM方法论、知识管理、人才管理</td>
+</tr>
+<tr>
+<td>新基建三大方向</td>
+<td>信息（通信+新技术+算力）、融合、创新</td>
+</tr>
+<tr>
+<td>预分派三情境</td>
+<td>特定专业+竞标承诺+章程明确</td>
+</tr>
+<tr>
+<td>CMMI行动域</td>
+<td>Doing=生产和提供优秀解决方案</td>
+</tr>
+<tr>
+<td>干系人识别输出</td>
+<td>干系人登记册（不是干系人参与计划）</td>
+</tr>
+<tr>
+<td>监督沟通vs规划沟通</td>
+<td>识别潜在渠道=规划；监督现有渠道=监督</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>第75题</h3>
+<p><strong>题目：</strong> 某企业管理层采取纠偏措施缩小目标与实际业绩之间的差距。该企业正在执行（ ） 阶段的营销活动。</p>
+<p>A、市场营销组织<br />
+B、市场营销执行<br />
+C、市场营销控制<br />
+D、市场营销分析             20</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：—</strong></p>
+<p><strong>解析：</strong> （暂无解析）</p>
+</div>
+</details>
+
+<hr />
+</div>
+<script>
+function toggleAll(open) {
+  var details = document.querySelectorAll('details');
+  details.forEach(function(d) { d.open = open; });
+  var s = document.getElementById('status');
+  s.textContent = open
+    ? ('已展开 ' + details.length + ' 个答案')
+    : ('已收起 ' + details.length + ' 个答案');
+  setTimeout(function() { s.textContent = ''; }, 2000);
+}
+</script>
+</body>
+</html>

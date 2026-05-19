@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2020 主卷 · 案例分析</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar span { color: #8b949e; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-expand { background: #2ea44f; color: #fff; }
+  .btn-expand:hover { background: #2c974b; }
+  .btn-collapse { background: #0969da; color: #fff; }
+  .btn-collapse:hover { background: #0860ca; }
+  .content {
+    max-width: 860px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 30px 40px;
+  }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.25em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; }
+  h3 { font-size: 1.05em; margin: 22px 0 8px; color: #0550ae; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 10px 0;
+    padding: 6px 16px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 0 4px 4px 0;
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 85%;
+  }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+         padding: 14px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; border: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  details {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    background: #fff;
+  }
+  details[open] { background: #f0fff4; border-color: #2ea44f; }
+  summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #0550ae;
+    list-style: none;
+    user-select: none;
+    border-radius: 6px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: 11px; }
+  details[open] summary::before { content: "▼ "; }
+  details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
+  .details-body { padding: 14px 18px; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回目录</a>
+  <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
+  <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <span id="status"></span>
+</div>
+<div class="content">
+<h1>2020年信息系统项目管理师案例分析真题（文字版整理）</h1>
+<h2>来源说明</h2>
+<ul>
+<li>PDF 原文：<code>resource/近五年真题/2020/2020年信息系统项目管理师考试案例分析真题.pdf</code></li>
+<li>答案解析来源：<code>resource/近五年真题/2020/案例分析_答案解析.md</code></li>
+<li>处理说明：原题（含题干、各问问题）直接从 PDF 提取；参考答案与解析来自仓库已有解析文件。</li>
+</ul>
+<hr />
+<h2>原题（PDF提取）</h2>
+<p>2020 年信息系统项目管理师考试案例分析真题 <br />
+1、 <br />
+某集成公司和某地区的燃气公司签订了系统升级合同，将原有的终端抄表系统升级改造，实现远程自<br />
+动抄表且提供APP 终端应用服务。 <br />
+公司指定原系统的项目经理张工来负责该项目，目前张工已经升任新产品研发部经理。张工调派了原<br />
+项目团队的核心骨干刘工和李工分别负责新项目的需求调研和开发工作。刘工和李工带领团队根据以<br />
+往经验完成了需求调研和范围说明书。但由于该项目甲方负责人负责多个项目，时间紧张，导致需求<br />
+评审会无法召开。张工考虑到双方已经有合作基础，李工和刘工对原系统非常熟悉。为了不影响进<br />
+度，张工让项目组采用敏捷开发模式，直接进入了设计和编码阶段。 <br />
+在客户验收测试时，甲方负责人提出APP 的UI 设计不符合公司风格、不兼容新燃气表的数据接口、<br />
+数据传输加密算法不符合要求等多项问题，要求必须全部实现这些需求后才能验收。此时张工把公司<br />
+新产品研发部正在研发的新产品给甲方负责人展示，双方口头约定可以采用新产品部分功能实现未完<br />
+善的需求。经过增加人员和加班赶工，延期1 个月完成。项目上线后用户又发现了若干问题。 <br />
+问题内容： <br />
+【问题1】（8 分） <br />
+结合案例，请从项目范围管理的角度指出该项目实施过程中存在的问题。 <br />
+【问题2】（6 分） <br />
+请写出范围说明书的内容和作用。 <br />
+【问题3】（6 分） <br />
+结合案例，请阐述张工在需求变更过程中需要完成的具体工作内容。 <br />
+【问题4】（5 分） <br />
+请将下面①-⑤处的答案填写在答题纸的对应栏内。 <br />
+（1）在每个项目任务的分解单元中都存在可交付成果和①，标志着某个可交付成果或阶段的正式完<br />
+成。 <br />
+（2）创建②是将项目的可交付成果和项目工作分解为较小的、更易管理的组件的过程，其主要作用<br />
+是对所要交付的内容提供一个结构化的视图。其最底层的可交付成果或项目工作组成部分称为③。 <br />
+（3）项目干系人提出变更申请后，一般由④或⑤进行初审。 </p>
+<p>2、 <br />
+某软件开发项目包括ABCD 四个活动，项目总预算为52000 元。截至6 月30 日，各活动相关信息如下<br />
+表所示。 </p>
+<p>C 活动是项目中的一项关键任务，目前刚刚开始，项目经理希望该任务能在24 天之内完成，项目组一<br />
+致决定采取快速跟进的方法加快项目进度，并估算C 活动的预计工期为乐观14 天、最可能20 天、悲<br />
+观32 天。 <br />
+问题内容： <br />
+【问题1】（13 分） <br />
+结合案例，请计算截至6 月30 日各活动的挣值和项目的进度偏差（SV）和成本偏差（CV），并判断<br />
+项目的执行绩效。 <br />
+【问题2】（3 分） <br />
+项目组决定采用快速跟进的方式加快进度，请简述该方式的不足。 <br />
+【问题3】（4 分） <br />
+如果当前项目偏差属于典型偏差，请计算完工估算成本（EAC）。 <br />
+【问题4】（5 分） <br />
+项目经理尝试采用资源优化技术24 天完成C 活动的目标，请计算能达到项目经理预期目标的概率。 </p>
+<p>3、 <br />
+A 公司是提供SaaS 平台服务业务的公司，小张作为研发流程优化经理，他抽查了核心产品的配置管理<br />
+和测试过程。 <br />
+情况如下：项目组共10 人，产品经理小马兼任项目经理和配置管理员，还有7 名开发工程师和2 名<br />
+测试工程师，采用敏捷开发的方法，2 周为一个迭代周期，目前刚刚完成一个3.01 版本的上线。 <br />
+小张要求看一下配置管理库，小马回复：“我正忙着，让测试工程师王工给你看吧，我们10 个人都<br />
+有管理员权限”。小张看到配置库分为了开发库和产品库，产品库包括上线的3 个大版本的完整代码<br />
+和文档资料，而且与实际运行版本有偏差。小版本只能在开发库中找到代码，但没有相关文档，而且<br />
+因为新需求迭代太快，有些很细微的修改，开发人员随手进行了修改，文档和代码存在一些偏差。 <br />
+小张策划对产品做一次3.01 版本的系统测试，以便更好地解决研发流程和系统本身的问题。 <br />
+问题内容： <br />
+【问题1】（5 分） <br />
+结合本案例，从配置管理的角度指出项目实施过程存在的问题。 <br />
+【问题2】（10 分） </p>
+<p>结合本案例，请帮助测试工程师从测试目的、测试对象、测试内容、测试过程、测试用例设计依据、<br />
+测试技术6 个方面设计核心产品3.01 版本的系统测试方案。 <br />
+【问题3】（6 分） <br />
+如果系统测试中需要采用黑盒测试、白盒测试和灰盒测试，请阐述三种测试的含义和用途。 <br />
+【问题4】（4 分） <br />
+从候选答案中选择正确选项，将该选项编号填入答题纸对应栏内。 <br />
+配置项的状态通常可分为三种，配置项初建时其状态为（1）。配置项通过评审后，其状态变为<br />
+（2）。此后若更改配置项，则其状态变为（3）。当配置项修改完毕并重新通过评审时，其状态又变<br />
+为（4）。 <br />
+A.送审稿 <br />
+B.草稿 <br />
+C.报批稿 <br />
+D.征求意见 <br />
+E.修改 <br />
+F.正式</p>
+<hr />
+<h2>参考答案与解析</h2>
+<hr />
+<h2>案例一：燃气系统升级改造项目（范围管理）</h2>
+<h3>问题1（8分）：范围管理方面的问题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li>需求评审会无法召开时，项目经理未采取有效措施（如调整时间、线上评审等），直接绕过了需求评审环节，需求基准未经确认。</li>
+<li>在未完成需求评审、未确认需求基准的情况下，就直接进入设计和编码阶段，违反了项目管理程序。</li>
+<li>将敏捷开发方法作为跳过需求确认的借口，混淆了敏捷迭代与需求无基准开发的概念。</li>
+<li>张工在客户验收阶段口头约定使用公司新产品功能来弥补需求缺口，口头约定不具备法律效力，未走变更流程，属于变更管理失控。</li>
+<li>变更范围时未评估对成本、进度、质量的影响，擅自增加人员和加班，导致延期1个月。</li>
+<li>项目上线后仍有问题，说明测试不充分，验收标准不明确，缺少正式的验收测试过程。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题2（6分）：范围说明书的内容和作用</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>内容：</strong><br />
+1. 项目目标（可量化的成功标准）<br />
+2. 产品范围描述（产品特性、功能的逐步精细化描述）<br />
+3. 项目可交付成果（以及不可交付物）<br />
+4. 项目除外责任（明确不包含在范围内的内容）<br />
+5. 项目制约因素<br />
+6. 项目假设条件<br />
+7. 项目批准要求（验收标准）</p>
+<p><strong>作用：</strong><br />
+- 是WBS、进度计划、成本估算的基础<br />
+- 明确项目边界，减少范围蔓延<br />
+- 作为验收依据<br />
+- 指导项目团队理解项目工作</p>
+</div>
+</details>
+
+<hr />
+<h3>问题3（6分）：需求变更的工作内容</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li><strong>识别和记录变更</strong>：将甲方提出的新需求（UI风格、接口兼容、加密算法）正式记录为变更申请。</li>
+<li><strong>变更影响分析</strong>：评估变更对项目范围、进度、成本、质量、资源的影响。</li>
+<li><strong>提交CCB审批</strong>：将变更申请和影响分析提交变更控制委员会（CCB）审批，不能口头约定。</li>
+<li><strong>更新项目文件</strong>：变更批准后，更新范围说明书、WBS、项目计划、合同文件等相关文档。</li>
+<li><strong>实施变更并跟踪</strong>：按批准方案实施，跟踪实施情况，确保变更得以落实。</li>
+<li><strong>验证变更完成</strong>：确认变更内容已正确实现后，关闭变更请求，归档变更记录。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题4（5分）：填空</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li><strong>里程碑</strong>（Milestone）——标志某个可交付成果或阶段的正式完成。</li>
+<li>②=<strong>WBS（工作分解结构）</strong>；③=<strong>工作包</strong></li>
+<li>④=<strong>项目经理</strong>；⑤=<strong>变更控制委员会（CCB）</strong></li>
+</ol>
+<blockquote>
+<p>完整答案：<br />
+- ①里程碑<br />
+- ②WBS（工作分解结构）<br />
+- ③工作包（Work Package）<br />
+- ④项目经理<br />
+- ⑤CCB（变更控制委员会）</p>
+</blockquote>
+</div>
+</details>
+
+<hr />
+<h2>案例二：软件开发项目挣值分析（EVM）</h2>
+<h3>题面关键数据说明</h3>
+<p>原题中该题的数据表以图片形式给出，之前本地文件将其直接重写成了文字表，并标注为“来自原题表格”，这一步<strong>不严谨且口径有误</strong>。</p>
+<p>按已核对的公开参考答案，本题在检查点（6月30日）的关键数据应收敛为：</p>
+<ul>
+<li><strong>BAC = 52000 元</strong></li>
+<li><strong>PV = 39800 元</strong></li>
+<li><strong>AC = 32000 元</strong></li>
+<li>各活动挣值（EV）：</li>
+<li>A：<strong>25000 元</strong></li>
+<li>B：<strong>6000 元</strong></li>
+<li>C：<strong>5000 元</strong></li>
+<li>D：<strong>0 元</strong></li>
+<li><strong>总 EV = 36000 元</strong></li>
+</ul>
+<hr />
+<h3>问题1（13分）：计算各活动挣值及项目SV、CV</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>各活动挣值：</strong></p>
+<ul>
+<li>A活动：$25000 \times 100\% = 25000$ 元</li>
+<li>B活动：$12000 \times 50\% = 6000$ 元</li>
+<li>C活动：$10000 \times 50\% = 5000$ 元</li>
+<li>D活动：$0$ 元</li>
+</ul>
+<p>因此：</p>
+<ul>
+<li><strong>PV（计划价值）= 39800 元</strong></li>
+<li><strong>EV（挣值）= 36000 元</strong></li>
+<li><strong>AC（实际成本）= 32000 元</strong></li>
+</ul>
+<p><strong>偏差计算：</strong></p>
+<ul>
+<li><strong>SV = EV - PV = 36000 - 39800 = -3800 元</strong>（进度落后）</li>
+<li><strong>CV = EV - AC = 36000 - 32000 = 4000 元</strong>（成本节约）</li>
+</ul>
+<p><strong>绩效判断：</strong></p>
+<ul>
+<li><strong>SV &lt; 0</strong>，说明<strong>进度落后</strong></li>
+<li><strong>CV &gt; 0</strong>，说明<strong>成本节约</strong></li>
+</ul>
+<p>若补充绩效指数，则：</p>
+<ul>
+<li><strong>SPI = 36000 / 39800 ≈ 0.90</strong></li>
+<li><strong>CPI = 36000 / 32000 = 1.125</strong></li>
+</ul>
+</div>
+</details>
+
+<hr />
+<h3>问题2（3分）：快速跟进的不足</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li>快速跟进将串行活动改为并行，增加了工作的不确定性和返工风险。</li>
+<li>并行执行时，如果前序活动的输出发生变化，会导致后续活动的工作成果需要修改，增加成本。</li>
+<li>快速跟进通常只适用于可以并行的活动，并非所有活动都适合，应用范围有限。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题3（4分）：完工估算成本（EAC）</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>假设当前偏差属于典型偏差（即未来按当前 CPI 进行）：</p>
+<p>$$EAC = \frac{BAC}{CPI} = \frac{52000}{36000/32000} = \frac{52000}{1.125} \approx 46222.2 \text{ 元}$$</p>
+</div>
+</details>
+
+<hr />
+<h3>问题4（5分）：PERT概率计算</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>C活动工期估算：<br />
+- 乐观工期（O）= 14天，最可能工期（M）= 20天，悲观工期（P）= 32天</p>
+<p>$$t_e = \frac{O + 4M + P}{6} = \frac{14 + 4 \times 20 + 32}{6} = \frac{126}{6} = 21 \text{ 天}$$</p>
+<p>$$\sigma = \frac{P - O}{6} = \frac{32 - 14}{6} = 3 \text{ 天}$$</p>
+<p>目标：24天内完成：</p>
+<p>$$Z = \frac{T - t_e}{\sigma} = \frac{24 - 21}{3} = 1.0$$</p>
+<p>查标准正态分布表：$P(Z \leq 1.0) = \mathbf{84.13\%}$</p>
+<p><strong>结论：项目经理采用资源优化在24天完成C活动的概率约为84.13%。</strong></p>
+</div>
+</details>
+
+<hr />
+<h2>案例三：SaaS平台配置管理与测试</h2>
+<h3>问题1（5分）：配置管理方面的问题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li>产品经理兼任项目经理和配置管理员，职责不分离，存在角色冲突，缺乏独立性。</li>
+<li>所有10名人员都拥有管理员权限，权限设置过于宽泛，违反最小权限原则，无法有效控制配置项。</li>
+<li>配置库缺少受控库，只有开发库和产品库，结构不完整（应有开发库、受控库、产品库三层）。</li>
+<li>产品库内容与实际运行版本存在偏差，版本管理不规范。</li>
+<li>小版本只有代码没有文档，文档与代码不同步。</li>
+<li>开发人员随手修改代码，未经配置变更控制流程即直接修改，缺乏变更控制意识。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题2（10分）：系统测试方案</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<table>
+<thead>
+<tr>
+<th>测试要素</th>
+<th>内容说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>测试目的</strong></td>
+<td>验证3.01版本的各功能模块符合需求规格说明书，发现系统级缺陷，为优化研发流程提供依据</td>
+</tr>
+<tr>
+<td><strong>测试对象</strong></td>
+<td>核心产品3.01版本完整系统，包括代码、文档、数据库等</td>
+</tr>
+<tr>
+<td><strong>测试内容</strong></td>
+<td>功能测试、性能测试、兼容性测试、安全性测试、回归测试、用户界面测试</td>
+</tr>
+<tr>
+<td><strong>测试过程</strong></td>
+<td>制定测试计划→设计测试用例→搭建测试环境→执行测试→记录缺陷→回归测试→出具测试报告</td>
+</tr>
+<tr>
+<td><strong>测试用例设计依据</strong></td>
+<td>需求规格说明书、产品功能文档、历史版本缺陷库</td>
+</tr>
+<tr>
+<td><strong>测试技术</strong></td>
+<td>功能测试采用黑盒测试；代码逻辑采用白盒测试；接口与安全采用灰盒测试</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<hr />
+<h3>问题3（6分）：黑盒、白盒、灰盒测试</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<table>
+<thead>
+<tr>
+<th>测试类型</th>
+<th>含义</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>黑盒测试</strong></td>
+<td>不关注内部代码实现，仅通过输入/输出验证功能是否符合需求规格</td>
+<td>功能验证、用户验收测试、系统测试</td>
+</tr>
+<tr>
+<td><strong>白盒测试</strong></td>
+<td>基于代码内部结构进行测试，关注代码逻辑路径、分支覆盖</td>
+<td>单元测试、代码审查、路径测试</td>
+</tr>
+<tr>
+<td><strong>灰盒测试</strong></td>
+<td>介于黑盒和白盒之间，部分了解内部结构，针对接口、协议等进行测试</td>
+<td>集成测试、接口测试、性能调优测试</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<hr />
+<h3>问题4（4分）：配置项状态转换</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>（1）初建时状态</td>
+<td><strong>草稿</strong>（B）</td>
+</tr>
+<tr>
+<td>（2）评审通过后</td>
+<td><strong>正式</strong>（F）</td>
+</tr>
+<tr>
+<td>（3）修改时</td>
+<td><strong>修改</strong>（E）</td>
+</tr>
+<tr>
+<td>（4）修改后重新评审通过</td>
+<td><strong>正式</strong>（F）</td>
+</tr>
+</tbody>
+</table>
+<p>答案：(1)B (2)F (3)E (4)F</p>
+</div>
+</details>
+</div>
+<script>
+function toggleAll(open) {
+  var details = document.querySelectorAll('details');
+  details.forEach(function(d) { d.open = open; });
+  var s = document.getElementById('status');
+  s.textContent = open
+    ? ('已展开 ' + details.length + ' 个答案')
+    : ('已收起 ' + details.length + ' 个答案');
+  setTimeout(function() { s.textContent = ''; }, 2000);
+}
+</script>
+</body>
+</html>

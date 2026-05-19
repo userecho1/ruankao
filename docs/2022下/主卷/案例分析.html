@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022下 主卷 · 案例分析</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar span { color: #8b949e; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-expand { background: #2ea44f; color: #fff; }
+  .btn-expand:hover { background: #2c974b; }
+  .btn-collapse { background: #0969da; color: #fff; }
+  .btn-collapse:hover { background: #0860ca; }
+  .content {
+    max-width: 860px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 30px 40px;
+  }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.25em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; }
+  h3 { font-size: 1.05em; margin: 22px 0 8px; color: #0550ae; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 10px 0;
+    padding: 6px 16px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 0 4px 4px 0;
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 85%;
+  }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+         padding: 14px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; border: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  details {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    background: #fff;
+  }
+  details[open] { background: #f0fff4; border-color: #2ea44f; }
+  summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #0550ae;
+    list-style: none;
+    user-select: none;
+    border-radius: 6px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: 11px; }
+  details[open] summary::before { content: "▼ "; }
+  details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
+  .details-body { padding: 14px 18px; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回目录</a>
+  <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
+  <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <span id="status"></span>
+</div>
+<div class="content">
+<h1>2022年下半年信息系统项目管理师案例分析真题（文字版整理）</h1>
+<h2>来源说明</h2>
+<ul>
+<li>PDF 原文：<code>resource/近五年真题/2022下/2022年下半年信息系统项目管理师考试案例分析真题.pdf</code></li>
+<li>答案解析来源：<code>resource/近五年真题/2022下/案例分析_答案解析.md</code></li>
+<li>处理说明：原题（含题干、各问问题）直接从 PDF 提取；参考答案与解析来自仓库已有解析文件。</li>
+</ul>
+<hr />
+<h2>原题（PDF提取）</h2>
+<p>2022 年下半年信息系统项目管理师考试案例分析真题 </p>
+<p>1、 <br />
+ 某集团为提升企业服务水平和办公效率，通过招投标选定A 公司为其开发企业协同办公管理<br />
+信息系统。A 公司组建了项目团队，任命小张担任项目经理，并将系统中的数据可视化模块外包给某<br />
+一软件公司。 <br />
+ 在制订项目管理计划过程中，小张让负责研发的小陈制订沟通管理计划，作为项目管理计划<br />
+的子计划。小陈认为编制沟通管理计划是一件重复性的工作，于是参考过去的项目的沟通管理计划，<br />
+简单进行了修改后放入了项目计划文件夹下作为公共信息供大家查阅，完成后的沟通管理计划表如<br />
+下： </p>
+<p>每次参加客户召集的项目沟通会，小张会根据项目组人员空闲时间临时安排参会人员。参会<br />
+人员不固定，新的参会人员对之前会议需要确认的内容毫不知情，这种情况时有发生。引起客户强烈<br />
+不满，沟通不畅，效率也不高。 <br />
+ 在项目进行中，客户对数据可视化模块要求增加新的功能，经变更确认后，小张电话通知外<br />
+包公司增加了新功能。项目验收时发现新功能并未实现。 <br />
+问题内容： <br />
+【问题1】（6 分） <br />
+请结合案例，指出小陈制订的沟通管理计划表中已列出内容的不合理之处。 <br />
+【问题2】（10 分） <br />
+请结合案例，在下表中补充沟通管理过程，并写出该项目在沟通管理各过程上存在的问题。 </p>
+<p>【问题3】（8 分） <br />
+（1）请指出常用的沟通方法一般分为几类？ </p>
+<p>（2）案例中沟通管理计划表中所提到的沟通方法分别属于哪类沟通？ </p>
+<p>2、 <br />
+【说明】 <br />
+阅读下列说明，回答问题1 至问题4，将解答填入答题纸对应栏内。 <br />
+【说明】某项目基本信息如表所示: </p>
+<p>问题内容： <br />
+【问题1】（8 分） <br />
+（1）绘制项目计划的双代号网络图。 <br />
+（2）请给出项目计划工期及关键路径。 <br />
+（3）请按照计划分别计算活动a 和b 的总时差。 <br />
+【问题2】（8 分） <br />
+（1）项目要求150 天完工，请写出关键路径上可压缩的活动成本变化情况。 <br />
+（2）请绘出成本最优的压缩工期的方案和总成本的变化情况。 <br />
+【问题3】（4 分） <br />
+请写出压缩工期为150 天后的项目关键路径。 <br />
+【问题4】（6 分） <br />
+若项目不进行压缩，还按原计划进行，实施到第80 天时，项目经理发现acd 活动已经完工，b 活动完<br />
+成了一半，各计划的实际支出为a 活动6500 元，b 活动1000 元，c 活动280 元，d 活动1400 元。假<br />
+设项目每个活动的预算按照活动工期平均分配。请计算到第80 天时，活动b 的绩效情况，并写出判<br />
+断依据。 </p>
+<p>3、 <br />
+A 公司为提升市场竞争力，计划针对制造业数字化转型的需求，新开发一套数字化软件，实现在工业<br />
+产品生产和制造过程中数据采集、分析和决策功能。公司让产品部前期对市场需求进行调研。产品部<br />
+对软件预期能产生的经济效益和社会效益进行了详细的分析，并针对这两部分编制了《可行性分析报<br />
+告》。公司高层领导看了报告后，认为该软件未来会为公司带来巨大的收益，当场拍板决定启动项<br />
+目，要求产品部补充编制《项目建议书》，并组建项目团队。 <br />
+小王作为某名校计算机专业刚毕业的研究生，被公司委以重任，担任该项目的项目经理。研发负责人<br />
+向小王建议为配置管理设置一名专职配置管理员，但小王认为有配置管理工具对代码进行控制，大家<br />
+只要对程序代码做好版本控制就可以了，考虑到项目组人员紧张，没必要再安排专人负责配置管理工<br />
+作。 <br />
+开发过程中，为避免多人同时修改代码，导致冲突，研发人员要先将服务器上的代码下载，待编码完<br />
+成后，使用文本对比工具将代码中修改的部分进行上传整合。 <br />
+软件研发完成，测试通过后，研发人员将最终版本软件和软件使用说明书提供给产品部，产品部人员<br />
+发现说明书描述的内容与软件不完全一致，于是将问题反馈给小王，小王经检查发现提交的说明书并<br />
+不是最新的说明书。 <br />
+问题内容： <br />
+【问题1】（12 分） <br />
+请结合案例，分析项目在可行性研究和配置管理中存在哪些问题。 <br />
+【问题2】（7 分） <br />
+（1）请写出项目建议书的内容； <br />
+（2）说明项目建议书的作用。 <br />
+【问题3】（6 分） <br />
+请结合案例说明，项目组在软件研发工作完成后，并移交给产品部之前，应完成哪些项目结项相关工<br />
+作。</p>
+<hr />
+<h2>参考答案与解析</h2>
+<hr />
+<h2>案例一：协同办公系统（沟通管理）</h2>
+<h3>问题1（6分）：沟通管理计划表中已列内容的不合理之处</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>沟通管理计划表内容（来自原题）：</p>
+<table>
+<thead>
+<tr>
+<th>沟通内容</th>
+<th>沟通方法</th>
+<th>沟通时间</th>
+<th>参与人</th>
+<th>沟通目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每周工作例会</td>
+<td>谈话</td>
+<td>每周五 16:00</td>
+<td>A公司项目组成员</td>
+<td>汇报进度，解决遇到的问题</td>
+</tr>
+<tr>
+<td>方案评审</td>
+<td>会议</td>
+<td>阶段性</td>
+<td>A公司项目组相关成员</td>
+<td>确定方案</td>
+</tr>
+<tr>
+<td>项目阶段性总结</td>
+<td>电子邮件</td>
+<td>里程碑节点</td>
+<td>A公司主管领导、项目组相关人员</td>
+<td>阶段性汇报</td>
+</tr>
+<tr>
+<td>软件开发技能培训</td>
+<td>在线课程</td>
+<td>临时</td>
+<td>A公司软件研发人员</td>
+<td>提高软件研发技能</td>
+</tr>
+<tr>
+<td>项目交流会</td>
+<td>电话</td>
+<td>项目启动、结束时</td>
+<td>A公司项目组成员、客户外包公司</td>
+<td>各方了解项目情况</td>
+</tr>
+</tbody>
+</table>
+<p><strong>不合理之处：</strong></p>
+<ol>
+<li><strong>每周工作例会参与人仅为A公司内部人员</strong>，未包含客户代表，无法通过例会了解和解决客户需求，沟通范围不完整。</li>
+<li><strong>方案评审未包含客户</strong>，评审参与人只有A公司相关成员，缺少客户和外包方参与，评审结果可能与客户需求脱节。</li>
+<li><strong>项目交流会使用电话</strong>，作为沟通方法不够正式，不适合启动和结束这类重要节点，应改用正式会议。</li>
+<li><strong>软件技能培训时间为"临时"</strong>，缺乏计划性，无法保障培训效果。</li>
+<li><strong>外包公司沟通仅在启动和结束时</strong>，执行过程中缺少对外包数据可视化模块的定期跟踪和沟通，导致变更通知不规范（仅电话通知）。</li>
+<li><strong>计划表缺少"沟通负责人"字段</strong>，无法落实责任人。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题2（10分）：沟通管理过程补充及各过程存在的问题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>沟通管理的三个过程：</strong></p>
+<table>
+<thead>
+<tr>
+<th>沟通管理过程</th>
+<th>存在的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>过程1：规划沟通管理</strong></td>
+<td>1. 沟通管理计划由负责研发的小陈制定，而非项目经理主导，导致沟通计划缺乏整体视角。<br>2. 简单复用旧计划，未结合本项目干系人特点进行定制，参与人不完整（缺客户、外包方）。<br>3. 计划放入公共文件夹作"公共信息"，缺乏正式发布和确认机制。</td>
+</tr>
+<tr>
+<td><strong>过程2：管理沟通</strong></td>
+<td>1. 每次客户会议临时安排参会人员，参会人不固定，无法保证沟通的连续性和有效性。<br>2. 对外包公司的变更仅通过电话通知，未形成书面记录，无法追踪变更落实情况，导致验收时新功能未实现。</td>
+</tr>
+<tr>
+<td><strong>过程3：控制沟通</strong></td>
+<td>1. 没有对沟通效果进行监控，未及时发现客户的不满。<br>2. 未建立信息反馈机制，无法评估沟通计划的执行情况。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<hr />
+<h3>问题3（8分）：沟通方法分类</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>（1）常用沟通方法分类：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>交互式沟通</strong></td>
+<td>多方实时双向交流，确认共同理解</td>
+<td>会议、电话、视频会议、谈话</td>
+</tr>
+<tr>
+<td><strong>推式沟通</strong></td>
+<td>信息发送方主动推送，接收方不一定立即回复</td>
+<td>电子邮件、传真、报告、备忘录</td>
+</tr>
+<tr>
+<td><strong>拉式沟通</strong></td>
+<td>接收方主动获取信息，适用于信息量大</td>
+<td>内网门户、电子数据库、在线课程</td>
+</tr>
+</tbody>
+</table>
+<p><strong>（2）计划表中各沟通方法的分类：</strong></p>
+<table>
+<thead>
+<tr>
+<th>沟通活动</th>
+<th>沟通方法</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每周工作例会</td>
+<td>谈话</td>
+<td><strong>交互式沟通</strong></td>
+</tr>
+<tr>
+<td>方案评审</td>
+<td>会议</td>
+<td><strong>交互式沟通</strong></td>
+</tr>
+<tr>
+<td>项目阶段性总结</td>
+<td>电子邮件</td>
+<td><strong>推式沟通</strong></td>
+</tr>
+<tr>
+<td>软件开发技能培训</td>
+<td>在线课程</td>
+<td><strong>拉式沟通</strong></td>
+</tr>
+<tr>
+<td>项目交流会</td>
+<td>电话</td>
+<td><strong>交互式沟通</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<hr />
+<h2>案例二：项目进度压缩与赶工分析</h2>
+<h3>活动数据（来自原题表格）</h3>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>紧前活动</th>
+<th>计划工期(天)</th>
+<th>直接成本(元/天)</th>
+<th>最快完工(天)</th>
+<th>赶工增加成本(元/天)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>/</td>
+<td>60</td>
+<td>100</td>
+<td>60</td>
+<td>100（不可压缩）</td>
+</tr>
+<tr>
+<td>b</td>
+<td>a</td>
+<td>45</td>
+<td>45</td>
+<td>30</td>
+<td>63</td>
+</tr>
+<tr>
+<td>c</td>
+<td>a</td>
+<td>10</td>
+<td>28</td>
+<td>5</td>
+<td>43</td>
+</tr>
+<tr>
+<td>d</td>
+<td>a</td>
+<td>20</td>
+<td>70</td>
+<td>10</td>
+<td>110</td>
+</tr>
+<tr>
+<td>e</td>
+<td>a</td>
+<td>40</td>
+<td>100</td>
+<td>35</td>
+<td>125</td>
+</tr>
+<tr>
+<td>f</td>
+<td>c</td>
+<td>18</td>
+<td>36</td>
+<td>10</td>
+<td>54.4</td>
+</tr>
+<tr>
+<td>g</td>
+<td>d</td>
+<td>30</td>
+<td>90</td>
+<td>20</td>
+<td>125</td>
+</tr>
+<tr>
+<td>h</td>
+<td>d,e</td>
+<td>15</td>
+<td>37.5</td>
+<td>10</td>
+<td>57.5</td>
+</tr>
+<tr>
+<td>i</td>
+<td>g</td>
+<td>25</td>
+<td>62.5</td>
+<td>15</td>
+<td>91.5</td>
+</tr>
+<tr>
+<td>j</td>
+<td>b,i,f,h</td>
+<td>35</td>
+<td>120</td>
+<td>35</td>
+<td>120（不可压缩）</td>
+</tr>
+</tbody>
+</table>
+<p>间接成本：500元/天</p>
+<hr />
+<h3>问题1（8分）</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>（1）绘制双代号网络图（AOA图）：</strong></p>
+<pre><code>       b(45)
+      /------→\
+    /    c(10)  → f(18) \
+a(60) → d(20) → g(30) → i(25) → j(35) → END
+    \    d(20) → h(15) /
+      \  e(40) → h(15)/
+</code></pre>
+<p>网络结构：<br />
+- 起点：a<br />
+- a → b → j<br />
+- a → c → f → j<br />
+- a → d → g → i → j<br />
+- a → d → h → j<br />
+- a → e → h → j（h的紧前活动为d和e）</p>
+<p><strong>（2）关键路径和工期：</strong></p>
+<p>各路径工期：<br />
+| 路径 | 计算 | 工期 |<br />
+|-----|------|-----|<br />
+| a→b→j | 60+45+35 | 140天 |<br />
+| a→c→f→j | 60+10+18+35 | 123天 |<br />
+| <strong>a→d→g→i→j</strong> | <strong>60+20+30+25+35</strong> | <strong>170天 ← 关键</strong> |<br />
+| a→d→h→j | 60+20+15+35 | 130天 |<br />
+| a→e→h→j | 60+40+15+35 | 150天 |</p>
+<p><strong>关键路径：a→d→g→i→j，工期170天</strong></p>
+<p><strong>（3）活动a和b的总时差：</strong></p>
+<ul>
+<li>活动a：在关键路径上，<strong>总时差 = 0</strong></li>
+<li>活动b：</li>
+<li>ES(b) = 60，EF(b) = 105</li>
+<li>LF(b) = 170-35 = 135（j最早开始时间的限制）</li>
+<li>LS(b) = 135-45 = 90</li>
+<li><strong>总时差 TF(b) = LS(b) - ES(b) = 90 - 60 = 30天</strong></li>
+</ul>
+</div>
+</details>
+
+<hr />
+<h3>正常总成本计算</h3>
+<p>直接成本合计：<br />
+$$DC = 60×100 + 45×45 + 10×28 + 20×70 + 40×100 + 18×36 + 30×90 + 15×37.5 + 25×62.5 + 35×120$$<br />
+$$= 6000 + 2025 + 280 + 1400 + 4000 + 648 + 2700 + 562.5 + 1562.5 + 4200 = 23378 \text{ 元}$$</p>
+<p>间接成本：$170 × 500 = 85000$ 元</p>
+<p><strong>总成本 = 23378 + 85000 = 108378 元</strong></p>
+<hr />
+<h3>问题2（8分）：压缩到150天的最优方案</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>需压缩 <strong>20天</strong>（170→150）。</p>
+<p><strong>关键路径上可压缩活动及成本分析：</strong></p>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>可压缩天数</th>
+<th>赶工成本斜率(元/天)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>0（不可压缩）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>d</td>
+<td>10天</td>
+<td>110</td>
+</tr>
+<tr>
+<td>g</td>
+<td>10天</td>
+<td>125</td>
+</tr>
+<tr>
+<td>i</td>
+<td>10天</td>
+<td>91.5</td>
+</tr>
+<tr>
+<td>j</td>
+<td>0（不可压缩）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>按成本由低到高的压缩顺序：i(91.5) &lt; d(110) &lt; g(125)</strong></p>
+<p><strong>第一轮：压缩i（91.5元/天，最便宜），压缩10天</strong><br />
+- 关键路径变为：a→d→g→i→j = 60+20+30+15+35 = <strong>160天</strong><br />
+- 次关键路径 a→e→h→j = 150天（未变）<br />
+- 额外直接成本：10 × 91.5 = 915元<br />
+- 间接节省：10 × 500 = 5000元</p>
+<p><strong>第二轮：还需压缩10天，压缩d（110元/天）</strong><br />
+- a→d→g→i→j = 60+10+30+15+35 = <strong>150天</strong> ✓<br />
+- 验证：a→e→h→j = 150天（现在也成为关键路径）<br />
+- 额外直接成本：10 × 110 = 1100元<br />
+- 间接节省：10 × 500 = 5000元</p>
+<p><strong>最优压缩方案：</strong><br />
+- 压缩i 10天 + 压缩d 10天<br />
+- 额外直接成本 = 915 + 1100 = <strong>2015元</strong><br />
+- 压缩后新总成本 = 23378 + 2015 + 150×500 = 23378 + 2015 + 75000 = <strong>100393元</strong><br />
+- 比原方案节省：108378 - 100393 = 7985元</p>
+<p><strong>总成本变化：</strong><br />
+| 状态 | 直接成本 | 间接成本 | 总成本 |<br />
+|-----|--------|--------|------|<br />
+| 原计划（170天） | 23378 | 85000 | 108378 |<br />
+| 压缩后（150天） | 23378+2015=25393 | 75000 | 100393 |</p>
+</div>
+</details>
+
+<hr />
+<h3>问题3（4分）：压缩到150天后的关键路径</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>压缩后：<br />
+- <strong>a→d→g→i→j = 60+10+30+15+35 = 150天</strong><br />
+- <strong>a→e→h→j = 60+40+15+35 = 150天</strong></p>
+<p><strong>两条关键路径：a→d→g→i→j 和 a→e→h→j，工期均为150天</strong></p>
+</div>
+</details>
+
+<hr />
+<h3>问题4（6分）：活动b的绩效分析（第80天）</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>基本数据：</strong><br />
+- a完工（60天），c完工（60+10=70天），d完工（60+20=80天） → 均已完工 ✓<br />
+- b的计划：a结束后开始（第60天），工期45天，正常完工第105天<br />
+- b的实际：第80天时完成了50%</p>
+<p><strong>计算PV_b（第80天的计划挣值）：</strong><br />
+$$\text{b的计划进度比例} = \frac{80-60}{45} = \frac{20}{45} \approx 44.4\%$$<br />
+$$PV_b = 44.4\% \times (45 \times 45) = 44.4\% \times 2025 = 900 \text{ 元}$$</p>
+<p><strong>计算EV_b：</strong><br />
+$$EV_b = 50\% \times 2025 = 1012.5 \text{ 元}$$</p>
+<p><strong>已知AC_b = 1000元</strong></p>
+<p><strong>偏差计算：</strong><br />
+$$SV_b = EV_b - PV_b = 1012.5 - 900 = +112.5 \text{ 元（进度超前）}$$<br />
+$$CV_b = EV_b - AC_b = 1012.5 - 1000 = +12.5 \text{ 元（成本节省）}$$</p>
+<p>$$SPI_b = \frac{EV}{PV} = \frac{1012.5}{900} = 1.125 \quad (&gt; 1, \text{进度超前})$$<br />
+$$CPI_b = \frac{EV}{AC} = \frac{1012.5}{1000} = 1.0125 \quad (&gt; 1, \text{成本节省})$$</p>
+<p><strong>结论：</strong> 活动b在第80天时进度超前（实际完成50% &gt; 计划完成44.4%），成本略有节省，执行绩效良好。</p>
+</div>
+</details>
+
+<hr />
+<h2>案例三：数字化软件项目（可行性研究 + 配置管理）</h2>
+<h3>问题1（12分）：可行性研究和配置管理存在的问题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>可行性研究方面：</strong><br />
+1. 可行性研究报告仅包含经济效益和社会效益分析，<strong>缺少技术可行性分析</strong>，没有评估技术方案的可行性。<br />
+2. 公司高层在可行性报告未经主管部门审批的情况下便拍板决定启动项目，<strong>违反了项目立项程序</strong>（应先通过可行性审批再立项）。<br />
+3. 可行性报告后补的《项目建议书》顺序错误——<strong>项目建议书应先于可行性研究报告编制</strong>，而非事后补充。<br />
+4. 请A设计院评估可行性，但A设计院缺乏人工智能领域专家，<strong>评估人员不具备相应专业能力</strong>，导致评估结论的可信度存疑。<br />
+5. A设计院在专业能力不足的情况下仍签署评估意见，<strong>评估过程不客观</strong>。</p>
+<p><strong>配置管理方面：</strong><br />
+1. 小王不设专职配置管理员，仅依赖配置管理工具进行版本控制，<strong>缺少配置管理流程和制度</strong>。<br />
+2. 开发人员先下载代码，用文本对比工具手动合并，<strong>未使用配置管理系统的检出（Checkout）/检入（Checkin）机制</strong>，容易导致版本冲突和遗漏。<br />
+3. 最终提交给产品部的软件说明书不是最新版本，说明<strong>配置项版本控制混乱</strong>，缺少统一的版本标识和发布管理。<br />
+4. <strong>未建立配置基线</strong>，导致发布时无法确认哪个版本是正式版本。</p>
+</div>
+</details>
+
+<hr />
+<h3>问题2（7分）</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>（1）项目建议书的内容：</strong></p>
+<ol>
+<li>项目建设的必要性（背景和目标）</li>
+<li>产品描述（主要功能和特性）</li>
+<li>市场预测（需求分析）</li>
+<li>技术方案初步设想</li>
+<li>投资估算和资金筹措</li>
+<li>经济效益和社会效益的初步评估</li>
+<li>项目实施计划（初步进度安排）</li>
+<li>建设条件和协作关系</li>
+</ol>
+<p><strong>（2）项目建议书的作用：</strong><br />
+- 项目立项的初始依据，是申请项目批准的正式文件<br />
+- 向主管部门表明项目的必要性和可行性，为立项决策提供参考<br />
+- 为后续可行性研究确立范围和方向</p>
+</div>
+</details>
+
+<hr />
+<h3>问题3（6分）：项目结项相关工作</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li><strong>完成项目测试和质量验证</strong>：确认所有功能满足需求规格说明书要求。</li>
+<li><strong>整理和确认可交付成果</strong>：确保软件版本和文档均为最新版本，并通过验收测试。</li>
+<li><strong>更新配置基线</strong>：将最终版本的软件、文档纳入产品库，建立发布基线。</li>
+<li><strong>编制项目总结报告</strong>：总结项目实施过程、经验教训、技术积累。</li>
+<li><strong>进行知识转移</strong>：向产品部交接软件操作手册、技术文档和培训材料。</li>
+<li><strong>完成行政收尾</strong>：归档项目文件，关闭合同，释放资源。</li>
+<li><strong>组织验收</strong>：与产品部共同进行正式验收，形成验收报告并双方签字。</li>
+</ol>
+</div>
+</details>
+</div>
+<script>
+function toggleAll(open) {
+  var details = document.querySelectorAll('details');
+  details.forEach(function(d) { d.open = open; });
+  var s = document.getElementById('status');
+  s.textContent = open
+    ? ('已展开 ' + details.length + ' 个答案')
+    : ('已收起 ' + details.length + ' 个答案');
+  setTimeout(function() { s.textContent = ''; }, 2000);
+}
+</script>
+</body>
+</html>

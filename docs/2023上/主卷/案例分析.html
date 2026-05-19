@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2023上 主卷 · 案例分析</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar span { color: #8b949e; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-expand { background: #2ea44f; color: #fff; }
+  .btn-expand:hover { background: #2c974b; }
+  .btn-collapse { background: #0969da; color: #fff; }
+  .btn-collapse:hover { background: #0860ca; }
+  .content {
+    max-width: 860px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 30px 40px;
+  }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.25em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; }
+  h3 { font-size: 1.05em; margin: 22px 0 8px; color: #0550ae; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 10px 0;
+    padding: 6px 16px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 0 4px 4px 0;
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 85%;
+  }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+         padding: 14px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; border: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  details {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    background: #fff;
+  }
+  details[open] { background: #f0fff4; border-color: #2ea44f; }
+  summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #0550ae;
+    list-style: none;
+    user-select: none;
+    border-radius: 6px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: 11px; }
+  details[open] summary::before { content: "▼ "; }
+  details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
+  .details-body { padding: 14px 18px; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回目录</a>
+  <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
+  <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <span id="status"></span>
+</div>
+<div class="content">
+<h1>2023年上半年信息系统项目管理师案例分析真题（文字版整理）</h1>
+<h2>来源说明</h2>
+<ul>
+<li>PDF 原文：<code>resource/近五年真题/2023上/2023年上半年信息系统项目管理师考试案例分析真题.pdf</code></li>
+<li>答案解析来源：<code>resource/近五年真题/2023上/案例分析_答案解析.md</code></li>
+<li>处理说明：原题（含题干、各问问题）直接从 PDF 提取；参考答案与解析来自仓库已有解析文件。</li>
+</ul>
+<hr />
+<h2>原题（PDF提取）</h2>
+<p>2023 年上半年信息系统项目管理师考试案例分析真题 </p>
+<p>1、 <br />
+阅读下列说明，回答问题1 至问题4 ，将解答填入答题纸的对应栏内。 <br />
+【说明】 <br />
+数字化城市管理通过信息化手段和移动通信技术手段来处理、分析和管理整个城市的所有部件和事件<br />
+信息，促进城市人流、物流、信息流、交通流的通畅与协调。 <br />
+2023 年，某县为提升该县的运营效率，利用已有的海量数据，实现数字化城市管理，启动了数字化城<br />
+市管理项目，项目建设期8 年。作为政 府重点项目，为扶持当地民营企业， 将项目建设工作交给A<br />
+公司牵头负责。 <br />
+A 公司过去一直做银行信息管理系统 ，为了完成好项目，他们仔细研究了数字化城市管理的相关文<br />
+档，参考了其他城市的数字化城市管理建设项目，发现城市管理的建设要牵涉到多个政 府部门。调<br />
+研中还发现，尽管目前县政 府已经汇集了来自各部门关于城市运营的海量数据，但没有统一的数据<br />
+标准，导致出现数据不规范、难以融合、利用率不高等问题。尤其是交通数据，来源于多个系统，各<br />
+系统建设时间先后不一、标准不同、 数据多而散乱、数据多源异构现象明显，导致海量交通数据一<br />
+直未得到有效利用。因此，为了满足不同系统间的数据整合和共享需求， A 公司打算建立统一的数<br />
+据元标准 ， 指导与规范城市数字化建设。 <br />
+问题内容： <br />
+【问题1】（ 10 分） <br />
+结合案例，请分析项目存在的问题和风险。 <br />
+【问题2】（5 分） <br />
+什么是数据元？制定数据元标准，应遵循哪些过程？ <br />
+【问题3】（5 分 ） <br />
+请将下面（1）~（5）处的答案填写在答题纸的对应栏内。 <br />
+国家十四五规划中，数字产业化发展重点包括：云计算、大数据、（1）、（2）、（3）、（4）和<br />
+（5）。 <br />
+【问题4】（5 分） <br />
+结合案例，判断下列说法的正误（填写在答题纸的对应栏内，正确的填写“√”，错误的填写<br />
+“×”） <br />
+（1）根据模型应用目的不同，可以将数据模型划分为概念模型、实体模型和物理模型三类。（ ） <br />
+（2）概念模型把现实世界中的客观对象抽象为某一种信息结构，这种信息结构不依赖于具体的计算</p>
+<p>机系统，也不对应某个DBMS。（ ） <br />
+（3）物理模型的基本元素包括表、字段、视图、存储过程、触发器等。 （ ） <br />
+（4）A 公司在项目过程中要重点关注数据的采集过程。 （ ） <br />
+（5）数据元和元数据是一个概念的不同说法 ，二者可以等同。（ ） </p>
+<p>2、 <br />
+阅读下列说明，回答问题1 至问题4，将解答填入答题纸的对应栏内。 <br />
+【说明】 <br />
+以下是某项目的基本信息： </p>
+<p>问题内容： <br />
+【问题1】（10 分） <br />
+结合案例： <br />
+（1）请画出该项目的双代号网络图。 <br />
+（2）计算该项目的关键路径和工期。 <br />
+【问题2】（5 分） <br />
+根据项目经理的预测，H 活动是项目组面临的一个新问题，一旦延期将会影响到整个项目的工期，这<br />
+种说法对吗？为什么？如果不对，延期几天会影响整个项目的工期？ <br />
+【问题3】（7 分） <br />
+项目的费用主要取决于项目中的人力资源成本（500 元/人天），项目中各活动为紧前活动完成后立即<br />
+开始。运行到第十天时项目经理对项目进展情况进行了统计。其中ABCDEFG 均已完工， HK 尚未开<br />
+工，IJ 各完成了50% ，项目已花费成本100000 元，请计算项目此时的进度偏差和成本偏差，并说<br />
+明项目的执行绩效。 </p>
+<p>【问题4】（3 分） <br />
+在当前绩效情况下，请写出项目经理应该采取的措施。 </p>
+<p>3、 <br />
+【说明】 <br />
+为实现空气质量的精细化治理，某市规划了智慧环保项目。该项目涉及网格化监测、应急管理、执法<br />
+系统等多个子系统。作为总集成商，A 公司非常重视，委派李经理任项目经理，对公司内研发部门与<br />
+项目相关的各产品线研发人员及十余家供应商进行统筹管理。李经理明确了关键时间节点，识别出项<br />
+目干系人为客户和供应商后，开始了项目建设工作。 <br />
+项目开始建设5 个月后，公司高层希望了解项目情况，要求李经理进行阶段性汇报。李经理对各方面<br />
+工作进展进行汇总，发现三个问题： <br />
+一是原本该到位的服务器、交换机，采购部门迟迟没有采购到位，部分研发完成的功能无法部署到客<br />
+户现场与客户进行演示确认； <br />
+二是S 公司作为A 公司的供应商，承担空气质量监测核心算法工作，一直与客户方直接对接，其进度<br />
+已经不受李经理掌控，且S 公司作为核心算法国内唯一权威团队，可以确保算法工作按期交付，因此<br />
+其认为不需要向李经理汇报工作进展； <br />
+三是公司研发部门负责人因其他项目交付紧迫性更高，从该项目抽调走了2 名研发人员张工、王工，<br />
+项目目前研发人员的空缺需要后续补充。 <br />
+李经理忧心忡忡，向公司汇报完项目进展情况后，公司政策研究院相关领导表示国家在环境执法方面<br />
+的法律法规本月初已经进行了较大改版，项目相关子系统会有关联；营销副总裁听完项目汇报后表达<br />
+不满：该项目作为公司的重点项目，希望作为全国性的标杆项目进行展示和推广，但当前各子系统的<br />
+研发成果基本照搬了公司现有产品，没有任何创新性的体现，不利于公司后期的宣传推广。PMO 提醒<br />
+李经理依据财务部门推送的数据，公司对部分供应商已经根据进度完成了第二节点款项支付，但当前<br />
+A 公司作为总集成商，与客户的第二个合同付款节点还未到，项目的成本支出和收益方面将面临较大<br />
+的压力。人力资源负责人提醒李经理，项目成员张工和王工的本月绩效评价还未提交，截止日期为2<br />
+天后。 <br />
+问题内容： <br />
+【问题1】（12 分） <br />
+结合案例，请指出李经理在资源管理和沟通管理方面存在的问题。 <br />
+【问题2】（5 分） <br />
+请将下面（1）~（5）处的答案填写在对应栏内。 <br />
+本案例中，项目的组织结构是（1），李经理发现人员空缺时需要再选2-3 名研发人员进入项目，选</p>
+<p>择标准包括经验、（2）、（3）、（4）、（5）、成本、能力和国际因素。 <br />
+【问题3】（3 分） <br />
+结合案例，请帮助李经理补充他没有识别到的其他干系人。 <br />
+【问题4】（5 分） <br />
+请写出项目资源管理包含的过程，并描述每个过程的主要作用。</p>
+<hr />
+<h2>参考答案与解析</h2>
+<hr />
+<h2>案例一：数字化城市管理项目（数据治理 + 风险管理）</h2>
+<h3>问题1（10分）：项目存在的问题和风险</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>问题：</strong></p>
+<ol>
+<li><strong>经验不匹配</strong>：A公司过去做银行信息系统，从未做过城市管理项目，缺乏行业经验，承接该项目存在较大能力风险。</li>
+<li><strong>多部门协调难度大</strong>：城市管理牵涉多个政府部门，协调管理复杂，但项目计划中未见相应的协调机制设计。</li>
+<li><strong>数据标准缺失</strong>：现有数据来自各部门、标准不统一、多源异构，数据整合难度极大，需建立数据元标准，但这本身就是一个复杂工程。</li>
+<li><strong>项目周期过长</strong>（8年），需求可能在8年间发生重大变化，项目范围难以稳定。</li>
+<li><strong>顶层设计不足</strong>：项目在A公司参与前，各部门已独立建设，缺乏统一顶层规划，后期整合成本高。</li>
+</ol>
+<p><strong>风险：</strong></p>
+<ol>
+<li><strong>技术风险</strong>：A公司缺乏城市管理领域经验，对交通数据等专业领域的技术掌握不足，实施过程可能出现重大技术障碍。</li>
+<li><strong>数据整合风险</strong>：多源异构数据整合难度高，数据质量难以保证，影响系统有效性。</li>
+<li><strong>政治/政策风险</strong>：政府重点项目涉及多个政府部门，部门间利益协调可能导致项目停滞或范围变更。</li>
+<li><strong>进度风险</strong>：8年建设期内，人员流动、需求变更、技术演进可能导致项目严重超期。</li>
+<li><strong>合规风险</strong>：数据元标准化工作若与国家标准不一致，可能面临合规问题。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题2（5分）：数据元与制定标准的过程</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>什么是数据元（Data Element）：</strong></p>
+<p>数据元是通过定义、标识、表示以及允许值等一系列属性描述的数据单元。数据元是不可再分的最小信息单元，是构建数据标准的基础组件。</p>
+<p><strong>制定数据元标准应遵循的过程：</strong></p>
+<ol>
+<li><strong>需求分析</strong>：收集和分析各部门的数据需求，梳理现有数据资源和问题。</li>
+<li><strong>数据元调研</strong>：调研国内外相关标准（国家标准、行业标准），避免重复制定。</li>
+<li><strong>数据元设计</strong>：对每个数据元定义名称、标识符、定义、数据类型、表示格式、允许值等属性。</li>
+<li><strong>评审与验证</strong>：组织相关部门和专家对数据元标准草案进行评审，验证其适用性。</li>
+<li><strong>标准发布</strong>：经审批后正式发布，成为约束各系统的规范文件。</li>
+<li><strong>标准维护</strong>：随业务发展定期评审和更新数据元标准。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题3（5分）：国家十四五数字产业化重点领域</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>国家"十四五"规划数字产业化发展重点（七大领域）：</p>
+<ol>
+<li><strong>（1）人工智能</strong></li>
+<li><strong>（2）大数据</strong>（注：题目已含"云计算、大数据"，此处为其余5个）</li>
+<li><strong>（3）区块链</strong></li>
+<li><strong>（4）5G</strong></li>
+<li><strong>（5）物联网</strong></li>
+</ol>
+<blockquote>
+<p>注：完整列表为：云计算、大数据、人工智能、区块链、5G、物联网、工业互联网。</p>
+</blockquote>
+</div>
+</details>
+
+<hr />
+<h3>问题4（5分）：判断正误</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>说法</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>（1）数据模型可分为概念模型、<strong>实体</strong>模型和物理模型</td>
+<td><strong>×</strong></td>
+<td>应为概念模型、<strong>逻辑</strong>模型和物理模型</td>
+</tr>
+<tr>
+<td>（2）概念模型不依赖具体计算机系统，不对应某DBMS</td>
+<td><strong>√</strong></td>
+<td>概念模型是现实世界的抽象，不依赖具体实现</td>
+</tr>
+<tr>
+<td>（3）物理模型的基本元素包括表、字段、视图、存储过程、触发器等</td>
+<td><strong>√</strong></td>
+<td>物理模型直接对应数据库实现，包含这些元素</td>
+</tr>
+<tr>
+<td>（4）A公司在项目过程中要重点关注数据的采集过程</td>
+<td><strong>√</strong></td>
+<td>海量交通数据多源异构，采集过程质量至关重要</td>
+</tr>
+<tr>
+<td>（5）数据元和元数据是同一概念，可以等同</td>
+<td><strong>×</strong></td>
+<td>数据元是数据的最小单元；元数据是描述数据的数据，二者概念不同</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<hr />
+<h2>案例二：项目网络图与挣值分析</h2>
+<h3>活动数据</h3>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>紧前活动</th>
+<th>工期(天)</th>
+<th>所需人数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>/</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>B</td>
+<td>/</td>
+<td>4</td>
+<td>9</td>
+</tr>
+<tr>
+<td>C</td>
+<td>/</td>
+<td>2</td>
+<td>12</td>
+</tr>
+<tr>
+<td>D</td>
+<td>A</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr>
+<td>E</td>
+<td>B</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>F</td>
+<td>C</td>
+<td>3</td>
+<td>9</td>
+</tr>
+<tr>
+<td>G</td>
+<td>C</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr>
+<td>H</td>
+<td>D</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>I</td>
+<td>E,F</td>
+<td>6</td>
+<td>8</td>
+</tr>
+<tr>
+<td>J</td>
+<td>G</td>
+<td>7</td>
+<td>4</td>
+</tr>
+<tr>
+<td>K</td>
+<td>H,I</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>问题1（10分）</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>（1）双代号网络图（AOA图）：</strong></p>
+<pre><code>        D(4)--H(3)
+       /              \
+A(3)--              K(5)--END
+                /
+B(4)--E(2)--          (E,F并汇入I)
+       \      \I(6)--/
+C(2)--F(3)--/
+  \
+   G(4)--J(7)--END
+</code></pre>
+<p>更准确地说，网络图包含以下节点和箭头：<br />
+- START → A(3) → D(4) → H(3) → K(5) → END<br />
+- START → B(4) → E(2) → I(6) → K(5) → END<br />
+- START → C(2) → F(3) → I(6) [E,F汇入I]<br />
+- START → C(2) → G(4) → J(7) → END</p>
+<p><strong>（2）关键路径和工期：</strong></p>
+<p>各路径时长计算：<br />
+| 路径 | 计算 | 工期 |<br />
+|-----|------|-----|<br />
+| A-D-H-K | 3+4+3+5 | 15天 |<br />
+| <strong>B-E-I-K</strong> | <strong>4+2+6+5</strong> | <strong>17天 ← 关键路径</strong> |<br />
+| C-F-I-K | 2+3+6+5 | 16天 |<br />
+| C-G-J | 2+4+7 | 13天 |</p>
+<p><strong>关键路径：B-E-I-K，总工期：17天</strong></p>
+</div>
+</details>
+
+<hr />
+<h3>问题2（5分）：H活动延期分析</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>H活动的总时差计算：</strong></p>
+<ul>
+<li>ES(H) = ES(D) + dur(D) = ES(A) + dur(A) + dur(D) = 0+3+4 = <strong>7天</strong></li>
+<li>EF(H) = 7+3 = 10天</li>
+<li>LF(H) = LF(K) - dur(K) = 17-5 = 12天</li>
+<li>LS(H) = LF(H) - dur(H) = 12-3 = 9天</li>
+<li><strong>TF(H) = LS - ES = 9 - 7 = 2天</strong></li>
+</ul>
+<p><strong>结论：H活动有2天的总时差，说法"一旦延期将影响整个项目工期"是错误的。</strong></p>
+<p>H活动延期 <strong>1-2天</strong> 不影响总工期；延期 <strong>超过2天</strong> 才会影响整个项目工期。</p>
+<p>具体：若H延期3天（超过总时差2天），将影响整个项目工期，导致项目延迟1天。</p>
+</div>
+</details>
+
+<hr />
+<h3>问题3（7分）：第10天的EVM计算</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>各活动BAC（成本/人天 = 500元）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>BAC（元）</th>
+<th>ES</th>
+<th>EF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>3×6×500=9000</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>B</td>
+<td>4×9×500=18000</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>C</td>
+<td>2×12×500=12000</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>D</td>
+<td>4×7×500=14000</td>
+<td>3</td>
+<td>7</td>
+</tr>
+<tr>
+<td>E</td>
+<td>2×2×500=2000</td>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr>
+<td>F</td>
+<td>3×9×500=13500</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>G</td>
+<td>4×7×500=14000</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr>
+<td>H</td>
+<td>3×5×500=7500</td>
+<td>7</td>
+<td>10</td>
+</tr>
+<tr>
+<td>I</td>
+<td>6×8×500=24000</td>
+<td>6</td>
+<td>12</td>
+</tr>
+<tr>
+<td>J</td>
+<td>7×4×500=14000</td>
+<td>6</td>
+<td>13</td>
+</tr>
+<tr>
+<td>K</td>
+<td>5×6×500=15000</td>
+<td>12</td>
+<td>17</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>143000</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PV（计划价值）at 第10天：</strong></p>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>计划完成比例（第10天）</th>
+<th>PV（元）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>100%（EF=3≤10）</td>
+<td>9000</td>
+</tr>
+<tr>
+<td>B</td>
+<td>100%（EF=4≤10）</td>
+<td>18000</td>
+</tr>
+<tr>
+<td>C</td>
+<td>100%（EF=2≤10）</td>
+<td>12000</td>
+</tr>
+<tr>
+<td>D</td>
+<td>100%（EF=7≤10）</td>
+<td>14000</td>
+</tr>
+<tr>
+<td>E</td>
+<td>100%（EF=6≤10）</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>F</td>
+<td>100%（EF=5≤10）</td>
+<td>13500</td>
+</tr>
+<tr>
+<td>G</td>
+<td>100%（EF=6≤10）</td>
+<td>14000</td>
+</tr>
+<tr>
+<td>H</td>
+<td>100%（EF=10≤10）</td>
+<td>7500</td>
+</tr>
+<tr>
+<td>I</td>
+<td>(10-6)/6=67%</td>
+<td>16000</td>
+</tr>
+<tr>
+<td>J</td>
+<td>(10-6)/7=57%</td>
+<td>8000</td>
+</tr>
+<tr>
+<td>K</td>
+<td>0%（ES=12&gt;10）</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>PV合计</strong></td>
+<td></td>
+<td><strong>114000</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>EV（挣值）at 第10天（A-G全完工，H,K未开工，I,J各50%）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>实际完成%</th>
+<th>EV（元）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-G</td>
+<td>100%</td>
+<td>9000+18000+12000+14000+2000+13500+14000 = 82500</td>
+</tr>
+<tr>
+<td>H</td>
+<td>0%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>I</td>
+<td>50%</td>
+<td>12000</td>
+</tr>
+<tr>
+<td>J</td>
+<td>50%</td>
+<td>7000</td>
+</tr>
+<tr>
+<td>K</td>
+<td>0%</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>EV合计</strong></td>
+<td></td>
+<td><strong>101500</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>AC = 100000元（已给）</strong></p>
+<p><strong>偏差计算：</strong></p>
+<p>$$SV = EV - PV = 101500 - 114000 = \mathbf{-12500 \text{ 元（进度落后）}}$$<br />
+$$CV = EV - AC = 101500 - 100000 = \mathbf{+1500 \text{ 元（成本节省）}}$$<br />
+$$SPI = \frac{101500}{114000} \approx 0.89 \quad (&lt; 1, \text{进度落后})$$<br />
+$$CPI = \frac{101500}{100000} = 1.015 \quad (&gt; 1, \text{成本节省})$$</p>
+<p><strong>绩效评价：项目进度落后（SPI=0.89），但成本控制良好（CPI=1.015）。</strong></p>
+</div>
+</details>
+
+<hr />
+<h3>问题4（3分）：项目经理应采取的措施</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li><strong>分析落后原因</strong>：H、K未开工，I、J进度只有50%，需找出落后的根本原因。</li>
+<li><strong>赶工（Crashing）</strong>：为I、J等关键活动增加资源，加快完成。</li>
+<li><strong>快速跟进（Fast-Tracking）</strong>：合理调整活动执行顺序，并行处理部分工作。</li>
+<li><strong>更新进度计划</strong>：重新评估剩余工作，制定追赶方案，明确恢复进度的里程碑。</li>
+<li><strong>加强监控</strong>：加大对关键路径活动的监控频率，及时识别新的风险。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h2>案例三：智慧环保项目（资源管理 + 沟通管理）</h2>
+<h3>问题1（12分）：资源管理和沟通管理方面的问题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>资源管理方面：</strong></p>
+<ol>
+<li>干系人识别不完整（仅识别客户和供应商），未识别公司研发部门、PMO、财务部门、营销部门等内部干系人，缺乏全面的资源视角。</li>
+<li>采购部门采购工作滞后，李经理未提前监控采购资源到位情况，资源管理计划与实际脱节。</li>
+<li>S公司作为核心算法供应商，其工作进度脱离李经理掌控，未建立有效的供应商进度监控机制。</li>
+<li>公司研发部门从项目抽调人员（张工、王工），李经理未能阻止或协调，说明对内部资源的管控能力不足，项目资源计划的刚性不足。</li>
+<li>对张工、王工的绩效评价未及时提交，说明对团队成员的日常管理不到位。</li>
+</ol>
+<p><strong>沟通管理方面：</strong></p>
+<ol>
+<li>干系人识别不全，导致沟通计划不完整，多个内部关键干系人（PMO、财务、人力资源、营销）未纳入沟通范围。</li>
+<li>S公司与客户直接沟通，绕过项目经理，信息未汇聚到李经理处，形成"信息孤岛"。</li>
+<li>未建立有效的信息沟通渠道，导致国家法规变化、预算压力等重要信息未能及时传达给李经理。</li>
+<li>缺少正式的供应商进度报告制度，S公司不向李经理汇报进度，无法实现对供应商的有效管控。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题2（5分）：填空</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>内容</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>（1）项目的组织结构</td>
+<td>由A公司统筹管理内部研发和外部供应商</td>
+<td><strong>矩阵型组织（弱矩阵）</strong></td>
+</tr>
+<tr>
+<td>（2）选择标准1</td>
+<td></td>
+<td><strong>知识</strong></td>
+</tr>
+<tr>
+<td>（3）选择标准2</td>
+<td></td>
+<td><strong>技能</strong></td>
+</tr>
+<tr>
+<td>（4）选择标准3</td>
+<td></td>
+<td><strong>态度</strong></td>
+</tr>
+<tr>
+<td>（5）选择标准4</td>
+<td></td>
+<td><strong>可用性</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>完整选择标准：经验、<strong>知识</strong>、<strong>技能</strong>、<strong>态度</strong>、<strong>可用性</strong>、成本、能力、国际因素（共8项）</p>
+</blockquote>
+</div>
+</details>
+
+<hr />
+<h3>问题3（3分）：补充未识别的干系人</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>李经理仅识别了客户和供应商，补充的干系人包括：</p>
+<ol>
+<li><strong>公司高层管理者</strong>（已关注项目的标杆意义）</li>
+<li><strong>公司研发部门负责人</strong>（影响人员分配）</li>
+<li><strong>公司PMO</strong>（负责进度和预算监控）</li>
+<li><strong>公司财务部门</strong>（涉及资金支付节点）</li>
+<li><strong>营销副总裁</strong>（关注项目宣传推广价值）</li>
+<li><strong>公司政策研究院</strong>（关注法律法规变化）</li>
+<li><strong>公司人力资源部</strong>（负责绩效评价）</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题4（5分）：项目资源管理包含的过程</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<table>
+<thead>
+<tr>
+<th>过程</th>
+<th>主要作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>规划资源管理</strong></td>
+<td>确定如何识别、获取、管理和使用项目资源，建立资源管理计划</td>
+</tr>
+<tr>
+<td><strong>估算活动资源</strong></td>
+<td>估算完成项目工作所需的团队和实物资源的类型、数量</td>
+</tr>
+<tr>
+<td><strong>获取资源</strong></td>
+<td>获取项目所需的团队成员、设施、设备、材料等</td>
+</tr>
+<tr>
+<td><strong>建设团队</strong></td>
+<td>提升团队成员的能力和协作水平，改善团队氛围，提高项目绩效</td>
+</tr>
+<tr>
+<td><strong>管理团队</strong></td>
+<td>跟踪团队绩效，解决问题，管理变更，提供绩效反馈</td>
+</tr>
+<tr>
+<td><strong>控制资源</strong></td>
+<td>确保实物资源按计划分配使用，监控实际资源与计划的偏差并采取纠正措施</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<script>
+function toggleAll(open) {
+  var details = document.querySelectorAll('details');
+  details.forEach(function(d) { d.open = open; });
+  var s = document.getElementById('status');
+  s.textContent = open
+    ? ('已展开 ' + details.length + ' 个答案')
+    : ('已收起 ' + details.length + ' 个答案');
+  setTimeout(function() { s.textContent = ''; }, 2000);
+}
+</script>
+</body>
+</html>
