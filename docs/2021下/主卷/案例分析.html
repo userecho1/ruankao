@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2021下 主卷 · 案例分析</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar span { color: #8b949e; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-expand { background: #2ea44f; color: #fff; }
+  .btn-expand:hover { background: #2c974b; }
+  .btn-collapse { background: #0969da; color: #fff; }
+  .btn-collapse:hover { background: #0860ca; }
+  .content {
+    max-width: 860px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 30px 40px;
+  }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.25em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; }
+  h3 { font-size: 1.05em; margin: 22px 0 8px; color: #0550ae; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 10px 0;
+    padding: 6px 16px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 0 4px 4px 0;
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 85%;
+  }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+         padding: 14px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; border: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  details {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    background: #fff;
+  }
+  details[open] { background: #f0fff4; border-color: #2ea44f; }
+  summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #0550ae;
+    list-style: none;
+    user-select: none;
+    border-radius: 6px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: 11px; }
+  details[open] summary::before { content: "▼ "; }
+  details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
+  .details-body { padding: 14px 18px; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回目录</a>
+  <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
+  <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <span id="status"></span>
+</div>
+<div class="content">
+<h1>2021年下半年信息系统项目管理师案例分析真题（文字版整理）</h1>
+<h2>来源说明</h2>
+<ul>
+<li>PDF 原文：<code>resource/近五年真题/2021下/2021年下半年信息系统项目管理师考试案例分析真题.pdf</code></li>
+<li>答案解析来源：<code>resource/近五年真题/2021下/案例分析_答案解析.md</code></li>
+<li>处理说明：原题（含题干、各问问题）直接从 PDF 提取；参考答案与解析来自仓库已有解析文件。</li>
+</ul>
+<hr />
+<h2>原题（PDF提取）</h2>
+<p>2021 年下半年信息系统项目管理师考试案例分析真题 <br />
+1、 <br />
+阅读下列说明，回答问题1 至问题4，将解答填入答题纸的对应栏内。 <br />
+【说明】 <br />
+某集团公司希望对总部现有信息系统进行升级改造，升级后的系统能收集整合子公司各类数据，实现<br />
+总部对全集团人力资源、采购、销售信息的掌握、分析及预测。 <br />
+小王担任项目经理，项目交付期为60 天。小王研究了总部提出的需求后，认为项目核心在于各子公<br />
+司数据收集以及数据可视化及分析预测功能。各子公司数据收集可以以总部现有系统中的数据格式模<br />
+板为基础，为各子公司建立数据上传接口。针对数据的分析预测功能，由于牵涉人工智能等相关算<br />
+法，目前项目组还不具备相关方面的知识储备，因此项目组对该模块功能直接外包。小王将数据收集<br />
+与可视化工作进行了WBS 分解，WBS 的部分内容如下： </p>
+<p>此外，虽然总部没有提出修改界面，但小王认为旧版的软件界面不够美观，让软件研发团队重新设计<br />
+并更改了软件界面。 <br />
+试运行阶段，总部人员试用后，认为已经熟悉旧版的操作模式，对新版界面的布局极其不适应；各子<br />
+公司数据报送人员，认为数据上报的字段内容与自己公司的业务并不相关，填写困难。总部和各子公<br />
+司的试用人员大部分认为新系统不是很好用。不是很好用。 <br />
+问题内容： <br />
+【问题1】（12 分） <br />
+（1）请结合案例，简要分析该项目经理在WBS 分解中存在的问题。 <br />
+（2）写出WBS 分解时，需要注意的事项。 </p>
+<p>【问题2】（8 分） <br />
+请结合案例，除WBS 分解的问题外，项目在范围管理中还存在哪些问题。 <br />
+【问题3】（3 分） <br />
+请描述项目范围说明书的内容。 <br />
+【问题4】（2 分） <br />
+请将下面（1）-（4）处的答案填写在对应栏内。 <br />
+项目范围是否完成要以（1）来衡量，包括（ 2）、（ 3）、（4 ）。 </p>
+<p>2、 <br />
+阅读下列说明，回答问题1 至问题4 将解答填入答题纸的对应栏内。 <br />
+【说明】 <br />
+某项目的任务计划表如表1 所示，资金计划和资金使用情况表如表2 所示。 <br />
+表1 任务计划表 </p>
+<p>项目完成后得到任务完成情况月报表如表3 所示。 </p>
+<p>问题内容： <br />
+【问题1】（4 分） <br />
+请根据项目任务计划表，绘制项目的单代号网络图。 <br />
+【问题2】（7 分） <br />
+(1)项目参与人员均可胜任任意一项任务，请计算项目每月需要的人数，并估算项目最少需要多少人? <br />
+(2)项目经理希望采用资源平滑的方法减少项目人员，请问该方法是否可行?为什么? <br />
+【问题3】（5 分） <br />
+项目第1 个月月底时，项目经理考察项目的执行情况，请计算此时项目的PV 、EV 和 AC 。 <br />
+【问题4】（9 分） <br />
+项目第2 个月月底时，上级部门考核财政资金使用情况，请给出项目此时的执行绩效。 </p>
+<p>3、 <br />
+阅读下列说明，回答问题1 至问题4，将解答填入对应栏内。 <br />
+【说明】 <br />
+某公司中标医院的信息管理系统。公司指派小王担任项目经理，并组建相应的项目团队。由于人手有<br />
+限，小王让负责项目质量工作的小杨同时担当配置管理员。小杨编写并发布了质量管理计划和配置管<br />
+理计划。 <br />
+小杨利用配置管理软件对项目进行配置管理，为了项目管理方便，小杨给小王开放所有的配置权限，<br />
+当有项目组成员提出配置变更需求时，小杨直接决定是否批准变更请求。小杨为项目创建了三个文件<br />
+夹，分别作为存放开发、受控、产品文件的目录，对经过认定的文档或经过测试的代码等能够形成配</p>
+<p>置基线的文件，存放到受控库中，并对其编号。项目研发过程中，某软件人员打算对某段代码作一个<br />
+简单修改，他从配置库检出待修改的代码段，修改完成并经测试没问题后，检入配置库，小杨认为代<br />
+码改动不大，依然使用之前的版本号，并删除了旧的代码。公司在质量审计过程中，发现项目管理方<br />
+面的诸多问题。 </p>
+<p>问题内容： <br />
+【问题1】（10 分） <br />
+请结合案例，简要分析该项目在配置管理方面存在的问题。 <br />
+【问题2】（8 分） <br />
+请结合案例，描述在升级过程中的配置库变更控制流程。 <br />
+【问题3】（5 分） <br />
+请简述质量审计的目标。 <br />
+【问题4】（2 分） <br />
+在候选答案中选择正确选项。 <br />
+通常来说，质量管理人员不应具备__的权限。 <br />
+A.产品库代码的Check 权限 <br />
+B.产品库文档的Check 权限 <br />
+C.受控库代码的Check 权限 <br />
+D.受控库文档的Check 权限</p>
+<hr />
+<h2>参考答案与解析</h2>
+<hr />
+<h2>案例一：集团信息系统升级（WBS与范围管理）</h2>
+<h3>问题1（12分）</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>（1）WBS分解中存在的问题：</strong></p>
+<ol>
+<li>将"数据可视化分析预测功能"模块外包，但在WBS中未包含外包管理工作（供应商管理、外包成果验收等），WBS不完整。</li>
+<li>未经客户确认，擅自增加"软件界面重新设计"工作，将范围外工作纳入WBS，违反了以批准的范围说明书为基础的原则。</li>
+<li>WBS分解时，仅由项目经理一人完成，未与相关干系人共同制定，可能遗漏必要工作。</li>
+<li>未对各子公司的数据上报字段和业务需求进行深入调研，导致分解出的工作与实际需求不符。</li>
+</ol>
+<p><strong>（2）WBS分解注意事项：</strong></p>
+<ol>
+<li>WBS应以项目范围说明书为依据，包含且仅包含批准的项目工作，避免镀金和遗漏。</li>
+<li>WBS的最低层应为工作包（可以被分配和管理的最小单元）。</li>
+<li>WBS应涵盖项目管理工作本身，不只是技术工作（如项目管理、外包管理等）。</li>
+<li>WBS分解应满足"100%规则"：所有子节点工作量之和等于父节点。</li>
+<li>WBS应由项目团队共同参与制定，并经过关键干系人评审确认。</li>
+<li>WBS的层次不宜过多也不宜过少，一般以3-6层为宜。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题2（8分）：范围管理中的其他问题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li><strong>需求收集不充分</strong>：各子公司数据上报字段与实际业务不符，说明未对子公司进行充分的需求调研。</li>
+<li><strong>范围未经正式确认</strong>：没有通过正式的范围确认（验收可交付成果）程序，导致双方对范围的理解存在偏差。</li>
+<li><strong>镀金（Gold Plating）</strong>：在客户未提出修改界面需求的情况下，擅自更改UI，属于超范围工作。</li>
+<li><strong>外包模块需求不明确</strong>：外包模块的功能边界和接口要求未在范围内明确定义，可能导致交付成果不符合要求。</li>
+<li><strong>缺少变更控制</strong>：界面更改属于范围变更，应走变更管理流程，而非直接执行。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题3（3分）：项目范围说明书的内容</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li>产品范围描述（产品特性和功能的逐步精细化描述）</li>
+<li>可交付成果（项目预期产生的所有工作成果及辅助成果）</li>
+<li>项目除外责任（明确不属于项目范围的内容）</li>
+<li>项目制约因素</li>
+<li>项目假设条件</li>
+<li>批准的项目变更（如有）</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题4（2分）：填空</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>项目范围是否完成要以<strong>（1）范围基准</strong>来衡量，包括：<br />
+- <strong>（2）批准的项目范围说明书</strong><br />
+- <strong>（3）WBS</strong><br />
+- <strong>（4）WBS词典</strong></p>
+</div>
+</details>
+
+<hr />
+<h2>案例二：项目网络图与挣值分析</h2>
+<h3>说明：本案例含三个表格（任务计划表、资金计划与使用情况表、任务完成情况表），关键数值见各问题。项目全部活动总浮动时间均为 0，所有路径均为关键路径，不可进行资源平滑。</h3>
+<hr />
+<h3>问题1（4分）：绘制单代号网络图</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>根据任务计划表中各活动的紧前关系，网络图逻辑如下：</p>
+<pre><code class="language-text">START → A → B → C → D → E → F → END
+</code></pre>
+<p>所有活动串行排列，无分支。单代号网络图中各节点按顺序依次连接即可。</p>
+</div>
+</details>
+
+<hr />
+<h3>问题2（7分）：资源计算</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>（1）每月所需人数及最少人数：</strong></p>
+<p>根据计划表统计各月并行活动数：</p>
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>所需人数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第1月</td>
+<td>8 人</td>
+</tr>
+<tr>
+<td>第2月</td>
+<td>8 人</td>
+</tr>
+<tr>
+<td>第3月</td>
+<td>7 人</td>
+</tr>
+<tr>
+<td>第4月</td>
+<td>6 人</td>
+</tr>
+<tr>
+<td>第5月</td>
+<td>9 人</td>
+</tr>
+<tr>
+<td>第6月</td>
+<td>5 人</td>
+</tr>
+</tbody>
+</table>
+<p><strong>项目最少需要 9 人</strong>（第5月为峰值）。</p>
+<p><strong>（2）资源平滑是否可行？</strong></p>
+<p><strong>不可行。</strong></p>
+<p>原因：本项目所有活动的自由浮动时间和总浮动时间均为 0（所有路径都是关键路径），没有可用来延迟活动以平滑资源的浮动时间。若强行削减人员，只能延长关键路径即延长工期，这属于<strong>资源平衡</strong>而非资源平滑。</p>
+</div>
+</details>
+
+<hr />
+<h3>问题3（5分）：第1个月月底的EVM计算</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>根据资金计划表（表2）和任务完成情况表（表3）：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PV</strong></td>
+<td><strong>400 万元</strong></td>
+<td>第1月计划分配到任务的预算（表2）</td>
+</tr>
+<tr>
+<td><strong>AC</strong></td>
+<td><strong>200 万元</strong></td>
+<td>第1月实际支出（表2）</td>
+</tr>
+<tr>
+<td><strong>EV</strong></td>
+<td><strong>440 万元</strong></td>
+<td>第1月实际完成工作量 × 预算单价</td>
+</tr>
+</tbody>
+</table>
+<p>$$PV = 400 \text{万元}, \quad AC = 200 \text{万元}, \quad EV = 440 \text{万元}$$</p>
+</div>
+</details>
+
+<hr />
+<h3>问题4（9分）：第2个月月底的执行绩效</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>按公开参考答案，第2个月月底应从<strong>项目整体累计执行情况</strong>和<strong>财政资金使用情况</strong>两部分作答。</p>
+<p><strong>（1）项目整体累计绩效：</strong></p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>计算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PV</td>
+<td><strong>1100 万元</strong></td>
+<td>400 + 700</td>
+</tr>
+<tr>
+<td>AC</td>
+<td><strong>900 万元</strong></td>
+<td>200 + 700</td>
+</tr>
+<tr>
+<td>EV</td>
+<td><strong>1100 万元</strong></td>
+<td>按表3累计完成情况折算</td>
+</tr>
+</tbody>
+</table>
+<p>$$SV = EV - PV = 1100 - 1100 = \mathbf{0 \text{万元}}$$</p>
+<p>$$CV = EV - AC = 1100 - 900 = \mathbf{200 \text{万元}}$$</p>
+<p>$$SPI = \frac{EV}{PV} = \frac{1100}{1100} = \mathbf{1}$$</p>
+<p>$$CPI = \frac{EV}{AC} = \frac{1100}{900} \approx \mathbf{1.22}$$</p>
+<p><strong>结论：项目整体进度正常，成本节约。</strong></p>
+<p><strong>（2）财政资金使用情况：</strong></p>
+<ul>
+<li>财政资金按计划应支出 <strong>500 万元</strong>，实际支出 <strong>100 万元</strong>，说明<strong>财政资金节约</strong>。</li>
+<li>自筹资金按计划应使用 <strong>600 万元</strong>，实际执行 <strong>800 万元</strong>，说明<strong>自筹资金超额支出</strong>。</li>
+</ul>
+</div>
+</details>
+
+<hr />
+<h2>案例三：医院信息系统配置管理与质量审计</h2>
+<h3>问题1（10分）：配置管理方面的问题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li>质量工程师小杨兼任配置管理员，角色冲突，不符合职责分离原则。</li>
+<li>将全部配置权限开放给项目经理小王，权限管理混乱，不符合最小权限原则。</li>
+<li>配置变更由小杨直接决定批准，未建立变更控制委员会（CCB）和变更审批流程，变更决策程序不规范。</li>
+<li>配置项修改后版本号未更新（未升版），违反版本管理规范。</li>
+<li>修改后删除了旧代码，违反了配置管理中保留历史版本的原则，无法进行版本回退。</li>
+<li>修改人员在修改前未通过正式的配置变更申请和审批流程，直接检出、修改、检入，缺少审批环节。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题2（8分）：配置库变更控制流程</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li><strong>提出变更申请</strong>：需要修改的人员填写配置变更申请单，说明变更原因和内容。</li>
+<li><strong>变更影响分析</strong>：配置管理员分析变更对其他配置项和基线的影响。</li>
+<li><strong>CCB审批</strong>：提交配置控制委员会（CCB）审查，批准或拒绝变更。</li>
+<li><strong>建立新基线（检出）</strong>：获批后，从受控库中检出（Checkout）待修改的配置项，在开发库中进行修改。</li>
+<li><strong>执行修改</strong>：按照批准方案进行修改，并完成相应测试验证。</li>
+<li><strong>检入并升版</strong>：修改完成后，生成新版本号，将修改后的配置项检入（Checkin）受控库。</li>
+<li><strong>通知相关人员</strong>：将变更情况通知受影响的干系人。</li>
+<li><strong>保留历史版本</strong>：旧版本应保留存档，不得删除。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题3（5分）：质量审计的目标</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li>识别项目中正在实施的所有良好或最佳实践。</li>
+<li>识别所有与政策、流程和程序不符合的差距、缺陷。</li>
+<li>分享同类项目中已证实的良好实践。</li>
+<li>积极、主动地提供协助改进过程执行效果。</li>
+<li>强调每次审计都应对其后形成的、已完成任务的知识库做出贡献。</li>
+<li>确保项目工作符合组织和项目的质量标准及相关规定。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题4（2分）：选择题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>答案：C（受控库代码的Check权限）</strong></p>
+<p>质量管理人员负责检验产品，通常不应具备<strong>受控库代码的Check（提交/修改）权限</strong>，以保证质量审查的客观性和独立性——受控库是开发人员修改配置项的核心库，质量管理人员不应具备直接修改受控库代码的权限。</p>
+<blockquote>
+<p>注：信管网公开参考答案为C。质量管理人员应具备产品库的各项Read权限以查阅基线内容，但不应具备受控库代码的Check权限以避免"既当运动员又当裁判员"。</p>
+</blockquote>
+</div>
+</details>
+</div>
+<script>
+function toggleAll(open) {
+  var details = document.querySelectorAll('details');
+  details.forEach(function(d) { d.open = open; });
+  var s = document.getElementById('status');
+  s.textContent = open
+    ? ('已展开 ' + details.length + ' 个答案')
+    : ('已收起 ' + details.length + ' 个答案');
+  setTimeout(function() { s.textContent = ''; }, 2000);
+}
+</script>
+</body>
+</html>

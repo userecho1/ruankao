@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022上 主卷 · 案例分析</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar span { color: #8b949e; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-expand { background: #2ea44f; color: #fff; }
+  .btn-expand:hover { background: #2c974b; }
+  .btn-collapse { background: #0969da; color: #fff; }
+  .btn-collapse:hover { background: #0860ca; }
+  .content {
+    max-width: 860px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 30px 40px;
+  }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.25em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; }
+  h3 { font-size: 1.05em; margin: 22px 0 8px; color: #0550ae; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 10px 0;
+    padding: 6px 16px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 0 4px 4px 0;
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 85%;
+  }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+         padding: 14px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; border: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  details {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    background: #fff;
+  }
+  details[open] { background: #f0fff4; border-color: #2ea44f; }
+  summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #0550ae;
+    list-style: none;
+    user-select: none;
+    border-radius: 6px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: 11px; }
+  details[open] summary::before { content: "▼ "; }
+  details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
+  .details-body { padding: 14px 18px; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回目录</a>
+  <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
+  <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <span id="status"></span>
+</div>
+<div class="content">
+<h1>2022年上半年信息系统项目管理师案例分析真题（文字版整理）</h1>
+<h2>来源说明</h2>
+<ul>
+<li>PDF 原文：<code>resource/近五年真题/2022上/2022年上半年信息系统项目管理师考试案例分析真题.pdf</code></li>
+<li>答案解析来源：<code>resource/近五年真题/2022上/案例分析_答案解析.md</code></li>
+<li>处理说明：原题（含题干、各问问题）直接从 PDF 提取；参考答案与解析来自仓库已有解析文件。</li>
+</ul>
+<hr />
+<h2>原题（PDF提取）</h2>
+<p>2022 年上半年信息系统项目管理师考试案例分析真题 <br />
+1、 <br />
+ A 公司承接了某地方政 府的智慧社区云平台的基础设施建设项目，客户方对安全性和系统性<br />
+能要求较高。为了实现自身业务由硬件设备提供向软件开发转型，A 公司承诺免费提供一个智慧社区<br />
+APP 小程序，并将其写入项目合同中，合同期为6 个月。 <br />
+ 项目经理小邱负责APP 的开发，项目周期4 个月，计划2019 年12 月上线。因合同中没有对<br />
+APP 给出明确的功能和性能要求，小邱首先借鉴其他项目的开发经验和成果确定了APP 的主要便民服<br />
+务功能。之后开发团队通过走访社区居民和在社区网发放调查问卷收集相关的需求，最终确定了APP<br />
+的功能需求，编制了详细的功能需求说明书，并将业务目标、项目目标、范围、设计、开发、高层级<br />
+需求、详细需求均纳入到需求跟踪矩阵中。 <br />
+ 2019 年7 月项目组与客户共同召开了范围确认会，讨论了项目的文档交付物清单，各阶段里<br />
+程碑及详细的工作进度和人员分工图表，形成会议纪要并双方签字。 <br />
+ 后期，项目组审核了范围说明书，提交了项目代码和相关设计文档。2019 年12 月完成功能<br />
+测试。在项目验收评审会上，与会外部专家认为该项目涉及个人隐私信息，建议请第三方测评机构对<br />
+该APP 进行全面的测试。经第三方测评机构测试，发现多项严重的个人信息安全保护问题。经分析，<br />
+漏洞修复比较困难，全面整改需要投入较大的工作量，但预算已超支。经与公司领导和客户反复协<br />
+商，不得不提出项目变更。 <br />
+问题内容： <br />
+【问题1】（10 分） <br />
+（1）结合案例，请分析在7 月召开的范围确认会上，范围确认工作是否有遗漏？请指出遗漏的内<br />
+容。 <br />
+（2）请阐述范围确认和质量控制的不同点，完成以下表格。 </p>
+<p>【问题2】（5 分） </p>
+<p>请将下面（1）-（5）处的答案填写在答题纸的对应栏内。 <br />
+在上述案例中，收集需求阶段项目团队采用了（1）、（2）和（3）的工具和技术，在需求跟踪矩阵<br />
+设计过程中缺少对（4）和（5）的策划。 <br />
+【问题3】（4 分） <br />
+请指出项目变更的决策机构，并简述其成员和职责。 <br />
+【问题4】（6 分） <br />
+请阐述项目变更应开展哪些工作？ </p>
+<p>2、 <br />
+已知某公司承担一个旅游信息监管系统的开发，整个项目划分为四个阶段九项活动，项目相关信息如<br />
+表所示：</p>
+<p>问题内容： <br />
+【问题1】（12 分） <br />
+结合案例： <br />
+（1）每个活动的乐观、 可能和悲观成本【工期】服从β分布，请计算每个活动的成本【工期】，并<br />
+绘制项目的时标网络图。 <br />
+（2）如果项目人员均为多面手，可以从事任意活动，请指出项目实施需要的最少人数。 <br />
+【问题2】（3 分） </p>
+<p>请确定项目的关键路径，工期。 <br />
+【问题3】（6 分） <br />
+项目进展到第70 天时，项目已完成总工作量的3/4，花费60 万元，请计算此时项目的PV、EV 、SV<br />
+和CV 值（假设项目每项活动的日工作量相同，计算结果精确到整数）。 <br />
+【问题4】（4 分） <br />
+请指出当前项目绩效情况，并说明项目经理应该采取哪些措施？ </p>
+<p>3、 <br />
+ A 公司承接某市机关事业单位养老保险信息系统，项目覆盖整个市、区、县的机关事业单位<br />
+在编人员的养老保险信息，实现数据集中统一管理。公司成立了项目组，并任命小王担任项目经理。 <br />
+ 项目组对项目进行调研后，成立了风险管理小组，编写了项目管理计划和风险管理计划，明<br />
+确项目风险管理流程如下图所示： </p>
+<p>项目组对风险登记册的各风险制定了相应措施，部分措施如下所示： </p>
+<p>此外，在信息安全方面，养老保险数据信息涉及个人隐私，如果不法分子突破安全限制，会造成用户<br />
+隐私泄露或信息篡改。因此项目组采用PKI 技术，为系统的安全运行提供了有效的保障。 <br />
+问题内容： <br />
+【问题1】（4 分） <br />
+请结合案例，指出该项目风险管理流程中存在的问题。 <br />
+【问题2】（10 分） <br />
+请指出案例中列出的风险措施分别采用的是哪种风险应对策略。 <br />
+【问题3】（8 分） <br />
+项目组使用的PKI 技术采用双密钥、双证书机制，请简述双密钥证书的生成过程。 <br />
+【问题4】（3 分） <br />
+请将下面（1） ~（3）处的答案填写在答题纸的对应栏内。 <br />
+SWOT 技术从项目的每个（1）、劣势、（2）和（3）出发，对项目进行考察，把产生于内部的风险都<br />
+包括在内，从而更全面地考虑风险。</p>
+<hr />
+<h2>参考答案与解析</h2>
+<hr />
+<h2>案例一：智慧社区APP项目（范围确认与变更管理）</h2>
+<h3>问题1（10分）</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>（1）7月范围确认会存在哪些遗漏？</strong></p>
+<p>范围确认（核实范围）的主要工作是：检验可交付成果是否满足验收标准，获得客户对已完成可交付成果的正式认可。</p>
+<p>本案例7月会议仅讨论了：文档交付物清单、里程碑、工作进度和人员分工图表。</p>
+<p><strong>遗漏的内容：</strong><br />
+1. <strong>未对已完成的可交付成果进行检查和演示</strong>（核实范围应以实物成果为对象，而非计划文档）。<br />
+2. <strong>未对功能需求说明书进行正式评审和确认</strong>（客户对需求的正式认可）。<br />
+3. <strong>未包含安全性和性能要求的验收标准</strong>（合同要求客户方对安全性和性能有高要求，但未纳入确认内容）。<br />
+4. <strong>缺少对验收标准的正式确定和双方签字确认</strong>（虽有会议纪要，但未明确功能和性能的验收条件）。<br />
+5. <strong>未识别和确认合同变更</strong>（APP是免费附加，功能范围不明确，应在此时明确）。</p>
+<p><strong>（2）范围确认与质量控制的区别：</strong></p>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>范围确认（核实范围）</th>
+<th>质量控制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>目的</strong></td>
+<td>获得客户对可交付成果的正式验收</td>
+<td>监控和记录质量活动执行结果，评估绩效</td>
+</tr>
+<tr>
+<td><strong>时机</strong></td>
+<td>项目阶段末或里程碑节点</td>
+<td>贯穿整个项目执行过程</td>
+</tr>
+<tr>
+<td><strong>执行方</strong></td>
+<td>客户/发起人（外部）</td>
+<td>项目团队（内部）</td>
+</tr>
+<tr>
+<td><strong>关注点</strong></td>
+<td>可交付成果是否符合范围定义（验收条件）</td>
+<td>可交付成果是否满足质量标准（质量指标）</td>
+</tr>
+<tr>
+<td><strong>输入</strong></td>
+<td>核实的可交付成果（经质控后）</td>
+<td>项目测量结果、质量计划</td>
+</tr>
+<tr>
+<td><strong>输出</strong></td>
+<td>已验收的可交付成果、变更请求</td>
+<td>已核实的可交付成果、质量控制测量结果</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<hr />
+<h3>问题2（5分）：填空</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li><strong>（1）访谈/访问（走访社区居民）</strong></li>
+<li><strong>（2）问卷调查（发放调查问卷）</strong></li>
+<li><strong>（3）标杆对照（借鉴其他项目的经验和成果）</strong></li>
+<li><strong>（4）测试/验证需求</strong>（需求跟踪矩阵中缺少对测试的策划）</li>
+<li><strong>（5）安全性/隐私保护需求</strong>（缺少对个人隐私安全的策划，导致最终被发现安全问题）</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题3（4分）：变更的决策机构</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>决策机构：变更控制委员会（CCB）</strong></p>
+<p><strong>成员组成：</strong><br />
+- 项目发起人或高层管理者<br />
+- 项目经理<br />
+- 关键客户代表<br />
+- 技术负责人<br />
+- 财务/合同代表<br />
+- 相关领域专家（如安全专家、法律顾问）</p>
+<p><strong>职责：</strong><br />
+1. 评审变更申请，进行独立、客观的变更影响分析。<br />
+2. 批准、拒绝或推迟变更请求。<br />
+3. 确保变更符合项目目标和合同要求。<br />
+4. 监督变更实施情况，跟踪变更结果。</p>
+</div>
+</details>
+
+<hr />
+<h3>问题4（6分）：项目变更应开展哪些工作</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<ol>
+<li><strong>提出变更申请</strong>：相关方正式填写变更申请单，描述变更内容和理由。</li>
+<li><strong>变更影响评估</strong>：分析变更对项目范围、进度、成本、质量、资源和风险的影响。</li>
+<li><strong>CCB审批</strong>：将变更申请和影响分析提交CCB，由CCB批准、拒绝或修改变更方案。</li>
+<li><strong>更新项目管理计划</strong>：变更批准后，更新范围基准、进度基准、成本基准及相关子计划。</li>
+<li><strong>实施变更</strong>：按批准的变更方案执行，并分配相应资源。</li>
+<li><strong>跟踪与验证</strong>：跟踪变更实施情况，验证变更结果是否符合预期，关闭变更请求并归档。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h2>案例二：旅游信息监管系统（PERT + EVM）</h2>
+<h3>活动数据与PERT期望工期</h3>
+<p>PERT 三点估算公式：</p>
+<p>$$t_e = \frac{O + 4M + P}{6}$$</p>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>乐观-最可能-悲观</th>
+<th>紧前活动</th>
+<th>人数</th>
+<th>预算（万元）</th>
+<th>期望工期（天）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 任务下达</td>
+<td>(1,4,7)</td>
+<td>/</td>
+<td>6</td>
+<td>0.6</td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>B 需求分析</td>
+<td>(12,14,22)</td>
+<td>A</td>
+<td>15</td>
+<td>6.3</td>
+<td><strong>15</strong></td>
+</tr>
+<tr>
+<td>C 总体设计</td>
+<td>(13,14,21)</td>
+<td>B</td>
+<td>13</td>
+<td>10.4</td>
+<td><strong>15</strong></td>
+</tr>
+<tr>
+<td>D 初样实现</td>
+<td>(8,9,16)</td>
+<td>C</td>
+<td>17</td>
+<td>24.7</td>
+<td><strong>10</strong></td>
+</tr>
+<tr>
+<td>E 正样研制</td>
+<td>(10,17,18)</td>
+<td>D</td>
+<td>18</td>
+<td>10.2</td>
+<td><strong>16</strong></td>
+</tr>
+<tr>
+<td>F 密码测评</td>
+<td>(6,7,8)</td>
+<td>E</td>
+<td>9</td>
+<td>5.1</td>
+<td><strong>7</strong></td>
+</tr>
+<tr>
+<td>G 软件测试</td>
+<td>(5,8,11)</td>
+<td>E</td>
+<td>12</td>
+<td>10.6</td>
+<td><strong>8</strong></td>
+</tr>
+<tr>
+<td>H 用户试用</td>
+<td>(9,16,17)</td>
+<td>F、G</td>
+<td>20</td>
+<td>15.7</td>
+<td><strong>15</strong></td>
+</tr>
+<tr>
+<td>I 收尾</td>
+<td>(3,5,7)</td>
+<td>H</td>
+<td>10</td>
+<td>3</td>
+<td><strong>5</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>问题1（12分）：PERT计算 + 时标网络图 + 最少人数</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>（1）各活动期望工期：</strong></p>
+<ul>
+<li>A=4 天</li>
+<li>B=15 天</li>
+<li>C=15 天</li>
+<li>D=10 天</li>
+<li>E=16 天</li>
+<li>F=7 天</li>
+<li>G=8 天</li>
+<li>H=15 天</li>
+<li>I=5 天</li>
+</ul>
+<p><strong>时标网络图逻辑关系：</strong></p>
+<pre><code class="language-text">START → A(4) → B(15) → C(15) → D(10) → E(16)
+                                      ├→ F(7) ─┐
+                                      └→ G(8) ─┴→ H(15) → I(5) → END
+</code></pre>
+<p>按最早开始时间排列：</p>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>ES</th>
+<th>EF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>B</td>
+<td>4</td>
+<td>19</td>
+</tr>
+<tr>
+<td>C</td>
+<td>19</td>
+<td>34</td>
+</tr>
+<tr>
+<td>D</td>
+<td>34</td>
+<td>44</td>
+</tr>
+<tr>
+<td>E</td>
+<td>44</td>
+<td>60</td>
+</tr>
+<tr>
+<td>F</td>
+<td>60</td>
+<td>67</td>
+</tr>
+<tr>
+<td>G</td>
+<td>60</td>
+<td>68</td>
+</tr>
+<tr>
+<td>H</td>
+<td>68</td>
+<td>83</td>
+</tr>
+<tr>
+<td>I</td>
+<td>83</td>
+<td>88</td>
+</tr>
+</tbody>
+</table>
+<p><strong>（2）项目实施所需最少人数：</strong></p>
+<p>只有 F 和 G 存在并行，且 H 必须等待二者全部完成，因此 F、G 不能完全串行执行；并行期间资源峰值为：</p>
+<p>$$9 + 12 = 21 \text{ 人}$$</p>
+<p>所以项目实施需要的<strong>最少人数为 21 人</strong>。</p>
+</div>
+</details>
+
+<hr />
+<h3>问题2（3分）：关键路径和工期</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>两条主要路径为：</p>
+<ul>
+<li>A-B-C-D-E-F-H-I = 4+15+15+10+16+7+15+5 = <strong>87天</strong></li>
+<li>A-B-C-D-E-G-H-I = 4+15+15+10+16+8+15+5 = <strong>88天</strong></li>
+</ul>
+<p>因此：</p>
+<ul>
+<li><strong>关键路径：A-B-C-D-E-G-H-I</strong></li>
+<li><strong>总工期：88天</strong></li>
+</ul>
+</div>
+</details>
+
+<hr />
+<h3>问题3（6分）：第70天时的EVM计算</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>已知：</strong><br />
+- 第70天：完成总工作量的3/4，花费60万元<br />
+- 各活动日工作量相同</p>
+<p>总预算 BAC：</p>
+<p>$$BAC = 0.6+6.3+10.4+24.7+10.2+5.1+10.6+15.7+3 = 86.6 \text{万元}$$</p>
+<p><strong>PV：</strong></p>
+<p>按计划到第70天时，应完成 A、B、C、D、E、F、G，并且 H 已经进行了 2 天：</p>
+<p>$$PV = 0.6+6.3+10.4+24.7+10.2+5.1+10.6+\frac{15.7}{15}\times 2$$</p>
+<p>$$PV \approx 69.99 \approx \mathbf{70 \text{万元}}$$</p>
+<p><strong>EV：</strong></p>
+<p>项目实际完成总工作量的 3/4：</p>
+<p>$$EV = 86.6 \times \frac{3}{4} = 64.95 \approx \mathbf{65 \text{万元}}$$</p>
+<p><strong>AC：</strong></p>
+<p>$$AC = \mathbf{60 \text{万元}}$$</p>
+<p><strong>偏差：</strong></p>
+<p>$$SV = EV - PV = 65 - 70 = \mathbf{-5 \text{万元}}$$</p>
+<p>$$CV = EV - AC = 65 - 60 = \mathbf{5 \text{万元}}$$</p>
+</div>
+</details>
+
+<hr />
+<h3>问题4（4分）：绩效评价与措施</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>绩效指标：</p>
+<p>$$SPI = \frac{65}{70} \approx 0.93 &lt; 1$$</p>
+<p>$$CPI = \frac{65}{60} \approx 1.08 &gt; 1$$</p>
+<p><strong>绩效判断：</strong></p>
+<ul>
+<li><strong>进度落后</strong>（SV&lt;0，SPI&lt;1）</li>
+<li><strong>成本节省 / 成本绩效较好</strong>（CV&gt;0，CPI&gt;1）</li>
+</ul>
+<p><strong>项目经理可采取的措施：</strong></p>
+<ol>
+<li>分析关键路径上延期的具体原因，重点关注 G、H、I 等关键活动。</li>
+<li>对关键路径活动采取<strong>赶工</strong>或<strong>快速跟进</strong>措施，把进度追回来。</li>
+<li>优先投入经验更强的人员到关键活动，避免在非关键活动上分散资源。</li>
+<li>加强阶段性监控和里程碑检查，及时更新进度计划并向干系人沟通偏差。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h2>案例三：养老保险信息系统（风险管理 + PKI）</h2>
+<h3>问题1（4分）：风险管理流程中存在的问题</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>根据标准的风险管理流程（规划→识别→定性→定量→规划应对→实施应对→监控），案例中流程可能存在：</p>
+<ol>
+<li>流程中缺少<strong>定量风险分析</strong>步骤（只有定性分析）。</li>
+<li>风险管理流程中未包含<strong>风险监控</strong>环节（控制风险），风险管理是一次性的而非持续的。</li>
+<li>未包含<strong>风险再评估</strong>机制，项目执行过程中不会持续更新风险登记册。</li>
+<li>风险应对措施未经评审，可能存在遗漏或不当的应对策略。</li>
+</ol>
+</div>
+</details>
+
+<hr />
+<h3>问题2（10分）：风险应对策略判断</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<table>
+<thead>
+<tr>
+<th>风险描述</th>
+<th>措施</th>
+<th>应对策略</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人员情绪风险</td>
+<td>调离项目组</td>
+<td><strong>规避（Avoid）</strong></td>
+<td>通过改变安排直接消除该风险源</td>
+</tr>
+<tr>
+<td>缺少数据库设计和相关技术储备</td>
+<td>外包</td>
+<td><strong>转移（Transfer）</strong></td>
+<td>将相关风险和责任部分转移给外部供应商</td>
+</tr>
+<tr>
+<td>需要新的数据安全管理技术</td>
+<td>培训</td>
+<td><strong>减轻（Mitigate）</strong></td>
+<td>通过培训提升能力，降低风险发生概率和影响</td>
+</tr>
+<tr>
+<td>非预期事件造成成本增加的风险</td>
+<td>应急储备</td>
+<td><strong>接受（Accept）</strong></td>
+<td>预留储备应对风险，属于主动接受</td>
+</tr>
+<tr>
+<td>审批流程繁琐</td>
+<td>加强部门沟通，建立协调配合机制</td>
+<td><strong>减轻（Mitigate）</strong></td>
+<td>通过改进协同机制降低管理风险影响</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<hr />
+<h3>问题3（8分）：PKI双密钥证书生成过程</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p><strong>双密钥、双证书机制：</strong><br />
+- <strong>签名密钥对（私钥+公钥）</strong>：用于数字签名，证明身份<br />
+- <strong>加密密钥对（私钥+公钥）</strong>：用于数据加密，保护隐私</p>
+<p><strong>证书生成过程：</strong></p>
+<ol>
+<li>
+<p><strong>密钥生成</strong>：用户（或CA代表用户）生成两对密钥：<br />
+   - 签名密钥对（由用户生成，私钥不出卡）<br />
+   - 加密密钥对（由CA生成并备份）</p>
+</li>
+<li>
+<p><strong>申请证书</strong>：用户向证书授权机构（CA）提交身份信息和公钥。</p>
+</li>
+<li>
+<p><strong>身份验证</strong>：注册机构（RA）验证用户身份（实名认证）。</p>
+</li>
+<li>
+<p><strong>CA签发证书</strong>：<br />
+   - CA对签名公钥签发<strong>签名证书</strong>（Signing Certificate）<br />
+   - CA对加密公钥签发<strong>加密证书</strong>（Encryption Certificate）</p>
+</li>
+<li>
+<p><strong>证书分发</strong>：<br />
+   - 签名私钥和签名证书存入用户的密钥介质（如USB Key）<br />
+   - 加密私钥和加密证书也存入密钥介质，加密私钥同时在CA/KM处备份（密钥托管）</p>
+</li>
+<li>
+<p><strong>发布至目录服务</strong>：加密公钥证书发布到公开目录中，供他人加密使用。</p>
+</li>
+</ol>
+<p><strong>密钥使用：</strong><br />
+- 发送方用接收方的加密公钥加密数据，接收方用加密私钥解密。<br />
+- 签名方用签名私钥签名，验证方用签名公钥验证。</p>
+</div>
+</details>
+
+<hr />
+<h3>问题4（3分）：填空</h3>
+<details>
+<summary>查看参考答案</summary>
+<div class="details-body">
+<p>SWOT分析：<br />
+- （1）<strong>优势（Strength）</strong><br />
+- （2）<strong>机会（Opportunity）</strong><br />
+- （3）<strong>威胁（Threat）</strong></p>
+<p>完整：从每个<strong>（1）优势</strong>、劣势、<strong>（2）机会</strong>和<strong>（3）威胁</strong>出发考察项目风险。</p>
+</div>
+</details>
+</div>
+<script>
+function toggleAll(open) {
+  var details = document.querySelectorAll('details');
+  details.forEach(function(d) { d.open = open; });
+  var s = document.getElementById('status');
+  s.textContent = open
+    ? ('已展开 ' + details.length + ' 个答案')
+    : ('已收起 ' + details.length + ' 个答案');
+  setTimeout(function() { s.textContent = ''; }, 2000);
+}
+</script>
+</body>
+</html>

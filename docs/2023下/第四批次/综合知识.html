@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2023下 第四批次 · 综合知识</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar span { color: #8b949e; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-expand { background: #2ea44f; color: #fff; }
+  .btn-expand:hover { background: #2c974b; }
+  .btn-collapse { background: #0969da; color: #fff; }
+  .btn-collapse:hover { background: #0860ca; }
+  .content {
+    max-width: 860px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 30px 40px;
+  }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.25em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; }
+  h3 { font-size: 1.05em; margin: 22px 0 8px; color: #0550ae; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 10px 0;
+    padding: 6px 16px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 0 4px 4px 0;
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 85%;
+  }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+         padding: 14px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; border: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  details {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    background: #fff;
+  }
+  details[open] { background: #f0fff4; border-color: #2ea44f; }
+  summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #0550ae;
+    list-style: none;
+    user-select: none;
+    border-radius: 6px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: 11px; }
+  details[open] summary::before { content: "▼ "; }
+  details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
+  .details-body { padding: 14px 18px; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回目录</a>
+  <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
+  <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <span id="status"></span>
+</div>
+<div class="content">
+<h1>2023年下半年信息系统项目管理师综合知识真题 （文字版整理）（第四批次）</h1>
+<h2>来源说明</h2>
+<ul>
+<li>整理范围：近五年（2020–2024），仅含综合知识选择题与案例分析题。</li>
+<li>原始文件：<code>resource/近五年真题/2023下/综合知识_答案解析.md</code></li>
+<li>原题识别：已参考原题 PDF（第四批次），使用 PyMuPDF 提取题干与选项，Q39 表格通过图像渲染核对。</li>
+<li>PDF 路径：<code>resource/近五年真题/2023下/2023年下半年信息系统项目管理师考试综合知识真题（第四批次）.pdf</code></li>
+</ul>
+<h2>修订说明</h2>
+<ul>
+<li>所有题目格式统一为：题干 + 选项各自独立一行 + 答案 + 解析。</li>
+<li>Q39（后悔值决策）：核对表格数据后答案更正为 A（B方案）。</li>
+<li>Q60（数字化转型）：原标注答案 A 有误，依据题意与解析更正为 B（数据 数据）。</li>
+<li>补充 Q61、Q63、Q64（PDF 有题但整合版原缺失）。</li>
+</ul>
+<h2>答案速查表</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C</td>
+<td>3</td>
+<td>B</td>
+<td>5</td>
+<td>D</td>
+<td>6</td>
+<td>B</td>
+<td>9</td>
+<td>D</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+<td>12</td>
+<td>B</td>
+<td>14</td>
+<td>D</td>
+<td>17</td>
+<td>D</td>
+<td>19</td>
+<td>D</td>
+</tr>
+<tr>
+<td>20</td>
+<td>B</td>
+<td>23</td>
+<td>C</td>
+<td>25</td>
+<td>A</td>
+<td>26</td>
+<td>A</td>
+<td>27</td>
+<td>A</td>
+</tr>
+<tr>
+<td>29</td>
+<td>D</td>
+<td>32</td>
+<td>C</td>
+<td>35</td>
+<td>C</td>
+<td>36</td>
+<td>D</td>
+<td>39</td>
+<td>A</td>
+</tr>
+<tr>
+<td>40</td>
+<td>A</td>
+<td>42</td>
+<td>D</td>
+<td>43</td>
+<td>B</td>
+<td>46</td>
+<td>D</td>
+<td>47</td>
+<td>B</td>
+</tr>
+<tr>
+<td>49</td>
+<td>D</td>
+<td>50</td>
+<td>D</td>
+<td>52</td>
+<td>A</td>
+<td>53</td>
+<td>C</td>
+<td>55</td>
+<td>D</td>
+</tr>
+<tr>
+<td>58</td>
+<td>A</td>
+<td>60</td>
+<td>B</td>
+<td>61</td>
+<td>A</td>
+<td>63</td>
+<td>C</td>
+<td>64</td>
+<td>C</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>逐题解析</h2>
+<h3>第1题 【信息技术应用】</h3>
+<p><strong>题目：</strong> 微信中语音转换为文字的功能，主要应用了（  ）技术。</p>
+<p>A、虚拟现实<br />
+B、专家系统<br />
+C、自然语言处理<br />
+D、大数据</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 自然语言处理（NLP）</strong></p>
+<p><strong>解析：</strong> 语音转文字是自动语音识别（ASR）与自然语言处理（NLP）的典型应用场景。<br />
+- 虚拟现实（A）：沉浸式体验技术，与语音转文字无关。<br />
+- 专家系统（B）：基于规则的推理系统，不用于语音识别。<br />
+- 大数据（D）：数据处理与分析框架，不是语音转文字的核心技术。</p>
+</div>
+</details>
+
+<hr />
+<h3>第3题 【沟通管理】</h3>
+<p><strong>题目：</strong> （  ）不属于书面沟通的5C原则。</p>
+<p>A、简洁的表述（concise）<br />
+B、可以证明的结论（certification）<br />
+C、连贯的思维逻辑（coherent）<br />
+D、清晰的目的和表述（clarity）</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 可以证明的结论（certification）</strong></p>
+<p><strong>解析：</strong> 书面沟通5C原则：<br />
+- <strong>Correct</strong>（正确的）<br />
+- <strong>Concise</strong>（简洁的）——对应选项 A<br />
+- <strong>Clear</strong>（清晰的）——对应选项 D<br />
+- <strong>Coherent</strong>（连贯的）——对应选项 C<br />
+- <strong>Controlling</strong>（可以控制的，有效控制信息流）</p>
+<p>"certification（可以证明的结论）"并不是5C之一，故选 B。</p>
+</div>
+</details>
+
+<hr />
+<h3>第5题 【IT服务管理】</h3>
+<p><strong>题目：</strong> GB/T 28827.1《信息技术服务 运行维护 第1部分：通用要求》定义的IT运维能力模型包含治理要求、运行维护服务能力体系和价值实现，其中（  ）为价值实现赋能。</p>
+<p>A、用户需求<br />
+B、治理要求<br />
+C、战略要求<br />
+D、运维服务能力体系</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 运维服务能力体系</strong></p>
+<p><strong>解析：</strong> IT运维能力模型三大组成部分：治理要求（约束框架）、运行维护服务能力体系（赋能主体）、价值实现（目标）。其中<strong>运维服务能力体系</strong>是为价值实现赋能的核心支撑，A、B、C均不符合题意。</p>
+</div>
+</details>
+
+<hr />
+<h3>第6题 【合同管理】</h3>
+<p><strong>题目：</strong> （  ）是解决所有索赔和争议的首选方法。</p>
+<p>A、申诉<br />
+B、谈判<br />
+C、起诉<br />
+D、替代争议解决方法（ADR）</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 谈判</strong></p>
+<p><strong>解析：</strong> PMBOK明确指出，谈判（直接谈判）是解决采购合同索赔与争议的<strong>首选</strong>方法，因为成本最低、速度最快，且有利于维持双方合作关系。申诉（A）、起诉（C）成本高、周期长；ADR（D）是谈判失败后的备选手段。</p>
+</div>
+</details>
+
+<hr />
+<h3>第9题 【规划绩效域】</h3>
+<p><strong>题目：</strong> 规划绩效域中，可以应用（  ）检查项目是否以有条理、协调一致的方式推进。</p>
+<p>A、绩效偏差<br />
+B、规划的详尽程度<br />
+C、规划的充分性<br />
+D、规划的整体性</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 规划的整体性</strong></p>
+<p><strong>解析：</strong> PMBOK第7版规划绩效域绩效要点：<br />
+- <strong>规划的整体性</strong>：检查计划是否有条理、相互协调、一致推进——对应题意，选 D。<br />
+- 规划的充分性（C）：检查计划内容是否充分。<br />
+- 规划的详尽程度（B）：检查计划细化程度。<br />
+- 绩效偏差（A）：属于测量绩效域的概念。</p>
+</div>
+</details>
+
+<hr />
+<h3>第11题 【沟通管理】</h3>
+<p><strong>题目：</strong> 项目经理需在项目生命周期的（  ），针对项目干系人多样性的信息需求，制订有效的沟通管理计划。应该在（  ）期间，定期审查本过程的成果并做必要修改，以确保其持续适用。</p>
+<p>A、前期　项目后期<br />
+B、早期　整个项目<br />
+C、中期　项目后期<br />
+D、整个周期　项目中期</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 早期；整个项目</strong></p>
+<p><strong>解析：</strong> 沟通管理计划应在项目<strong>早期</strong>制订（不是"前期"或"整个周期"），以便尽早识别干系人需求；并在<strong>整个项目</strong>期间持续审查更新，以适应不断变化的情况。选项 A、C、D 的时间搭配均不正确。</p>
+</div>
+</details>
+
+<hr />
+<h3>第12题 【项目管理原则】</h3>
+<p><strong>题目：</strong> 某跨国企业需要建设覆盖多个国家的人力资源系统，项目经理在规划系统建设时对系统覆盖多个国家的文化规范、语言、时区等问题进行了充分的调研，确保了该系统满足管理需要，这是价值驱动的项目管理原则中（  ）原则的体现。</p>
+<p>A、展现领导力行为<br />
+B、驾驭复杂性<br />
+C、为实现目标而驱动变革<br />
+D、促进干系人参与</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 驾驭复杂性</strong></p>
+<p><strong>解析：</strong> "驾驭复杂性"原则要求识别并应对项目复杂性来源，包括：系统交互、不确定性、技术复杂度、法律、多元文化差异等。题目中多国文化规范、语言、时区正是复杂性的典型来源，充分调研正是驾驭复杂性的体现，故选 B。</p>
+</div>
+</details>
+
+<hr />
+<h3>第14题 【项目立项】</h3>
+<p><strong>题目：</strong> 项目评估的依据主要包括：项目建议书及其批准文件、（  ）报送组织的申请报告及主管部门的初审意见、项目关键建设条件和工程等的协议文件、必需的其他文件和资料等。</p>
+<p>A、需求调研报告<br />
+B、绩效测量报告<br />
+C、成本预测报告<br />
+D、项目可行性研究报告</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 项目可行性研究报告</strong></p>
+<p><strong>解析：</strong> 项目评估是由专业机构对项目可行性研究结论进行审查的过程，其核心依据是<strong>项目可行性研究报告</strong>。评估在可行性研究完成后开展，以可行性研究报告为主要输入，A、B、C均不符合题意。</p>
+</div>
+</details>
+
+<hr />
+<h3>第17题 【干系人管理】</h3>
+<p><strong>题目：</strong> （  ）is about stakeholders. It is based on three variables: power to influence, legitimacy of the stakeholders' relationships with the project, and the urgency of the stakeholders' claim on the project for stakeholder engagement.</p>
+<p>A、The SPACE Matrix<br />
+B、The PEST Model<br />
+C、The SWOT Analysis<br />
+D、The Salience Model</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — The Salience Model（显著性模型）</strong></p>
+<p><strong>解析：</strong> 干系人<strong>显著性模型（Salience Model）</strong>正是基于三个维度对干系人进行分类分析：<br />
+- <strong>权力（Power）</strong>：影响项目的能力<br />
+- <strong>合法性（Legitimacy）</strong>：与项目关系的合理性<br />
+- <strong>紧迫性（Urgency）</strong>：对项目诉求的迫切程度</p>
+<p>SPACE Matrix（A）是战略规划工具；PEST Model（B）和SWOT Analysis（C）是环境分析工具，均与干系人分析无关。</p>
+</div>
+</details>
+
+<hr />
+<h3>第19题 【物联网架构】</h3>
+<p><strong>题目：</strong> 车联网系统是一个"端、管、云"三层体系。其中（  ）解决互联互通问题，（  ）是多源海量信息的汇聚。</p>
+<p>A、云系统　端系统<br />
+B、端系统　云系统<br />
+C、端系统　管系统<br />
+D、管系统　云系统</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 管系统；云系统</strong></p>
+<p><strong>解析：</strong> 车联网"端、管、云"三层架构：<br />
+- <strong>端系统</strong>（车载终端/感知层）：数据采集与感知。<br />
+- <strong>管系统</strong>（通信网络层）：负责<strong>互联互通</strong>，是数据传输通道。<br />
+- <strong>云系统</strong>（云平台/应用层）：<strong>多源海量信息的汇聚</strong>、存储与分析。</p>
+<p>故第一空填"管系统"，第二空填"云系统"，选 D。</p>
+</div>
+</details>
+
+<hr />
+<h3>第20题 【软件部署】</h3>
+<p><strong>题目：</strong> （  ）是指当有新版本发布的时候，先让少量用户使用新版本，并且观察新版本是否存在问题。如果出现问题，就及时处理并重新发布；如果一切正常，就稳步地将新版本适配给所有的用户。</p>
+<p>A、蓝绿部署<br />
+B、金丝雀部署<br />
+C、虚拟机部署<br />
+D、持续部署</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 金丝雀部署</strong></p>
+<p><strong>解析：</strong><br />
+- <strong>金丝雀部署（Canary Deployment）</strong>：先将新版本推送给小比例用户，验证无误后再逐步扩大，与题目描述完全吻合，选 B。<br />
+- 蓝绿部署（A）：维护两套环境（蓝/绿），一键切换，非渐进式。<br />
+- 虚拟机部署（C）：部署方式，与灰度发布无关。<br />
+- 持续部署（D）：自动化持续交付流程概念，非灰度发布策略。</p>
+</div>
+</details>
+
+<hr />
+<h3>第23题 【干系人管理】</h3>
+<p><strong>题目：</strong> 适用于监督干系人参与过程的数据表现技术是（  ）。</p>
+<p>A、沟通技能<br />
+B、根本原因分析<br />
+C、干系人参与度评估矩阵<br />
+D、干系人分析技术</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 干系人参与度评估矩阵</strong></p>
+<p><strong>解析：</strong> 监督干系人参与过程的数据表现技术是<strong>干系人参与度评估矩阵</strong>，通过对比干系人当前参与水平（C）与期望参与水平（D），识别差距并制定调整策略。沟通技能（A）属于人际关系技能，根本原因分析（B）属于数据分析技术，干系人分析技术（D）属于识别干系人过程的技术。</p>
+</div>
+</details>
+
+<hr />
+<h3>第25题 【项目管理信息系统】</h3>
+<p><strong>题目：</strong> 项目管理信息系统包括（  ）软件，用于监督资源的使用情况，协助确保合适的资源适时、适地用于合适的活动。</p>
+<p>A、资源管理或进度计划<br />
+B、CRM系统<br />
+C、采购系统或智能分析<br />
+D、BOM系统</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 资源管理或进度计划</strong></p>
+<p><strong>解析：</strong> PMIS（项目管理信息系统）中，<strong>资源管理软件或进度计划软件</strong>（如 MS Project、Primavera 等）直接用于监督资源使用、进度安排，确保资源按需分配。CRM（B）是客户关系管理；BOM（D）是物料清单；采购系统（C）不直接服务于资源监控。</p>
+</div>
+</details>
+
+<hr />
+<h3>第26题 【配置管理】</h3>
+<p><strong>题目：</strong> 功能配置审计内容包含：（  ）。</p>
+<p>①交付配置项是否存在<br />
+②配置项已达到配置标识中规定的性能和功能特征<br />
+③配置项中是否包含了所有必须的项目<br />
+④配置项的开发已圆满完成<br />
+⑤配置项的操作和支持文档已完成并且是符合要求的</p>
+<p>A、②④⑤<br />
+B、①③④<br />
+C、①②④⑤<br />
+D、②③④</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — ②④⑤</strong></p>
+<p><strong>解析：</strong> 配置审计分两类：<br />
+- <strong>功能配置审计（FCA）</strong>：审核功能/性能特征是否达到（②）、开发是否完成（④）、操作与支持文档是否完整（⑤）。<br />
+- <strong>物理配置审计（PCA）</strong>：审核配置项实体是否存在（①）、是否包含全部必须项（③）。</p>
+<p>故功能配置审计内容为②④⑤，选 A。</p>
+</div>
+</details>
+
+<hr />
+<h3>第27题 【成本估算】</h3>
+<p><strong>题目：</strong> （  ）估算方法将以往类似项目的相关信息作为估算未来项目的基础，是一种快速估算方法，适用于项目经理只能识别WBS的几个高层级的情况。</p>
+<p>A、类比<br />
+B、基线<br />
+C、自下而上<br />
+D、参数</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 类比估算</strong></p>
+<p><strong>解析：</strong> <strong>类比估算（Analogous Estimation）</strong>利用历史类似项目的参数估算当前项目，适用于信息不充分的早期阶段，是"快速但粗略"的方法，且只需识别WBS高层级即可使用。<br />
+- 参数估算（D）需要建立统计关系模型。<br />
+- 自下而上估算（C）需要详细完整的WBS。<br />
+- 基线（B）是控制参照基准，不是估算方法。</p>
+</div>
+</details>
+
+<hr />
+<h3>第29题 【质量成本】</h3>
+<p><strong>题目：</strong> 与项目有关的质量成本（COQ）包含以下一种或多种成本：（  ）、评估成本、失败成本（内部/外部）。</p>
+<p>A、纠错成本<br />
+B、开发成本<br />
+C、测试成本<br />
+D、预防成本</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 预防成本</strong></p>
+<p><strong>解析：</strong> 质量成本（COQ）完整框架共四类：<br />
+- <strong>预防成本</strong>：防止缺陷发生（培训、流程改进、质量规划）<br />
+- <strong>评估成本</strong>：评估可交付成果（测试、检查、审核）<br />
+- <strong>内部失败成本</strong>：交付前发现缺陷（返工、废料）<br />
+- <strong>外部失败成本</strong>：交付后发现缺陷（保修、退货、赔偿）</p>
+<p>题目中已列出"评估成本"和"失败成本"，空白处填<strong>预防成本</strong>，选 D。</p>
+</div>
+</details>
+
+<hr />
+<h3>第32题 【投资决策】</h3>
+<p><strong>题目：</strong> 甲公司对某投资项目进行评估，投入100万元，10%概率获得利润150万元，55%概率获得利润200万元，20%概率获得利润280万元，10%概率不赔不赚，5%概率亏300万元。则项目的投资回报率为（  ）。</p>
+<p>A、266<br />
+B、2.66<br />
+C、166<br />
+D、1.66</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 166</strong></p>
+<p><strong>解析：</strong> 计算期望利润（加权平均）：</p>
+<p>$$E = 150×10\% + 200×55\% + 280×20\% + 0×10\% + (-300)×5\%$$<br />
+$$= 15 + 110 + 56 + 0 - 15 = 166 \text{（万元）}$$</p>
+<p>$$投资回报率 = \frac{期望利润}{投入成本} × 100\% = \frac{166}{100} × 100\% = 166\%$$</p>
+<p>故选 C（166%）。</p>
+</div>
+</details>
+
+<hr />
+<h3>第35题 【风险管理】</h3>
+<p><strong>题目：</strong> 整体项目风险应对策略不包括（  ）。</p>
+<p>A、开拓<br />
+B、接受<br />
+C、上报<br />
+D、转移或分享</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 上报</strong></p>
+<p><strong>解析：</strong> 整体项目风险的应对策略（五种）：<br />
+- <strong>规避（Avoid）/ 开拓（Exploit）</strong>：针对威胁/机会的极端应对<br />
+- <strong>转移（Transfer）/ 分享（Share）</strong>：将风险转给第三方<br />
+- <strong>减轻（Mitigate）/ 加强（Enhance）</strong>：降低/提高概率或影响<br />
+- <strong>接受（Accept）</strong>：主动或被动接受风险</p>
+<p><strong>上报（Escalate）</strong>是<strong>单个项目风险</strong>超出项目经理权限时使用的策略，属于单个风险应对策略，而非整体项目风险应对策略，故选 C。</p>
+</div>
+</details>
+
+<hr />
+<h3>第36题 【干系人识别】</h3>
+<p><strong>题目：</strong> 识别项目干系人管理过程在（  ）可以重复开展。</p>
+<p>①每个阶段开始时<br />
+②项目出现重大变化时<br />
+③进行可行性研究时<br />
+④组织出现重大变化时<br />
+⑤编制项目章程时</p>
+<p>A、③④⑤<br />
+B、①②③<br />
+C、②③④<br />
+D、①②④</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — ①②④</strong></p>
+<p><strong>解析：</strong> 识别干系人过程<strong>可重复开展</strong>的三个时机：<br />
+- <strong>每个项目阶段开始时</strong>①：进入新阶段可能出现新干系人。<br />
+- <strong>项目出现重大变化时</strong>②：变化可能引入新利益相关方。<br />
+- <strong>组织出现重大变化时</strong>④：组织重组导致干系人结构变化。</p>
+<p>③进行可行性研究 和 ⑤编制项目章程 属于项目<strong>初始识别</strong>，不是"重复开展"场景，故排除，选 D。</p>
+</div>
+</details>
+
+<hr />
+<h3>第39题 【决策分析】</h3>
+<p><strong>题目：</strong> 某企业新研发的产品要投入市场，有三种价格方案ABC，预估每种价格方案的三种销售状态，根据同类产品的销售经验，算出三种价格方案下三种销售状态的收益值如表所示，该企业根据<strong>后悔值决策标准</strong>，应选择（  ）方案。</p>
+<table>
+<thead>
+<tr>
+<th>价格方案</th>
+<th>销路较好</th>
+<th>销路一般</th>
+<th>销路较差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A方案</td>
+<td>34</td>
+<td>25</td>
+<td>22</td>
+</tr>
+<tr>
+<td>B方案</td>
+<td>30</td>
+<td>30</td>
+<td>24</td>
+</tr>
+<tr>
+<td>C方案</td>
+<td>26</td>
+<td>28</td>
+<td>26</td>
+</tr>
+</tbody>
+</table>
+<p>A、B方案<br />
+B、B方案或C方案<br />
+C、C方案<br />
+D、A方案</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — B方案</strong></p>
+<p><strong>解析：</strong> 后悔值决策标准（Minimax Regret）步骤：</p>
+<p><strong>第一步：</strong> 找每列（每种销售状态）最大收益值：<br />
+- 销路较好：max = 34（A方案）<br />
+- 销路一般：max = 30（B方案）<br />
+- 销路较差：max = 26（C方案）</p>
+<p><strong>第二步：</strong> 计算各方案在各状态下的后悔值（= 该列最大值 − 该方案收益）：</p>
+<table>
+<thead>
+<tr>
+<th>价格方案</th>
+<th>销路较好后悔值</th>
+<th>销路一般后悔值</th>
+<th>销路较差后悔值</th>
+<th><strong>最大后悔值</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A方案</td>
+<td>34-34 = 0</td>
+<td>30-25 = 5</td>
+<td>26-22 = 4</td>
+<td><strong>5</strong></td>
+</tr>
+<tr>
+<td>B方案</td>
+<td>34-30 = 4</td>
+<td>30-30 = 0</td>
+<td>26-24 = 2</td>
+<td><strong>4</strong> ✓</td>
+</tr>
+<tr>
+<td>C方案</td>
+<td>34-26 = 8</td>
+<td>30-28 = 2</td>
+<td>26-26 = 0</td>
+<td><strong>8</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>第三步：</strong> 选最大后悔值最小的方案：B方案（最大后悔值=4）最小，选 <strong>A（B方案）</strong>。</p>
+</div>
+</details>
+
+<hr />
+<h3>第40题 【项目章程】</h3>
+<p><strong>题目：</strong> 项目章程可由发起人编制，也可由项目经理与（  ）合作编制。通过这种合作，项目经理可以更好地了解项目的目的、目标和预期收益，以便更有效地分配项目资源。</p>
+<p>A、发起机构<br />
+B、评估机构<br />
+C、客户<br />
+D、干系人</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 发起机构</strong></p>
+<p><strong>解析：</strong> 《PMBOK》明确：项目章程可由发起人编制，或由<strong>项目经理与发起机构（sponsoring organization）</strong>合作编制。合作的目的是让项目经理更深入了解项目目的与预期收益，从而更有效分配资源。评估机构（B）、客户（C）、干系人（D）不参与章程编制。</p>
+</div>
+</details>
+
+<hr />
+<h3>第42题 【工作分解结构】</h3>
+<p><strong>题目：</strong> （  ）is the hierarchical breakdown of the entire scope of work by the project team to accomplish the project objectives and create the required deliverables. It provides detailed deliverable, activity, and scheduling information about each component in the work breakdown structure.</p>
+<p>A、OLA<br />
+B、SLA<br />
+C、SOP<br />
+D、WBS</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — WBS（工作分解结构）</strong></p>
+<p><strong>解析：</strong> 题目描述的是将项目全部工作按层级分解、提供可交付成果/活动/进度信息的结构，正是 <strong>WBS（Work Breakdown Structure，工作分解结构）</strong>的定义。<br />
+- OLA（A）：运营级别协议（Operational Level Agreement）<br />
+- SLA（B）：服务级别协议（Service Level Agreement）<br />
+- SOP（C）：标准操作程序（Standard Operating Procedure）</p>
+</div>
+</details>
+
+<hr />
+<h3>第43题 【交付绩效域】</h3>
+<p><strong>题目：</strong> 在交付绩效域，为了有效执行项目交付工作，项目经理需要重点关注的内容包括：（  ）。</p>
+<p>①可交付物<br />
+②价值的交付<br />
+③质量<br />
+④规划<br />
+⑤预算</p>
+<p>A、②③④<br />
+B、①②③<br />
+C、①②③④⑤<br />
+D、①②④</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — ①②③</strong></p>
+<p><strong>解析：</strong> PMBOK第7版交付绩效域的三大核心关注点：<br />
+- <strong>可交付物</strong>①：按要求产出成果。<br />
+- <strong>价值的交付</strong>②：确保成果创造预期价值。<br />
+- <strong>质量</strong>③：可交付物符合既定质量标准。</p>
+<p>④规划属于<strong>规划绩效域</strong>，⑤预算属于<strong>测量绩效域</strong>，均不属于交付绩效域，故选 B。</p>
+</div>
+</details>
+
+<hr />
+<h3>第46题 【质量管理】</h3>
+<p><strong>题目：</strong> （  ）的作用是识别无效过程和导致质量低劣的原因。</p>
+<p>A、规划质量<br />
+B、控制质量<br />
+C、评估质量<br />
+D、管理质量</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 管理质量</strong></p>
+<p><strong>解析：</strong> <strong>管理质量</strong>（原称质量保证QA）的主要作用是审核质量要求和质量控制结果，识别<strong>无效过程和导致质量低劣的原因</strong>，推动过程改进，与题目描述完全一致。<br />
+- 规划质量（A）：制定质量标准与方法。<br />
+- 控制质量（B）：检测可交付成果是否达标。<br />
+- "评估质量"（C）：非标准术语。</p>
+</div>
+</details>
+
+<hr />
+<h3>第47题 【进度管理】</h3>
+<p><strong>题目：</strong> （  ）不属于项目进度计划的图形表示方式。</p>
+<p>A、横道图<br />
+B、矩阵图<br />
+C、项目进度网络图<br />
+D、里程碑图</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 矩阵图</strong></p>
+<p><strong>解析：</strong> 项目进度计划的标准图形表示方式：<br />
+- <strong>横道图（甘特图）</strong>（A）✓<br />
+- <strong>项目进度网络图</strong>（C）✓<br />
+- <strong>里程碑图</strong>（D）✓</p>
+<p><strong>矩阵图</strong>（B）是质量管理工具，用于分析多变量间的关系，不是进度表现形式，故选 B。</p>
+</div>
+</details>
+
+<hr />
+<h3>第49题 【项目定义】</h3>
+<p><strong>题目：</strong> 关于项目的描述，不正确的是：（  ）。</p>
+<p>A、项目的需求不复存在，是项目宣告结束的情况之一<br />
+B、实现项目目标可能会产生一个或多个可交付成果<br />
+C、可交付成果可能会在项目终止后依然存在<br />
+D、项目是为创造独特的产品、服务或成果而进行的周期性工作</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D</strong></p>
+<p><strong>解析：</strong> 项目的本质特征是<strong>临时性（temporary）</strong>，有明确的开始和结束时间，是<strong>一次性</strong>工作而非周期性工作。<strong>周期性（cyclical/ongoing）工作是运营（Operations）的特征</strong>，不是项目特征，故 D 描述不正确。A、B、C 均为项目的正确描述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第50题 【数据标准化】</h3>
+<p><strong>题目：</strong> （  ）确立代码与事物或概念之间的一一对应关系，以保证数据的准确性和相容性，为信息集成与资源共享提供良好的基础。</p>
+<p>A、元数据标准化<br />
+B、数据元标准化<br />
+C、数据模式标准化<br />
+D、数据分类与编码标准化</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 数据分类与编码标准化</strong></p>
+<p><strong>解析：</strong> <strong>数据分类与编码标准化</strong>的核心是建立代码体系，使每个代码与特定事物或概念<strong>一一对应</strong>，从而保证数据准确性与相容性，支持信息系统间互操作和数据共享。元数据标准化（A）关注数据描述；数据元标准化（B）关注数据最小单元定义；数据模式标准化（C）关注结构模型。</p>
+</div>
+</details>
+
+<hr />
+<h3>第52题 【采购管理】</h3>
+<p><strong>题目：</strong> （  ）不属于实施采购的工具与技术。</p>
+<p>A、自制外购分析<br />
+B、数据分析<br />
+C、人际关系与团队技能<br />
+D、广告</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 自制外购分析</strong></p>
+<p><strong>解析：</strong><br />
+- <strong>实施采购</strong>过程的工具与技术：专家判断、广告（D）、投标人会议、数据分析（B）、人际关系与团队技能（C）等。<br />
+- <strong>自制外购分析（Make-or-Buy Analysis）</strong>（A）属于<strong>规划采购管理</strong>过程的工具，用于决策"自行开发还是外购"，不属于实施采购阶段，故选 A。</p>
+</div>
+</details>
+
+<hr />
+<h3>第53题 【整合管理】</h3>
+<p><strong>题目：</strong> 关于项目整合管理的描述，不正确的是：（  ）。</p>
+<p>A、项目整合管理由项目经理负责，项目经理负责整合所有其他知识领域的成果，并掌握项目总体情况<br />
+B、执行项目整合时项目经理承担双重角色<br />
+C、项目整合管理的责任可由项目经理授权或转移<br />
+D、项目整合是项目经理的一项关键技能</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C</strong></p>
+<p><strong>解析：</strong> 项目整合管理的总体责任归属于<strong>项目经理</strong>，且这一责任<strong>不能授权或转移</strong>给他人，这是项目管理中唯一不可让渡的核心职责。故 C 描述不正确。A（整合职责在经理）、B（项目经理承担双重角色：技术+整合）、D（整合是关键技能）均为正确表述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第55题 【进度控制】</h3>
+<p><strong>题目：</strong> 项目进度管理过程中，可用于控制进度过程的数据分析技术包括（  ）。</p>
+<p>A、蒙特卡洛分析<br />
+B、计划评审技术（PERT）<br />
+C、参数估算<br />
+D、挣值分析</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 挣值分析</strong></p>
+<p><strong>解析：</strong> 控制进度过程中的数据分析技术包括：<strong>挣值分析（EVM）</strong>、偏差分析、趋势分析、假设情景分析等。<br />
+- 蒙特卡洛分析（A）：定量风险分析工具。<br />
+- PERT（B）：估算活动工期的技术，属于规划阶段。<br />
+- 参数估算（C）：工期/成本估算技术，属于规划阶段。</p>
+<p>故选 D。</p>
+</div>
+</details>
+
+<hr />
+<h3>第58题 【项目建议书】</h3>
+<p><strong>题目：</strong> （  ）不属于项目建议书的核心内容。</p>
+<p>A、初步可行性研究<br />
+B、项目建设必需的条件<br />
+C、项目的市场预测<br />
+D、项目的必要性</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 初步可行性研究</strong></p>
+<p><strong>解析：</strong> 项目建议书（立项申请）的核心内容包括：项目必要性（D）、产品或服务描述、市场预测（C）、主要建设条件（B）、投资估算与效益分析等。<strong>初步可行性研究报告</strong>是项目建议书获批<strong>之后</strong>单独编制的独立文件，不属于建议书本身内容，故选 A。</p>
+</div>
+</details>
+
+<hr />
+<h3>第60题 【数字化转型】</h3>
+<p><strong>题目：</strong> （  ）是开展数字化转型的重要基石。组织可以利用（  ）的价值支持新的业务模式、改进产品和服务等。</p>
+<p>A、数字化产品　数据技术<br />
+B、数据　数据<br />
+C、数字化人才　数据技术<br />
+D、新技术　数据</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 数据；数据</strong></p>
+<p><strong>解析：</strong> 数字化转型的核心是以<strong>数据</strong>为驱动。"<strong>数据</strong>是开展数字化转型的重要基石，组织可以利用<strong>数据</strong>的价值支持新的业务模式、改进产品和服务"，两个空均为"数据"，选 B。数字化产品（A首词）、数字化人才（C首词）、新技术（D首词）均非"基石"的标准表述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第61题 【监控项目工作】</h3>
+<p><strong>题目：</strong> 在监控项目工作过程中，当遇到变更请求时，为使项目工作绩效重新与项目管理计划一致，而进行的有目的的活动属于（  ）。</p>
+<p>A、纠正措施<br />
+B、评审措施<br />
+C、预防措施<br />
+D、缺陷补救</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 纠正措施</strong></p>
+<p><strong>解析：</strong><br />
+- <strong>纠正措施（Corrective Action）</strong>：使项目工作绩效<strong>重新与项目管理计划一致</strong>的有目的活动，与题意完全匹配，选 A。<br />
+- 预防措施（C）：预先采取行动防止偏差发生（尚未发生偏差）。<br />
+- 缺陷补救（D）：针对已识别缺陷的修复，不是绩效对齐。<br />
+- 评审措施（B）：非标准术语。</p>
+</div>
+</details>
+
+<hr />
+<h3>第63题 【开发方法选择】</h3>
+<p><strong>题目：</strong> 高风险的产品需要大量的前期规划和严格的流程来降低风险，可采用（  ）开发方法，新药开发项目可能会进行（  ），临床前建议、第1阶段临床试验结果、第2阶段临床试验结果、第3阶段临床试验结果、注册和上市，按照顺序进行交付。</p>
+<p>A、混合型　多次交付<br />
+B、混合型　定期交付<br />
+C、预测型　多次交付<br />
+D、适应型　持续交付</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 预测型；多次交付</strong></p>
+<p><strong>解析：</strong><br />
+- <strong>预测型（瀑布型）开发方法</strong>：适合高风险产品，需要<strong>大量前期规划</strong>和严格流程来降低风险，与题目描述吻合。<br />
+- <strong>多次交付（multiple deliveries）</strong>：新药开发按临床前→Ⅰ期→Ⅱ期→Ⅲ期→注册上市<strong>顺序交付</strong>，属于多次交付（非定期交付，因为每阶段时间不固定）。</p>
+<p>故选 C。</p>
+</div>
+</details>
+
+<hr />
+<h3>第64题 【项目文件】</h3>
+<p><strong>题目：</strong> 由客户或者发起人正式签字批准的文件是（  ）。</p>
+<p>A、核实的可交付成果<br />
+B、工作绩效信息<br />
+C、验收的可交付成果<br />
+D、可交付成果</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 验收的可交付成果</strong></p>
+<p><strong>解析：</strong> 四个概念辨析：<br />
+- <strong>可交付成果（D）</strong>：项目过程中产生的任何产品/服务/结果，尚未经过验收。<br />
+- <strong>核实的可交付成果（A）</strong>：通过<strong>控制质量</strong>过程检验后确认符合质量要求的成果，但尚未由客户/发起人签署。<br />
+- <strong>验收的可交付成果（C）</strong>：经客户或发起人<strong>正式签字批准</strong>的成果，是确认范围过程的输出，与题意完全匹配，选 C。<br />
+- 工作绩效信息（B）：绩效数据分析后的信息，与签字验收无关。</p>
+</div>
+</details>
+
+<hr />
+<h2>知识点归纳</h2>
+<table>
+<thead>
+<tr>
+<th>高频考点</th>
+<th>关键记忆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>书面沟通5C原则</td>
+<td>Correct / Concise / Clear / Coherent / Controlling（无Certification）</td>
+</tr>
+<tr>
+<td>质量成本COQ</td>
+<td>预防→评估→内部失败→外部失败</td>
+</tr>
+<tr>
+<td>整体项目风险应对策略</td>
+<td>规避/开拓、转移/分享、减轻/加强、接受（无"上报"）</td>
+</tr>
+<tr>
+<td>识别干系人重复时机</td>
+<td>每阶段开始①、项目重大变化②、组织重大变化④</td>
+</tr>
+<tr>
+<td>项目临时性</td>
+<td>临时性（有终点）≠ 周期性（周期性是运营特征）</td>
+</tr>
+<tr>
+<td>功能vs物理配置审计</td>
+<td>功能FCA：性能特征+开发完成+文档；物理PCA：实体存在+包含必须项</td>
+</tr>
+<tr>
+<td>金丝雀部署</td>
+<td>先小量用户验证→无问题后逐步全量推广</td>
+</tr>
+<tr>
+<td>后悔值决策法</td>
+<td>每列取最大值，计算各方案最大后悔值，选最小的那个</td>
+</tr>
+<tr>
+<td>数字化转型基石</td>
+<td>数据是数字化转型的重要基石</td>
+</tr>
+<tr>
+<td>纠正vs预防措施</td>
+<td>纠正：绩效偏离后拉回正轨；预防：提前防止偏离</td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+function toggleAll(open) {
+  var details = document.querySelectorAll('details');
+  details.forEach(function(d) { d.open = open; });
+  var s = document.getElementById('status');
+  s.textContent = open
+    ? ('已展开 ' + details.length + ' 个答案')
+    : ('已收起 ' + details.length + ' 个答案');
+  setTimeout(function() { s.textContent = ''; }, 2000);
+}
+</script>
+</body>
+</html>

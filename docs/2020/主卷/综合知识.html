@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2020 主卷 · 综合知识</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar span { color: #8b949e; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-expand { background: #2ea44f; color: #fff; }
+  .btn-expand:hover { background: #2c974b; }
+  .btn-collapse { background: #0969da; color: #fff; }
+  .btn-collapse:hover { background: #0860ca; }
+  .content {
+    max-width: 860px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 30px 40px;
+  }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.25em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; }
+  h3 { font-size: 1.05em; margin: 22px 0 8px; color: #0550ae; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 10px 0;
+    padding: 6px 16px;
+    color: #57606a;
+    background: #f6f8fa;
+    border-radius: 0 4px 4px 0;
+  }
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 85%;
+  }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+         padding: 14px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; border: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  details {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    background: #fff;
+  }
+  details[open] { background: #f0fff4; border-color: #2ea44f; }
+  summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    font-weight: 600;
+    color: #0550ae;
+    list-style: none;
+    user-select: none;
+    border-radius: 6px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: 11px; }
+  details[open] summary::before { content: "▼ "; }
+  details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
+  .details-body { padding: 14px 18px; }
+  strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回目录</a>
+  <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
+  <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <span id="status"></span>
+</div>
+<div class="content">
+<h1>2020年信息系统项目管理师综合知识真题（文字版整理）</h1>
+<h2>来源说明</h2>
+<ul>
+<li>PDF 原文：<code>resource/近五年真题/2020/2020年信息系统项目管理师考试综合知识真题.pdf</code></li>
+<li>答案解析来源：<code>resource/近五年真题/2020/综合知识_答案解析.md</code></li>
+<li>处理说明：题干与选项直接从 PDF 提取；答案与解析来自仓库已有解析文件。</li>
+</ul>
+<h2>答案速查表</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>2</td>
+<td>A</td>
+<td>3</td>
+<td>D</td>
+<td>4</td>
+<td>A</td>
+<td>5</td>
+<td>C</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A</td>
+<td>7</td>
+<td>A</td>
+<td>8</td>
+<td>B</td>
+<td>9</td>
+<td>B</td>
+<td>10</td>
+<td>D</td>
+</tr>
+<tr>
+<td>11</td>
+<td>C</td>
+<td>12</td>
+<td>B</td>
+<td>13</td>
+<td>C</td>
+<td>14</td>
+<td>D</td>
+<td>15</td>
+<td>B</td>
+</tr>
+<tr>
+<td>16</td>
+<td>A</td>
+<td>17</td>
+<td>D</td>
+<td>18</td>
+<td>A</td>
+<td>19</td>
+<td>D</td>
+<td>20</td>
+<td>B</td>
+</tr>
+<tr>
+<td>21</td>
+<td>C</td>
+<td>22</td>
+<td>B</td>
+<td>23</td>
+<td>A</td>
+<td>24</td>
+<td>B</td>
+<td>25</td>
+<td>D</td>
+</tr>
+<tr>
+<td>26</td>
+<td>C</td>
+<td>27</td>
+<td>C</td>
+<td>28</td>
+<td>B</td>
+<td>29</td>
+<td>D</td>
+<td>30</td>
+<td>B</td>
+</tr>
+<tr>
+<td>31</td>
+<td>B</td>
+<td>32</td>
+<td>B(18天)</td>
+<td>34</td>
+<td>A</td>
+<td>35</td>
+<td>A</td>
+<td>36</td>
+<td>C</td>
+</tr>
+<tr>
+<td>37</td>
+<td>A</td>
+<td>38</td>
+<td>D</td>
+<td>39</td>
+<td>A</td>
+<td>40</td>
+<td>D</td>
+<td>41</td>
+<td>C</td>
+</tr>
+<tr>
+<td>42</td>
+<td>A</td>
+<td>43</td>
+<td>B</td>
+<td>44</td>
+<td>B</td>
+<td>45</td>
+<td>C</td>
+<td>46</td>
+<td>D</td>
+</tr>
+<tr>
+<td>47</td>
+<td>D</td>
+<td>48</td>
+<td>D</td>
+<td>49</td>
+<td>A</td>
+<td>50</td>
+<td>D</td>
+<td>51</td>
+<td>D</td>
+</tr>
+<tr>
+<td>52</td>
+<td>A</td>
+<td>53</td>
+<td>C</td>
+<td>54</td>
+<td>A</td>
+<td>55</td>
+<td>D</td>
+<td>56</td>
+<td>C</td>
+</tr>
+<tr>
+<td>57</td>
+<td>A</td>
+<td>58</td>
+<td>A</td>
+<td>59</td>
+<td>B</td>
+<td>60</td>
+<td>D</td>
+<td>61</td>
+<td>C</td>
+</tr>
+<tr>
+<td>62</td>
+<td>B</td>
+<td>63</td>
+<td>D</td>
+<td>64</td>
+<td>A</td>
+<td>65</td>
+<td>C</td>
+<td>66</td>
+<td>C</td>
+</tr>
+<tr>
+<td>67</td>
+<td>B/B</td>
+<td>69</td>
+<td>A</td>
+<td>70</td>
+<td>A</td>
+<td>71</td>
+<td>D</td>
+<td>72</td>
+<td>C</td>
+</tr>
+<tr>
+<td>73</td>
+<td>C</td>
+<td>74</td>
+<td>C</td>
+<td>75</td>
+<td>A</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>逐题解析</h2>
+<h3>第1题 【面向对象方法】</h3>
+<p><strong>题目：</strong> （ ）使系统的描述及信息模型的表示与客观实体相对应，符合人们的思维习惯，有利于系统开 发过程中用户与开发人员的交流和沟通。</p>
+<p>A、原型化方法<br />
+B、面向对象方法<br />
+C、结构化方法<br />
+D、面向服务的方法</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 面向对象方法</strong></p>
+<p><strong>解析：</strong> 面向对象方法以客观实体及其关系来描述系统，模型更贴近现实世界，便于用户与开发人员交流。</p>
+</div>
+</details>
+
+<hr />
+<h3>第2题 【TCP/IP网络层协议】</h3>
+<p><strong>题目：</strong> TCP/IP 模型中，（ ）协议属于网络层的协议。</p>
+<p>A、ARP<br />
+B、SNMP<br />
+C、TCP<br />
+D、FTP</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — ARP</strong></p>
+<p><strong>解析：</strong> ARP 用于将 IP 地址解析为物理地址，属于 TCP/IP 体系中的网络层相关协议。</p>
+</div>
+</details>
+
+<hr />
+<h3>第3题 【非关系型数据库】</h3>
+<p><strong>题目：</strong> （ ）不属于关系型数据库。</p>
+<p>A、Oracle<br />
+B、MySQL<br />
+C、SQLserver<br />
+D、MongoDB</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — MongoDB</strong></p>
+<p><strong>解析：</strong> MongoDB 是典型 NoSQL 数据库；Oracle、MySQL、SQL Server 都属于关系型数据库。</p>
+</div>
+</details>
+
+<hr />
+<h3>第4题 【O2O模式】</h3>
+<p><strong>题目：</strong> 影院向消费者线上提供订票、卖品优惠及其他会员服务，线下提供商品或服务，此模式称为 （ ）。</p>
+<p>A、O2O<br />
+B、B2B<br />
+C、B2G<br />
+D、C2C</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — O2O</strong></p>
+<p><strong>解析：</strong> 线上提供订票和优惠、线下完成消费，是 Online to Offline 的典型场景。</p>
+</div>
+</details>
+
+<hr />
+<h3>第5题 【人工智能应用】</h3>
+<p><strong>题目：</strong> （ ）不属于人工智能技术的应用。</p>
+<p>A、机器人<br />
+B、自然语言理解<br />
+C、扫码支付<br />
+D、图像识别</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 扫码支付</strong></p>
+<p><strong>解析：</strong> 机器人、自然语言理解、图像识别都属于 AI 常见应用；扫码支付主要属于移动支付场景。</p>
+</div>
+</details>
+
+<hr />
+<h3>第6题 【数据资产特征】</h3>
+<p><strong>题目：</strong> 区别于传统资产，数据资产具有的独特特征是（ ）。</p>
+<p>A、共享性<br />
+B、时效性<br />
+C、增值性<br />
+D、量化性</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 共享性</strong></p>
+<p><strong>解析：</strong> 数据可以被多人、多次复用而不会像实物资产那样显著损耗，共享性是其突出特征。</p>
+</div>
+</details>
+
+<hr />
+<h3>第7题 【区块链网络环境】</h3>
+<p><strong>题目：</strong> 区块链在（ ）网络环境下，通过透明和可信规则，构建可追溯的块链式数据结构，实现和管理事务 处理。</p>
+<p>A、分布式<br />
+B、集中式<br />
+C、关系式<br />
+D、共享式</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 分布式</strong></p>
+<p><strong>解析：</strong> 区块链依托分布式网络，通过链式结构和共识机制实现可信、可追溯的事务处理。</p>
+</div>
+</details>
+
+<hr />
+<h3>第8题 【E-R图模型】</h3>
+<p><strong>题目：</strong> 软件工程需求分析阶段，使用实体联系图表示（ ）模型。</p>
+<p>A、行为<br />
+B、数据<br />
+C、功能<br />
+D、状态</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 数据模型</strong></p>
+<p><strong>解析：</strong> 实体联系图用于描述实体、属性及其联系，属于需求分析阶段的数据模型工具。</p>
+</div>
+</details>
+
+<hr />
+<h3>第9题 【CMMI过程组】</h3>
+<p><strong>题目：</strong> 在CMMI 连续式模型中，“技术解决方案”过程域属于（ ）过程组。</p>
+<p>A、过程管理<br />
+B、工程<br />
+C、项目管理<br />
+D、支持</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 工程</strong></p>
+<p><strong>解析：</strong> 技术解决方案（TS）是 CMMI 连续式模型中的工程过程域。</p>
+</div>
+</details>
+
+<hr />
+<h3>第10题 【软件测试描述】</h3>
+<p><strong>题目：</strong> 关于软件测试的描述，不正确的是（ ）。</p>
+<p>A、软件测试从已知的条件开始，有预知的结果<br />
+B、软件测试过程可以事先设计，进度可以事先确定<br />
+C、软件测试可分为单元测试、集成测试、系统测试等<br />
+D、软件测试的工作内容包括定位和修改错误</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 软件测试的工作内容包括定位和修改错误</strong></p>
+<p><strong>解析：</strong> 测试负责发现缺陷；定位和修改错误属于调试活动，不是软件测试本身的工作内容。</p>
+</div>
+</details>
+
+<hr />
+<h3>第11题 【企业应用集成】</h3>
+<p><strong>题目：</strong> 企业应用集成中，（ ）超越了数据和系统，由一系列基于标准的、统一数据格式的工作流组成。</p>
+<p>A、应用集成<br />
+B、功能集成<br />
+C、过程集成<br />
+D、表示集成</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 过程集成</strong></p>
+<p><strong>解析：</strong> 过程集成强调跨系统、跨应用的业务流程衔接，已经超越单纯的数据和系统集成。</p>
+</div>
+</details>
+
+<hr />
+<h3>第12题 【信息安全属性】</h3>
+<p><strong>题目：</strong> 关于信息安全的描述，不正确的是（ ）。</p>
+<p>A、数据安全属性包括秘密性、完整性、可用性<br />
+B、信息的完整性是指信息随时可以正常使用<br />
+C、内容安全包括信息内容保密、信息隐私保护等<br />
+D、数据安全是静态安全，行为安全是动态安全</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 信息的完整性是指信息随时可以正常使用</strong></p>
+<p><strong>解析：</strong> “随时可以正常使用”描述的是可用性，不是完整性，因此 B 错误。</p>
+</div>
+</details>
+
+<hr />
+<h3>第13题 【无线网络安全技术】</h3>
+<p><strong>题目：</strong> （ ）不属于无线网络安全技术或协议。</p>
+<p>A、WEP<br />
+B、WPA<br />
+C、SCSI<br />
+D、802.11i</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — SCSI</strong></p>
+<p><strong>解析：</strong> SCSI 是存储接口标准，不属于无线网络安全技术或协议。</p>
+</div>
+</details>
+
+<hr />
+<h3>第14题 【互联网+】</h3>
+<p><strong>题目：</strong> “互联网+”是利用信息通信技术以及互联网平台，让互联网与（ ）深度融合。</p>
+<p>A、创新产业<br />
+B、金融业<br />
+C、服务业<br />
+D、传统行业</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 传统行业</strong></p>
+<p><strong>解析：</strong> “互联网+”强调互联网与传统行业深度融合，推动产业升级和业务模式创新。</p>
+</div>
+</details>
+
+<hr />
+<h3>第15题 【移动互联网特点】</h3>
+<p><strong>题目：</strong> （ ）不属于移动互联网的特点。</p>
+<p>A、终端移动性<br />
+B、业务与网络的弱关联性<br />
+C、业务使用的私密性<br />
+D、终端和网络的局限性</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 业务与网络的弱关联性</strong></p>
+<p><strong>解析：</strong> 移动互联网业务通常与网络环境强相关，因此“弱关联性”不属于其特点。</p>
+</div>
+</details>
+
+<hr />
+<h3>第16题 【大型信息系统】</h3>
+<p><strong>题目：</strong> （ ）不属于大型信息系统。</p>
+<p>A、企业门禁系统<br />
+B、跨境电子商务系统<br />
+C、媒体社交系统<br />
+D、铁路订票系统</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 企业门禁系统</strong></p>
+<p><strong>解析：</strong> 企业门禁系统规模和复杂度较小，一般不属于大型信息系统。</p>
+</div>
+</details>
+
+<hr />
+<h3>第17题 【信息系统规划出发点】</h3>
+<p><strong>题目：</strong> 信息系统规划是从（ ）出发，构建企业基本的信息系统架构，利用信息系统管理企业行为，辅助企 业进行决策。</p>
+<p>A、企业客户需求<br />
+B、信息系统运维需求<br />
+C、企业信息化建设现状<br />
+D、企业战略</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 企业战略</strong></p>
+<p><strong>解析：</strong> 信息系统规划应从企业战略出发，再构建支撑业务与决策的信息系统架构。</p>
+</div>
+</details>
+
+<hr />
+<h3>第18题 【信息系统规划工具】</h3>
+<p><strong>题目：</strong> （ ）不属于信息系统规划的工具。</p>
+<p>A、PERT 图<br />
+B、R/D 矩阵<br />
+C、E-R 图<br />
+D、CU 矩阵</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — PERT图</strong></p>
+<p><strong>解析：</strong> PERT 图是项目进度管理工具，不属于信息系统规划常用分析工具。</p>
+</div>
+</details>
+
+<hr />
+<h3>第19题 【著作权】</h3>
+<p><strong>题目：</strong> 依据《中华人民共和国著作权法》，关于著作权的描述，不正确的是（ ）。</p>
+<p>A、著作权人对作品享有发表权、署名权和修改权<br />
+B、合同约定著作权属于单位的作品，作者仅享有署名权<br />
+C、后继著作权人指没有参与创作，通过著作权转移活动而享有著作权的人<br />
+D、将已经发表的中文作品改成盲文出版，须经著作权人许可</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 将已经发表的中文作品改成盲文出版，须经著作权人许可</strong></p>
+<p><strong>解析：</strong> 将已发表作品改成盲文出版属于法律允许的特殊使用情形，一般无须另行许可。</p>
+</div>
+</details>
+
+<hr />
+<h3>第20题 【标准分类】</h3>
+<p><strong>题目：</strong> 《软件工程软件开发成本度量规范》（GB/T 36964-2018）属于（ ）。</p>
+<p>A、企业标准<br />
+B、国家标准<br />
+C、行业标准<br />
+D、国际标准</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 国家标准</strong></p>
+<p><strong>解析：</strong> GB/T 中 “GB” 表示国家标准，“T” 表示推荐性，因此该规范属于推荐性国家标准。</p>
+</div>
+</details>
+
+<hr />
+<h3>第21题 【经济可行性分析】</h3>
+<p><strong>题目：</strong> 在信息系统项目的经济可行性分析中，（ ）属于非一次性支出。</p>
+<p>A、差旅费<br />
+B、培训费<br />
+C、人员工资和福利<br />
+D、设备购置费</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 人员工资和福利</strong></p>
+<p><strong>解析：</strong> 人员工资和福利属于持续发生的经常性支出，归入非一次性支出。</p>
+</div>
+</details>
+
+<hr />
+<h3>第22题 【项目评估】</h3>
+<p><strong>题目：</strong> 在项目评估过程中，不可以由（ ）进行评价、分析和论证。</p>
+<p>A、政府主管部门<br />
+B、项目建设单位<br />
+C、银行<br />
+D、第三方评估机构</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 项目建设单位</strong></p>
+<p><strong>解析：</strong> 项目评估强调独立客观，通常不由项目建设单位自己对自己进行正式评价。</p>
+</div>
+</details>
+
+<hr />
+<h3>第23题 【项目管理描述】</h3>
+<p><strong>题目：</strong> 关于项目管理的描述，不正确的是：（ ）。</p>
+<p>A、项目管理的主要目的是实现企业管理目标<br />
+B、在项目管理中，时间是一种特殊的资源<br />
+C、项目管理的职能是对资源进行计划、组织、指挥、协调、控制<br />
+D、项目管理把各种知识、技能、手段和技术应用于项目活动中</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 项目管理的主要目的是实现企业管理目标</strong></p>
+<p><strong>解析：</strong> 项目管理的直接目标是实现项目目标，而不是笼统的企业管理目标。</p>
+</div>
+</details>
+
+<hr />
+<h3>第24题 【组织结构】</h3>
+<p><strong>题目：</strong> 某项目组织结构中，项目经理全职管理项目，拥有很大的职权，且组织中全职参与项目工作的职员比 例占70%。该项目组织结构属于（ ）。</p>
+<p>A、弱矩阵型<br />
+B、强矩阵型<br />
+C、平衡矩阵型<br />
+D、职能型</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 强矩阵型</strong></p>
+<p><strong>解析：</strong> 项目经理全职且职权大，大部分成员全职参与，符合强矩阵组织特征。</p>
+</div>
+</details>
+
+<hr />
+<h3>第25题 【产品实现过程】</h3>
+<p><strong>题目：</strong> 软件开发项目中，产品实现的过程不包含（ ）。</p>
+<p>A、需求获取<br />
+B、编码<br />
+C、集成测试<br />
+D、挣值分析</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 挣值分析</strong></p>
+<p><strong>解析：</strong> 挣值分析属于项目监控分析方法，不属于产品实现过程。</p>
+</div>
+</details>
+
+<hr />
+<h3>第26题 【风险分类】</h3>
+<p><strong>题目：</strong> 某系统集成项目制定风险管理计划时，发现病毒入侵有可能导致服务器死机或不能访问，此风险属于 （ ）。</p>
+<p>A、市场风险<br />
+B、经营风险<br />
+C、技术风险<br />
+D、设备风险</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 技术风险</strong></p>
+<p><strong>解析：</strong> 病毒入侵导致服务器死机或不可访问，本质上属于技术层面的风险。</p>
+</div>
+</details>
+
+<hr />
+<h3>第27题 【监控项目工作工具】</h3>
+<p><strong>题目：</strong> （ ）不属于“监控项目工作”过程使用的工具和技术。</p>
+<p>A、专家判断<br />
+B、分析技术<br />
+C、访问控制<br />
+D、会议</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 访问控制</strong></p>
+<p><strong>解析：</strong> 访问控制是信息安全手段，不是“监控项目工作”过程的典型工具与技术。</p>
+</div>
+</details>
+
+<hr />
+<h3>第28题 【整体变更控制成果】</h3>
+<p><strong>题目：</strong> （ ）不属于整体变更控制的成果。</p>
+<p>A、批准的变更请求<br />
+B、工作绩效报告<br />
+C、变更日志<br />
+D、项目文件更新</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 工作绩效报告</strong></p>
+<p><strong>解析：</strong> 批准的变更请求、变更日志、项目文件更新都属于成果；工作绩效报告不属于本过程输出。</p>
+</div>
+</details>
+
+<hr />
+<h3>第29题 【确认范围输出】</h3>
+<p><strong>题目：</strong> 验收的可交付成果，属于项目范围管理中（ ）过程的输出。</p>
+<p>A、定义范围<br />
+B、控制范围<br />
+C、收集需求<br />
+D、确认范围</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 确认范围</strong></p>
+<p><strong>解析：</strong> “验收的可交付成果”正是确认范围过程的典型输出。</p>
+</div>
+</details>
+
+<hr />
+<h3>第30题 【群体创新技术】</h3>
+<p><strong>题目：</strong> 在收集需求时，可以采用的群体创新技术包括：（ ）。  ①头脑风暴法；②观察；③原型法；④德尔菲技术；⑤文件分析；⑥名义小组技术。</p>
+<p>A、①②③<br />
+B、①④⑥<br />
+C、②③⑤<br />
+D、④⑤⑥</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — ①④⑥</strong></p>
+<p><strong>解析：</strong> 头脑风暴、德尔菲技术、名义小组技术都属于收集需求时常见的群体创新技术。</p>
+</div>
+</details>
+
+<hr />
+<h3>第31题 【管理层关注点】</h3>
+<p><strong>题目：</strong> 在项目范围管理中，企业管理层主要关注（ ）。</p>
+<p>A、产品的范围<br />
+B、项目范围投入产出的合理性<br />
+C、交付成果是否满足质量要求<br />
+D、项目过程的合理性</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 项目范围投入产出的合理性</strong></p>
+<p><strong>解析：</strong> 企业管理层更关注项目是否值得做、投入与产出是否匹配。</p>
+</div>
+</details>
+
+<hr />
+<h3>第32题 【网络图计算】</h3>
+<p><strong>题目：</strong> 某项目包含A、B、C、D、E、F、G、H、I、J 一共10 个活动，各活动历时估算与逻辑关系如下表所 示，则该项目工期为（ ），活动C 的总浮动时间是（ ）。  问题1</p>
+<p>A、17<br />
+B、18<br />
+C、19<br />
+D、20  问题2<br />
+A、2<br />
+B、3<br />
+C、4<br />
+D、5</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B(18天) / B(3天)</strong></p>
+<p><strong>解析：</strong> 该题需要结合网络图表格计算总工期与活动 C 的总浮动时间；按现有题干与参考结果，答案为 18 天、3 天。</p>
+</div>
+</details>
+
+<hr />
+<h3>第33题</h3>
+<p><strong>题目：</strong> 如果一个项目的SPI=0.75，CPI=0.9，此时项目经理最适合采取（ ）方式来控制项目进度。</p>
+<p>A、快速跟进<br />
+B、赶工<br />
+C、资源平衡<br />
+D、蒙特卡洛分析</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：—</strong></p>
+<p><strong>解析：</strong> （暂无解析）</p>
+</div>
+</details>
+
+<hr />
+<h3>第34题 【SPI/CPI下的进度控制】</h3>
+<p><strong>题目：</strong> 项目经理估算新开发产品的成本，最有可能情况下成本为17 万元，最好情况下成本为15 万元，最坏 情况下成本为25 万元，则该项目的预期成本为（ ）万元。</p>
+<p>A、18<br />
+B、19<br />
+C、20<br />
+D、21</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 快速跟进</strong></p>
+<p><strong>解析：</strong> SPI=0.75 表明进度落后，CPI=0.9 表明成本也偏紧，优先采用快速跟进比赶工更合适。</p>
+</div>
+</details>
+
+<hr />
+<h3>第35题 【三点估算】</h3>
+<p><strong>题目：</strong> 关于成本估算与预算的描述，不正确的是：（ ）。</p>
+<p>A、成本估算的作用是确定完成工作所需的成本数额<br />
+B、成本基准是经过批准且按时间段分配的项目预算<br />
+C、成本预算过程依据成本基准监督和控制项目绩效<br />
+D、项目预算包含应急储备，但不包含管理储备</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 18万元</strong></p>
+<p><strong>解析：</strong> 期望成本 = (15 + 4×17 + 25) / 6 = 18（万元）。</p>
+</div>
+</details>
+
+<hr />
+<h3>第36题 【成本估算与预算】</h3>
+<p><strong>题目：</strong> 某公司对正在进行的四个项目进行了检查，绩效数据如下表所示，则最有可能提前完成且不超支的是 （ ）。</p>
+<p>A、项目A<br />
+B、项目B<br />
+C、项目C<br />
+D、项目D</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 成本预算过程依据成本基准监督和控制项目绩效</strong></p>
+<p><strong>解析：</strong> 监督和控制成本绩效属于控制成本过程，不是制定预算过程本身的描述。</p>
+</div>
+</details>
+
+<hr />
+<h3>第37题 【挣值绩效判断】</h3>
+<p><strong>题目：</strong> 为保证项目实施质量，公司组织项目成员进行了三天专业知识培训。该培训成本属于（ ）。</p>
+<p>A、内部失败成本<br />
+B、外部失败成本<br />
+C、评估成本<br />
+D、预防成本       19</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 项目A</strong></p>
+<p><strong>解析：</strong> 题目依据表格比较各项目的 SPI 与 CPI；最有可能提前完成且不超支的，应满足 SPI&gt;1 且 CPI&gt;1，参考答案对应项目 A。</p>
+</div>
+</details>
+
+<hr />
+<h3>第38题 【质量成本】</h3>
+<p><strong>题目：</strong> 某系统上线后频繁收到发生闪退的用户投诉，项目经理安排工程师小王尽快找到故障原因，并推荐使 用（ ）进行分析。</p>
+<p>A、鱼骨图<br />
+B、直方图<br />
+C、趋势图<br />
+D、散点图</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 预防成本</strong></p>
+<p><strong>解析：</strong> 培训用于提升能力、预防质量问题发生，属于预防成本。</p>
+</div>
+</details>
+
+<hr />
+<h3>第39题 【原因分析工具】</h3>
+<p><strong>题目：</strong> 关于控制质量工具的描述，不正确的是：（ ）。</p>
+<p>A、控制图可以判断某一过程是否处于控制之中<br />
+B、统计抽样从总体中抽取一部分相关样本用于检查和测量<br />
+C、关联图中一条斜线上的数据点距离越近表示关系越密切<br />
+D、质量审计可用于确认已批准的变更请求的实施情况</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 鱼骨图</strong></p>
+<p><strong>解析：</strong> 需要尽快找出闪退根因时，鱼骨图最适合做原因归类与根因分析。</p>
+</div>
+</details>
+
+<hr />
+<h3>第40题 【控制质量工具】</h3>
+<p><strong>题目：</strong> A 公司任命黄总为新项目的项目经理，黄总任命小张为开发经理，并在公司内部调集10 人组成项目团 队，则该项目团队内的沟通渠道共（ ）条。</p>
+<p>A、45<br />
+B、55<br />
+C、66<br />
+D、78</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 质量审计可用于确认已批准的变更请求的实施情况</strong></p>
+<p><strong>解析：</strong> 质量审计是管理质量过程的工具，不是控制质量过程的工具。</p>
+</div>
+</details>
+
+<hr />
+<h3>第41题 【沟通渠道】</h3>
+<p><strong>题目：</strong> （ ）不属于沟通管理过程的工具与技术。</p>
+<p>A、标杆对照<br />
+B、信息管理系统<br />
+C、沟通方法<br />
+D、报告绩效</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 66条</strong></p>
+<p><strong>解析：</strong> 黄总、小张及另外 10 名成员共 12 人，沟通渠道数 = 12×11÷2 = 66。</p>
+</div>
+</details>
+
+<hr />
+<h3>第42题 【沟通管理工具】</h3>
+<p><strong>题目：</strong> 某手机应用上线后，收到老年用户的多起投诉：界面繁琐，字体太小，使用不方便。这反映了项目组 19  在（ ）工作中存在不足。</p>
+<p>A、变更控制<br />
+B、识别干系人<br />
+C、质量控制<br />
+D、团队建设</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 标杆对照</strong></p>
+<p><strong>解析：</strong> 标杆对照常用于质量管理，不属于沟通管理过程的工具与技术。</p>
+</div>
+</details>
+
+<hr />
+<h3>第43题 【识别干系人】</h3>
+<p><strong>题目：</strong> 根据干系人管理的权力/利益方格，对于项目建设方主管领导应该（ ）。</p>
+<p>A、令其满意<br />
+B、重点管理<br />
+C、监督<br />
+D、随时告知</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 识别干系人</strong></p>
+<p><strong>解析：</strong> 老年用户集中投诉易用性问题，说明项目组在识别用户特征和需求方面做得不够。</p>
+</div>
+</details>
+
+<hr />
+<h3>第44题 【权力/利益方格】</h3>
+<p><strong>题目：</strong> 关于项目风险的描述，不正确的是（ ）。</p>
+<p>A、风险具有随机性、相对性、可变性<br />
+B、项目收益越大，人们愿意承担的风险越大<br />
+C、项目投入越多，人们愿意承担的风险越大<br />
+D、风险按照影响范围可分为局部风险和总体风险</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 重点管理</strong></p>
+<p><strong>解析：</strong> 建设方主管领导通常权力高、利益高，应纳入重点管理对象。</p>
+</div>
+</details>
+
+<hr />
+<h3>第45题 【风险描述】</h3>
+<p><strong>题目：</strong> （ ）不属于识别风险过程的成果。</p>
+<p>A、已识别风险清单<br />
+B、潜在应对措施清单<br />
+C、风险根本原因<br />
+D、风险描述格式和模板</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 项目投入越多，人们愿意承担的风险越大</strong></p>
+<p><strong>解析：</strong> 风险承受度与组织偏好、收益预期等有关，不能简单认为项目投入越多就越愿意承担风险，因此 C 错误。</p>
+</div>
+</details>
+
+<hr />
+<h3>第46题 【识别风险成果】</h3>
+<p><strong>题目：</strong> （ ）不属于定性风险分析的技术。</p>
+<p>A、风险数据质量评估<br />
+B、概率和影响矩阵<br />
+C、风险紧迫性评估     19<br />
+D、预期货币价值分析</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 风险描述格式和模板</strong></p>
+<p><strong>解析：</strong> 风险描述格式和模板通常来自组织过程资产或风险管理计划，不属于识别风险过程输出。</p>
+</div>
+</details>
+
+<hr />
+<h3>第47题 【定性风险分析技术】</h3>
+<p><strong>题目：</strong> 关于管理者和领导者的描述，不正确的是：（ ）。</p>
+<p>A、领导者的主要工作是确定方向、统一思想、激励和鼓舞<br />
+B、管理者负责某件事情的管理或实现某个目标<br />
+C、领导者设定目标，管理者率众实现目标<br />
+D、项目经理的身份是管理者而非领导者</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 预期货币价值分析</strong></p>
+<p><strong>解析：</strong> 预期货币价值分析属于定量风险分析技术，不属于定性风险分析。</p>
+</div>
+</details>
+
+<hr />
+<h3>第48题 【管理者与领导者】</h3>
+<p><strong>题目：</strong> 为了暂时或部分解决冲突，寻找能让各方在一定程度上都满意的方案。这种冲突解决方法称为 （ ）。</p>
+<p>A、妥协/调解<br />
+B、缓和/包容<br />
+C、撤退/回避<br />
+D、合作/解决问题</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 项目经理的身份是管理者而非领导者</strong></p>
+<p><strong>解析：</strong> 项目经理既是管理者，也需要发挥领导者作用，因此该说法错误。</p>
+</div>
+</details>
+
+<hr />
+<h3>第49题 【冲突解决】</h3>
+<p><strong>题目：</strong> 在团队发展的5 个阶段中，（ ）的特征是：团队成员开始协同工作，并调整各自的工作习惯和行 为来支持团队，团队成员开始相互信任，项目经理能够得到团队的认可。</p>
+<p>A、形成阶段<br />
+B、震荡阶段<br />
+C、发挥阶段<br />
+D、规范阶段</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 妥协/调解</strong></p>
+<p><strong>解析：</strong> 各方都作出一定让步，获得部分满意的结果，属于妥协/调解。</p>
+</div>
+</details>
+
+<hr />
+<h3>第50题 【团队发展阶段】</h3>
+<p><strong>题目：</strong> 关于配置管理的描述，正确的是：（ ）。</p>
+<p>A、某个配置项的版本号为0.91，该配置项的状态为“正式”<br />
+B、配置项版本管理的目的是保留配置项的最新版本，删除所有旧的版本，以避免发生版本混淆<br />
+C、一个产品只能有一个基线，因此对基线的变更必须遵循正式的变更控制程序<br />
+D、开发库中的信息可能被频繁修改，因此可以由开发人员自行控制       19</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 规范阶段</strong></p>
+<p><strong>解析：</strong> 团队开始相互信任、工作习惯逐步协调、项目经理得到认可，这是规范阶段特征。</p>
+</div>
+</details>
+
+<hr />
+<h3>第51题 【配置管理】</h3>
+<p><strong>题目：</strong> 配置管理员的工作职责不包括（ ）。</p>
+<p>A、基线设立审批<br />
+B、版本管理和配置控制<br />
+C、建立和维护配置库<br />
+D、配置状态报告</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 开发库中的信息可能被频繁修改，因此可以由开发人员自行控制</strong></p>
+<p><strong>解析：</strong> 开发库允许频繁修改，日常由开发人员在权限约束下进行版本控制和维护。</p>
+</div>
+</details>
+
+<hr />
+<h3>第52题 【配置管理员职责】</h3>
+<p><strong>题目：</strong> （ ）的目的是确认变更的必要性，确保变更是有价值的。</p>
+<p>A、提出变更申请<br />
+B、变更效果评估<br />
+C、变更初审<br />
+D、变更实施</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 基线设立审批</strong></p>
+<p><strong>解析：</strong> 基线审批通常由 CCB 或授权审批机构负责，不是配置管理员职责。</p>
+</div>
+</details>
+
+<hr />
+<h3>第53题 【变更初审】</h3>
+<p><strong>题目：</strong> 关于招投标的描述，正确的是：（ ）。</p>
+<p>A、中标人确定后，招标人应当向中标人发出中标通知书，并同时将中标结果通知所有未中标的投标 人<br />
+B、依法必须进行招标的项目，自招标文件开始发出之日起至提交投标文件截止之日止，最短不得少 于10 日<br />
+C、在招标文件要求提交投标文件截止时间5 日前，招标人可以以书面形式对已发出的招标文件进行 必要的澄清或者修改<br />
+D、招标人和中标人应当自中标通知书发出之日起10 日内，按照招标文件和中标人的投标文件订立书 面合同</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 变更初审</strong></p>
+<p><strong>解析：</strong> 变更初审的核心目标就是确认变更是否必要、是否值得继续评估。</p>
+</div>
+</details>
+
+<hr />
+<h3>第54题 【招投标】</h3>
+<p><strong>题目：</strong> （ ）为卖方报销履行合同工作所发生的一切合法成本（即成本实报实销），买方再给卖方一笔利 润，完全由买方根据自己对卖方绩效的主观判断来决定，并且卖方通常无权申诉。</p>
+<p>A、总价加激励费用合同<br />
+B、总价加经济价格调整合同<br />
+C、成本加固定费用合同<br />
+D、成本加奖励费用合同     19</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 中标通知与结果通知</strong></p>
+<p><strong>解析：</strong> 中标人确定后，招标人应向中标人发出通知书，并将结果通知未中标投标人。</p>
+</div>
+</details>
+
+<hr />
+<h3>第55题 【合同类型】</h3>
+<p><strong>题目：</strong> （ ）是隐性知识的特征。</p>
+<p>A、经过编码、格式化、结构化<br />
+B、规范、系统、稳定、明确<br />
+C、不易保存、传递、掌握<br />
+D、用公式、规律、原则等方式表述</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 成本加奖励费用合同</strong></p>
+<p><strong>解析：</strong> 成本实报实销，再由买方根据绩效主观评价给予奖励，符合成本加奖励费用合同特征。</p>
+</div>
+</details>
+
+<hr />
+<h3>第56题 【隐性知识】</h3>
+<p><strong>题目：</strong> 组织高层从如何动员全体成员参与战略实施活动的角度考虑战略的制定和执行，属于（ ）战略组 织模式的特点。</p>
+<p>A、文化型<br />
+B、合作型<br />
+C、变革型<br />
+D、增长型</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 不易保存、传递、掌握</strong></p>
+<p><strong>解析：</strong> 隐性知识通常难以编码和形式化，不易直接传递。</p>
+</div>
+</details>
+
+<hr />
+<h3>第57题 【战略组织模式】</h3>
+<p><strong>题目：</strong> 业务流程分析工具中，（ ）反映现有系统各部门的业务处理过程和它们之间的业务分工与联系， 以及连接各部门的物流、信息流的传递和流动关系，体现现有系统的边界、环境、输入、输出、处理 和数据存储等内容。</p>
+<p>A、业务流程图<br />
+B、UML 活动图<br />
+C、N-S 图<br />
+D、Petri 网</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 文化型</strong></p>
+<p><strong>解析：</strong> 从动员全体成员参与战略实施的角度来考虑战略制定与执行，体现文化型模式。</p>
+</div>
+</details>
+
+<hr />
+<h3>第58题 【业务流程分析工具】</h3>
+<p><strong>题目：</strong> （ ）不是项目集指导委员会的职责。</p>
+<p>A、保证项目集与组织愿景和目标的一致性<br />
+B、对项目组合的投资以及优先级进行决策<br />
+C、批准项目集章程<br />
+D、批准和启动项目集       19</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 业务流程图</strong></p>
+<p><strong>解析：</strong> 业务流程图用于描述各部门业务处理过程及物流、信息流关系。</p>
+</div>
+</details>
+
+<hr />
+<h3>第59题 【项目集指导委员会】</h3>
+<p><strong>题目：</strong> 关于项目组合和项目集的描述，不正确的是（ ）。</p>
+<p>A、项目组合和项目集中都可能包含日常运作业务<br />
+B、项目集是项目组合的一部分<br />
+C、项目组合中的项目既可以位于项目集之内，也可以位于项目集之外<br />
+D、项目组合中的项目集和项目应有依赖关系</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 对项目组合的投资以及优先级进行决策</strong></p>
+<p><strong>解析：</strong> 组合层面的投资与优先级决策属于项目组合治理，不是项目集指导委员会职责。</p>
+</div>
+</details>
+
+<hr />
+<h3>第60题 【项目组合与项目集】</h3>
+<p><strong>题目：</strong> 缺陷发现率=Σ缺陷数（系统测试）（个）÷Σ执行系统测试的有效时间（小时），是衡量测试人员 （ ）的指标</p>
+<p>A、测试设计中工作效率<br />
+B、测试设计中工作质量<br />
+C、测试执行中工作效率<br />
+D、测试执行中工作质量</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 项目组合中的项目集和项目应有依赖关系</strong></p>
+<p><strong>解析：</strong> 项目组合中的组件不一定存在依赖关系，重点是共同服务组织战略。</p>
+</div>
+</details>
+
+<hr />
+<h3>第61题 【缺陷发现率】</h3>
+<p><strong>题目：</strong> （ ）用于评估工作产品的质量，辅助项目进行决策。</p>
+<p>A、过程度量<br />
+B、技术度量<br />
+C、项目度量<br />
+D、经济度量</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 测试执行中工作效率</strong></p>
+<p><strong>解析：</strong> 缺陷发现率按系统测试阶段单位时间发现缺陷数计算，衡量的是测试执行效率。</p>
+</div>
+</details>
+
+<hr />
+<h3>第62题 【技术度量】</h3>
+<p><strong>题目：</strong> 按照系统安全策略“七定”要求，系统安全策略首先要（ ）。</p>
+<p>A、定员<br />
+B、定制度<br />
+C、定方案<br />
+D、定岗</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B — 技术度量</strong></p>
+<p><strong>解析：</strong> 技术度量用于评估工作产品质量，并辅助项目决策。</p>
+</div>
+</details>
+
+<hr />
+<h3>第63题 【七定要求】</h3>
+<p><strong>题目：</strong> （ ）方式针对每个用户指明能够访问的资源，对于不在指定的资源列表中的对象不允许访问。</p>
+<p>A、自主访问控制     19<br />
+B、基于策略的访问控制<br />
+C、强制访问控制<br />
+D、基于角色的访问控制</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — 定岗</strong></p>
+<p><strong>解析：</strong> “七定”首先要明确岗位，再进一步明确人员、职责和制度。</p>
+</div>
+</details>
+
+<hr />
+<h3>第64题 【访问控制】</h3>
+<p><strong>题目：</strong> ISO/IEC 17859 标准将安全审计功能分为6 个部分，其中，（ ）通过分析系统活动和审计数据，寻找 可能的或真正的安全违规操作，可以用于入侵检测或安全违规的自动响应。</p>
+<p>A、安全审计事件存储功能<br />
+B、安全审计数据生成功能<br />
+C、安全审计分析功能<br />
+D、安全审计浏览功能</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 自主访问控制</strong></p>
+<p><strong>解析：</strong> 对每个用户明确可访问资源列表，属于 DAC（自主访问控制）特征。</p>
+</div>
+</details>
+
+<hr />
+<h3>第65题 【安全审计功能】</h3>
+<p><strong>题目：</strong> （PDF未提取到题干）</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 安全审计分析功能</strong></p>
+<p><strong>解析：</strong> 根据公开答案索引，该题在正式卷中的编号为 65，对应通过分析系统活动和审计数据发现安全违规的功能。</p>
+</div>
+</details>
+
+<hr />
+<h3>第66题 【期望收益决策】</h3>
+<p><strong>题目：</strong> （PDF未提取到题干）</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — 丙</strong></p>
+<p><strong>解析：</strong> 按不同需求情形及其概率计算期望收益后，丙产品的期望收益最高。</p>
+</div>
+</details>
+
+<hr />
+<h3>第67题 【线性规划】</h3>
+<p><strong>题目：</strong> 某公司主营产品有甲、乙、丙、丁四种。按照历史数据预测，下半年的市场需求总量可能有10 万 件、15 万件和20 万件三种情况，对应的概率分别为50%、30%、20%不同情况下各产品带来的市场收 益（单位：万元）如表所示。为了追求利润最大化，该公司应该生产（ ）。</p>
+<p>A、甲<br />
+B、乙<br />
+C、丙<br />
+D、丁</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：B(144万元) / B(6吨)</strong></p>
+<p><strong>解析：</strong> 根据原料约束和单位利润建立线性规划模型，最优解对应最大利润 144 万元，且甲产量为 6 吨。</p>
+</div>
+</details>
+
+<hr />
+<h3>第68题</h3>
+<p><strong>题目：</strong> 某乳制品加工厂用纯牛奶和酸牛奶两种生产原料，加工生产甲、乙两种乳制品。该厂加工每单位乳制 品消耗原料数、现有原料数、每单位乳制品的利润如下表所示。则该公司的最大利润为（ ）万 元。公司获得最大利润时，生产甲的数量是 （ ）吨。  19  问题1</p>
+<p>A、140<br />
+B、144<br />
+C、175<br />
+D、178  问题2<br />
+A、5<br />
+B、6<br />
+C、40<br />
+D、50</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：—</strong></p>
+<p><strong>解析：</strong> （暂无解析）</p>
+</div>
+</details>
+
+<hr />
+<h3>第69题 【指派问题】</h3>
+<p><strong>题目：</strong> 有A、B、C、D 四个邻省，同时向甲、乙、丙、丁四个城市运送援助物资，假设规定一个省对口援助 一个城市。四省到各城市的运输时间如下表所示。请给出一个合理的方案，使得物资运输总时间最 短，则最短物资运输时间为（ ）小时。</p>
+<p>A、74<br />
+B、75<br />
+C、76<br />
+D、77</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 74小时</strong></p>
+<p><strong>解析：</strong> 该题属于典型指派问题，求一一匹配后的最小总运输时间，最优值为 74 小时。</p>
+</div>
+</details>
+
+<hr />
+<h3>第70题 【投资收益率】</h3>
+<p><strong>题目：</strong> 甲、乙、丙、丁4 个已完工项目的历史数据如表所示，其中负值代表项目的投资额，正值代表项目的 收益。从投资收益率来看，（ ）项目最优。单位：万元  19</p>
+<p>A、甲<br />
+B、乙<br />
+C、丙<br />
+D、丁</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — 甲</strong></p>
+<p><strong>解析：</strong> 比较各项目总收益与总投资的收益率，甲项目的投资收益率最高。</p>
+</div>
+</details>
+
+<hr />
+<h3>第71题 【Big Data英文】</h3>
+<p><strong>题目：</strong> The patterns of （ ） show the next probable behavior of a person or market without  a logical explanation as to why.</p>
+<p>A、Internet of Things<br />
+B、Cloud Computing<br />
+C、Artificial Intelligence<br />
+D、Big Data</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：D — Big Data</strong></p>
+<p><strong>解析：</strong> 题干强调通过模式识别预测个人或市场下一步行为，对应大数据。</p>
+</div>
+</details>
+
+<hr />
+<h3>第72题 【Artificial Intelligence英文】</h3>
+<p><strong>题目：</strong> （ ）can be scripted as a new science and technology，which is used to simulate human  intelligence. Namely, computers simulate the way of human’s thinking and intelligent  behavior, such as Learning, Reasoning, Thinking, Planning, and so on.</p>
+<p>A、Internet of Things<br />
+B、Cloud Computing<br />
+C、Artificial Intelligence<br />
+D、Big Data</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — Artificial Intelligence</strong></p>
+<p><strong>解析：</strong> 模拟人类学习、推理、规划等智能行为的科学技术，就是人工智能。</p>
+</div>
+</details>
+
+<hr />
+<h3>第73题 【Information security英文】</h3>
+<p><strong>题目：</strong> （ ）is preservation of confidentiality, integrity and availability of information,in  addition, other properties such as authenticity, accountability, non-repudiation and  reliability can also be involved.</p>
+<p>A、Equipment security     19<br />
+B、Network security<br />
+C、Information security<br />
+D、Content security</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — Information security</strong></p>
+<p><strong>解析：</strong> 保密性、完整性、可用性以及真实性、可追责性等，正是信息安全的定义。</p>
+</div>
+</details>
+
+<hr />
+<h3>第74题 【Statistical sampling英文】</h3>
+<p><strong>题目：</strong> （ ） involves choosing part of a population of interest for inspection.</p>
+<p>A、Check list<br />
+B、Check sheet<br />
+C、Statistical sampling<br />
+D、Questionnaire</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：C — Statistical sampling</strong></p>
+<p><strong>解析：</strong> 从总体中抽取一部分样本进行检查，定义上就是统计抽样。</p>
+</div>
+</details>
+
+<hr />
+<h3>第75题 【Validate scope英文】</h3>
+<p><strong>题目：</strong> （ ）is the process of formalizing acceptance of the completed project deliverables.  The key benefit of this process is that it brings objectivity to the acceptance process  and increases the probability of final product, service,or result acceptance by  validating each deliverable.</p>
+<p>A、Validate scope<br />
+B、Define scope<br />
+C、Control scope<br />
+D、Collect requirement</p>
+<details>
+<summary>查看答案与解析</summary>
+<div class="details-body">
+<p><strong>答案：A — Validate scope</strong></p>
+<p><strong>解析：</strong> 对已完成可交付成果进行正式验收，是确认范围（Validate Scope）的定义。</p>
+</div>
+</details>
+
+<hr />
+</div>
+<script>
+function toggleAll(open) {
+  var details = document.querySelectorAll('details');
+  details.forEach(function(d) { d.open = open; });
+  var s = document.getElementById('status');
+  s.textContent = open
+    ? ('已展开 ' + details.length + ' 个答案')
+    : ('已收起 ' + details.length + ' 个答案');
+  setTimeout(function() { s.textContent = ''; }, 2000);
+}
+</script>
+</body>
+</html>
