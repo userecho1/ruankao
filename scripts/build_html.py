@@ -228,7 +228,7 @@ function toggleAll(open) {{
     allDetails.forEach(function (det) {{
       var bodyEl = det.querySelector('.details-body');
       if (!bodyEl) return;
-      var m = bodyEl.textContent.match(/答案[：:]\s*([ABCD])/);
+      var m = bodyEl.textContent.match(/答案[：:]\\s*([ABCD])/);
       if (!m) return;
       var answer = m[1];
 
@@ -237,7 +237,7 @@ function toggleAll(open) {{
       var prev = det.previousElementSibling;
       while (prev) {{
         if (prev.tagName === 'H3') {{
-          var nm = prev.textContent.match(/第\s*(\d+)\s*题/);
+          var nm = prev.textContent.match(/第\\s*(\\d+)\\s*题/);
           if (nm) qNum = parseInt(nm[1], 10);
           break;
         }}
