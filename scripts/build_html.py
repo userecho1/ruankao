@@ -278,7 +278,7 @@ function toggleAll(open) {{
     if (!_qs.length) return;
 
     /* 显示做题模式按钮 */
-    document.getElementById('btn-quiz').style.display = '';
+    document.getElementById('btn-quiz').style.display = 'inline-block';
 
     /* 页尾提交栏 */
     var footer = document.createElement('div');
