@@ -22,6 +22,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
     box-shadow: 0 2px 6px rgba(0,0,0,.3);
   }
   .toolbar a {
@@ -45,6 +46,8 @@
   .btn-expand:hover { background: #2c974b; }
   .btn-collapse { background: #0969da; color: #fff; }
   .btn-collapse:hover { background: #0860ca; }
+  .btn-quiz { background: #9a6700; color: #fff; display: none; }
+  .btn-quiz:hover { background: #7d5300; }
   .content {
     max-width: 860px;
     margin: 30px auto;
@@ -114,13 +117,66 @@
   details[open] summary { border-bottom: 1px solid #d0d7de; border-radius: 6px 6px 0 0; }
   .details-body { padding: 14px 18px; }
   strong { color: #1a1a1a; }
+
+  /* ── 做题模式 ── */
+  .qz-row {
+    display: none;
+    align-items: center;
+    gap: 6px 12px;
+    flex-wrap: wrap;
+    margin: 8px 0 10px;
+    padding: 10px 14px;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+  }
+  .quiz-mode .qz-row { display: flex; }
+  .qz-label { font-size: 13px; color: #57606a; white-space: nowrap; }
+  .qz-opt {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    user-select: none;
+  }
+  .qz-opt:hover { background: #e1e4e8; }
+  .qz-opt input { margin-right: 3px; cursor: pointer; }
+  .qz-status { font-size: 13px; margin-left: 4px; }
+  .qz-ok { color: #2ea44f; font-weight: 600; }
+  .qz-err { color: #cf222e; font-weight: 600; }
+  .qz-none { color: #57606a; }
+  .qz-row.qz-correct { background: #f0fff4; border-color: #2ea44f; }
+  .qz-row.qz-wrong { background: #fff0f0; border-color: #cf222e; }
+  .quiz-mode .btn-expand,
+  .quiz-mode .btn-collapse { opacity: .35; pointer-events: none; }
+  #qz-footer {
+    display: none;
+    margin-top: 30px;
+    padding: 18px 0 4px;
+    border-top: 2px solid #e1e4e8;
+    text-align: center;
+  }
+  .quiz-mode #qz-footer { display: block; }
+  #qz-score {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #24292e;
+    vertical-align: middle;
+  }
+  .btn-submit { background: #cf222e; color: #fff; }
+  .btn-submit:hover { background: #a40e26; }
+  .btn-retry { background: #9a6700; color: #fff; }
+  .btn-retry:hover { background: #7d5300; }
 </style>
 </head>
 <body>
 <div class="toolbar">
-  <a href="../index.html">⬅ 返回目录</a>
+  <a href="../../index.html">⬅ 返回目录</a>
   <button class="btn btn-expand" onclick="toggleAll(true)">📖 展开全部答案</button>
   <button class="btn btn-collapse" onclick="toggleAll(false)">📕 收起全部答案</button>
+  <button class="btn btn-quiz" id="btn-quiz" onclick="quizToggle()">📝 做题模式</button>
   <span id="status"></span>
 </div>
 <div class="content">
@@ -760,6 +816,7 @@ START → A → E → G → H → END
 </details>
 </div>
 <script>
+/* ── 展开 / 收起 ── */
 function toggleAll(open) {
   var details = document.querySelectorAll('details');
   details.forEach(function(d) { d.open = open; });
@@ -769,6 +826,144 @@ function toggleAll(open) {
     : ('已收起 ' + details.length + ' 个答案');
   setTimeout(function() { s.textContent = ''; }, 2000);
 }
+
+/* ── 做题模式 ── */
+(function () {
+  'use strict';
+  var _qs = []; /* {qNum, det, row, answer} */
+
+  function buildQuizUI() {
+    var allDetails = document.querySelectorAll('details');
+    allDetails.forEach(function (det) {
+      var bodyEl = det.querySelector('.details-body');
+      if (!bodyEl) return;
+      var m = bodyEl.textContent.match(/答案[：:]\s*([ABCD])/);
+      if (!m) return;
+      var answer = m[1];
+
+      /* 从前面的 h3 读取题号 */
+      var qNum = _qs.length + 1;
+      var prev = det.previousElementSibling;
+      while (prev) {
+        if (prev.tagName === 'H3') {
+          var nm = prev.textContent.match(/第\s*(\d+)\s*题/);
+          if (nm) qNum = parseInt(nm[1], 10);
+          break;
+        }
+        prev = prev.previousElementSibling;
+      }
+
+      /* 构建选项行 */
+      var row = document.createElement('div');
+      row.className = 'qz-row';
+      row.dataset.answer = answer;
+      row.dataset.qnum = qNum;
+
+      var lbl = document.createElement('span');
+      lbl.className = 'qz-label';
+      lbl.textContent = '我的答案：';
+      row.appendChild(lbl);
+
+      ['A', 'B', 'C', 'D'].forEach(function (opt) {
+        var label = document.createElement('label');
+        label.className = 'qz-opt';
+        var inp = document.createElement('input');
+        inp.type = 'radio';
+        inp.name = 'q' + qNum;
+        inp.value = opt;
+        label.appendChild(inp);
+        label.appendChild(document.createTextNode(' ' + opt));
+        row.appendChild(label);
+      });
+
+      var st = document.createElement('span');
+      st.className = 'qz-status';
+      row.appendChild(st);
+
+      det.parentNode.insertBefore(row, det);
+      _qs.push({ qNum: qNum, det: det, row: row, answer: answer });
+    });
+
+    if (!_qs.length) return;
+
+    /* 显示做题模式按钮 */
+    document.getElementById('btn-quiz').style.display = '';
+
+    /* 页尾提交栏 */
+    var footer = document.createElement('div');
+    footer.id = 'qz-footer';
+    footer.innerHTML =
+      '<button class="btn btn-submit" id="btn-submit" onclick="quizSubmit()">✅ 提交答案</button>' +
+      '<span id="qz-score"></span>' +
+      '<button class="btn btn-retry" id="btn-retry" onclick="quizRetry()" style="display:none">🔄 重新作答</button>';
+    document.querySelector('.content').appendChild(footer);
+  }
+
+  window.quizToggle = function () {
+    var active = document.body.classList.toggle('quiz-mode');
+    var btn = document.getElementById('btn-quiz');
+    btn.textContent = active ? '📖 退出做题模式' : '📝 做题模式';
+    if (active) {
+      /* 进入做题模式：收起所有答案 */
+      document.querySelectorAll('details').forEach(function (d) { d.open = false; });
+      quizRetry();
+    }
+  };
+
+  window.quizSubmit = function () {
+    var correct = 0, answered = 0;
+    _qs.forEach(function (q) {
+      var sel = document.querySelector('input[name="q' + q.qNum + '"]:checked');
+      var st = q.row.querySelector('.qz-status');
+      q.row.classList.remove('qz-correct', 'qz-wrong');
+      if (!sel) {
+        st.textContent = '⬜ 未作答';
+        st.className = 'qz-status qz-none';
+        return;
+      }
+      answered++;
+      if (sel.value === q.answer) {
+        correct++;
+        st.textContent = '✅ 正确';
+        st.className = 'qz-status qz-ok';
+        q.row.classList.add('qz-correct');
+      } else {
+        st.textContent = '❌ 错误，正确答案：' + q.answer;
+        st.className = 'qz-status qz-err';
+        q.row.classList.add('qz-wrong');
+        q.det.open = true; /* 展开解析 */
+      }
+    });
+    var total = _qs.length;
+    var pct = answered ? Math.round(correct / answered * 100) : 0;
+    var scoreEl = document.getElementById('qz-score');
+    scoreEl.textContent = answered === total
+      ? ('得分：' + correct + ' / ' + total + '（正确率 ' + pct + '%）')
+      : ('得分：' + correct + ' / ' + answered + ' 已答（共 ' + total + ' 题，正确率 ' + pct + '%）');
+    document.getElementById('btn-retry').style.display = '';
+    document.getElementById('btn-submit').style.display = 'none';
+    document.getElementById('qz-footer').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  window.quizRetry = function () {
+    _qs.forEach(function (q) {
+      q.row.querySelectorAll('input[type=radio]').forEach(function (r) { r.checked = false; });
+      var st = q.row.querySelector('.qz-status');
+      st.textContent = '';
+      st.className = 'qz-status';
+      q.row.classList.remove('qz-correct', 'qz-wrong');
+      q.det.open = false;
+    });
+    var scoreEl = document.getElementById('qz-score');
+    if (scoreEl) scoreEl.textContent = '';
+    var retryBtn = document.getElementById('btn-retry');
+    if (retryBtn) retryBtn.style.display = 'none';
+    var submitBtn = document.getElementById('btn-submit');
+    if (submitBtn) submitBtn.style.display = '';
+  };
+
+  document.addEventListener('DOMContentLoaded', buildQuizUI);
+})();
 </script>
 </body>
 </html>
