@@ -1,3 +1,4 @@
+# Redeploy trigger
 name: Deploy GitHub Pages
 
 on:
