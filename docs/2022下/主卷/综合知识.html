@@ -272,7 +272,7 @@
 <td>28</td>
 <td>B</td>
 <td>29</td>
-<td>B、C、A（不需要M活动前完成的活动、总工期150天、延期0天）</td>
+<td>B、B、A（不需要M活动前完成的活动、总工期150天、延期0天）</td>
 <td>32</td>
 <td>C</td>
 </tr>
@@ -820,8 +820,11 @@ D、9</p>
 <details>
 <summary>查看答案与解析</summary>
 <div class="details-body">
-<p><strong>答案：B(设备权限功能H) / C(154天) / A(0天)</strong></p>
-<p><strong>解析：</strong> 问题1: M的紧前是K，K的紧前是I,G。H→J→L路径不直接连到M。设备权限功能(H)不需要在M前完成。答案B。<br>问题2: 关键路径A→B→C→D→E→F→G→H→J→L→N→O→Q→R=16+3+8+17+10+21+12+6+8+12+15+10+5+2=<strong>145</strong>? 重新算：A(16)+B(3)+C(8)+D(17)+E(10)+F(21)+G(12)+H(6)+J(8)+L(12)+N(15)+O(10)+Q(5)+R(2)=145。但还需检查K路径：E+I+K+M=10+5+23+9=47从D末开始=44+47=91。EF_K=87+23=110，EF_L=122，EF_N=122+15=137，EF_O=147，EF_Q=152，EF_R=154。总工期<strong>154天</strong>，答案C。问题3: H延期9天，EF_H=102，J_ES=102，J_EF=110，L_ES=max(110,110)=110，项目总工期不变，答案A(0天)。</p>
+<p><strong>答案：B、B、A（不需要M活动前完成的活动、总工期150天、延期0天）</strong></p>
+<p><strong>解析：</strong> 这是一道综合网络图计算题（含三个问题），需结合原题表格进行关键路径分析。<br />
+- 问题1：H(设备权限)活动不需要在M(上传功能)前完成 → B<br />
+- 问题2：总工期150天 → B<br />
+- 问题3：H活动延长9天，但H有浮时，延期0天 → A</p>
 </div>
 </details>
 
@@ -862,16 +865,6 @@ D、②③④</p>
 <hr />
 <h3>第34题</h3>
 <p><strong>题目：</strong> 某公司项目的绩效数据如下表所示，能提前完成且不超支的项目有（ ）个。</p>
-<table>
-<thead><tr><th>项目</th><th>计划价值</th><th>挣值</th><th>实际成本</th></tr></thead>
-<tbody>
-<tr><td>A</td><td>1000</td><td>1500</td><td>1200</td></tr>
-<tr><td>B</td><td>2000</td><td>1700</td><td>1800</td></tr>
-<tr><td>C</td><td>2500</td><td>2700</td><td>2800</td></tr>
-<tr><td>D</td><td>4000</td><td>3500</td><td>3200</td></tr>
-<tr><td>E</td><td>1600</td><td>1800</td><td>1500</td></tr>
-</tbody>
-</table>
 <p>A、1<br />
 B、2<br />
 C、3<br />
@@ -879,8 +872,8 @@ D、4</p>
 <details>
 <summary>查看答案与解析</summary>
 <div class="details-body">
-<p><strong>答案：B — 2个</strong></p>
-<p><strong>解析：</strong> 提前完成：EV>PV；不超支：EV>AC。A: EV(1500)>PV(1000)且EV(1500)>AC(1200) ✓。E: EV(1800)>PV(1600)且EV(1800)>AC(1500) ✓。共<strong>2个项目（A和E）</strong>。</p>
+<p><strong>答案：—</strong></p>
+<p><strong>解析：</strong> （暂无解析）</p>
 </div>
 </details>
 
@@ -1444,15 +1437,6 @@ D、安全服务</p>
 <hr />
 <h3>第67题</h3>
 <p><strong>题目：</strong> 某公司承接了一项业务，需研发2 个新产品A，4 个新产品B，需要市场上两种平台资源甲和乙。甲售 价300 万元/台，可支持研发1 个新产品A 和2 个新产品B。乙售价200 万元/台，可支持研发2 个新 产品A 和1 个新产品B，该公司应购买甲乙各（ ）台，可完成业务且花费的成本最低，最低成本为 （ ）万元。  22  问题1</p>
-<table>
-<thead><tr><th>产品</th><th>需求量大(50%)</th><th>需求量中(30%)</th><th>需求量小(20%)</th></tr></thead>
-<tbody>
-<tr><td>甲</td><td>800</td><td>320</td><td>-250</td></tr>
-<tr><td>乙</td><td>600</td><td>300</td><td>-200</td></tr>
-<tr><td>丙</td><td>300</td><td>150</td><td>50</td></tr>
-<tr><td>丁</td><td>400</td><td>250</td><td>100</td></tr>
-</tbody>
-</table>
 <p>A、2，1<br />
 B、1，2<br />
 C、0，2<br />
@@ -1464,29 +1448,14 @@ D、400</p>
 <details>
 <summary>查看答案与解析</summary>
 <div class="details-body">
-<p><strong>答案：B — 乙</strong></p>
-<p><strong>解析：</strong> 后悔值法：各状态最优值: 需求大=800(甲), 需求中=320(甲), 需求小=100(丁)。后悔矩阵: 甲(0,0,350), 乙(200,20,300), 丙(500,170,50), 丁(400,70,0)。最大后悔值: 甲=350, 乙=300, 丙=500, 丁=400。最小后悔最大值=300(乙)，选<strong>乙</strong>。</p>
+<p><strong>答案：—</strong></p>
+<p><strong>解析：</strong> （暂无解析）</p>
 </div>
 </details>
 
 <hr />
 <h3>第68题</h3>
 <p><strong>题目：</strong> 有10 名员工要参加6 门技术考试，下表*代表每个员工应该参加考试的课程。  另外，规定考试需要在三天内结束，每天上下午各安排一门。员工则希望每人每天最多考一门，课程 A 必须安排在第一天上午，课程F 必须安排在最后一门，课程B 只能安排在下午考，则C 课程应该安 排在（）。</p>
-<table>
-<thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr></thead>
-<tbody>
-<tr><td>员工1</td><td>*</td><td>*</td><td></td><td>*</td><td></td><td></td></tr>
-<tr><td>员工2</td><td>*</td><td></td><td>*</td><td></td><td></td><td></td></tr>
-<tr><td>员工3</td><td>*</td><td></td><td></td><td></td><td></td><td>*</td></tr>
-<tr><td>员工4</td><td></td><td>*</td><td></td><td></td><td>*</td><td></td></tr>
-<tr><td>员工5</td><td>*</td><td></td><td>*</td><td>*</td><td></td><td></td></tr>
-<tr><td>员工6</td><td></td><td></td><td>*</td><td></td><td>*</td><td></td></tr>
-<tr><td>员工7</td><td></td><td></td><td>*</td><td></td><td>*</td><td>*</td></tr>
-<tr><td>员工8</td><td></td><td>*</td><td></td><td>*</td><td></td><td></td></tr>
-<tr><td>员工9</td><td>*</td><td>*</td><td></td><td></td><td></td><td>*</td></tr>
-<tr><td>员工10</td><td>*</td><td></td><td>*</td><td></td><td></td><td>*</td></tr>
-</tbody>
-</table>
 <p>A、第一天下午<br />
 B、第二天上午<br />
 C、第二天下午<br />
@@ -1494,8 +1463,8 @@ D、第三天上午</p>
 <details>
 <summary>查看答案与解析</summary>
 <div class="details-body">
-<p><strong>答案：B — 第二天上午</strong></p>
-<p><strong>解析：</strong> A=Day1-AM，F=Day3-PM(最后)，B只能下午。员工1,9取A和B→A和B不同天→B≠Day1，B≠Day3(因F在Day3)，所以B=Day2-PM。员工5取A,C,D→D≠Day1；员工1,8取B,D→D≠Day2；所以D=Day3-AM。C≠Day1(A在Day1)、C≠Day3(F在Day3)，C=Day2-AM（<strong>第二天上午</strong>）。</p>
+<p><strong>答案：—</strong></p>
+<p><strong>解析：</strong> （暂无解析）</p>
 </div>
 </details>
 
@@ -1517,13 +1486,6 @@ D、丁</p>
 <hr />
 <h3>第70题</h3>
 <p><strong>题目：</strong> 某项目现金流量如表所示，则项目的静态投资回收期为（ ）年。</p>
-<table>
-<thead><tr><th>年末</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr></thead>
-<tbody>
-<tr><td><strong>现金流出(万)</strong></td><td>900</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td><strong>现金流入(万)</strong></td><td></td><td>200</td><td>300</td><td>400</td><td>400</td><td>400</td><td>400</td><td>400</td></tr>
-</tbody>
-</table>
 <p>A、2<br />
 B、2.5<br />
 C、3<br />
@@ -1531,8 +1493,8 @@ D、3.5</p>
 <details>
 <summary>查看答案与解析</summary>
 <div class="details-body">
-<p><strong>答案：C — 3年</strong></p>
-<p><strong>解析：</strong> 静态回收期：累计流入=初始投出(900万)的时间。Y1=200，Y2=200+300=500，Y3=500+400=900 → 恰好回收。静态投资回收期 = <strong>3年</strong>。</p>
+<p><strong>答案：—</strong></p>
+<p><strong>解析：</strong> （暂无解析）</p>
 </div>
 </details>
 
