@@ -282,7 +282,7 @@
 <td>32</td>
 <td>B</td>
 <td>33</td>
-<td>D/B</td>
+<td>A/C</td>
 <td>35</td>
 <td>D</td>
 <td>36</td>
@@ -881,8 +881,8 @@ D、应改进项目所需技术</p>
 <details>
 <summary>查看答案与解析</summary>
 <div class="details-body">
-<p><strong>答案：D(CBFG) / B — 不需要采取任何措施</strong></p>
-<p><strong>解析：</strong> 关键路径：C(4)→B(3)→F(5)→G(2) = 14天（选项D=CBFG）。D延期2天后EF_D=11，G的ES=max(EF_D=11, EF_E=11, EF_F=12)=12，项目总工期仍=14天，无需额外措施（选项B）。</p>
+<p><strong>答案：A(CBDG) / C(需要为关键路径上的任务赶工)</strong></p>
+<p><strong>解析：</strong> 关键路径决定总工期；当关键路径上的活动 D 延期后，为保证按时完成，需要对关键路径任务赶工。</p>
 </div>
 </details>
 
@@ -1355,9 +1355,25 @@ D、通过改变组织的标准化过程，从而提高过程效能</p>
 <h3>第66题 【设备更新决策】</h3>
 <p><strong>题目：</strong> 某供应商为高铁提供设备，并负责该设备5 年的售后服务，售后可以采取维护方式，也可以选择更换 新设备，假设新设备的制造成本为9 万元，设备从换新的第2 年起，每年需要支出一定的维护费用。 各年维护费用如下表所示,则以5 年期计算,最优化的设备使用成本为（ ）万元。</p>
 <table>
-<thead><tr><th></th><th>第1年</th><th>第2年</th><th>第3年</th><th>第4年</th><th>第5年</th></tr></thead>
+<thead>
+<tr>
+<th></th>
+<th>第1年</th>
+<th>第2年</th>
+<th>第3年</th>
+<th>第4年</th>
+<th>第5年</th>
+</tr>
+</thead>
 <tbody>
-<tr><td><strong>维护费(万元)</strong></td><td>0</td><td>6</td><td>7</td><td>8</td><td>8</td></tr>
+<tr>
+<td><strong>维护费(万元)</strong></td>
+<td>0</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+</tr>
 </tbody>
 </table>
 <p>A、36     19<br />
@@ -1395,10 +1411,33 @@ D、400</p>
 <h3>第69题 【投资回收期】</h3>
 <p><strong>题目：</strong> 某公司投资一项目，各年成本和收入如下表所示，折现率为10%，该项目投资回收期为（ ）。</p>
 <table>
-<thead><tr><th>成本</th><th>初期投资</th><th>第1年</th><th>第2年</th><th>第3年</th><th>第4年</th></tr></thead>
+<thead>
+<tr>
+<th>成本</th>
+<th>初期投资</th>
+<th>第1年</th>
+<th>第2年</th>
+<th>第3年</th>
+<th>第4年</th>
+</tr>
+</thead>
 <tbody>
-<tr><td><strong>成本(万元)</strong></td><td>1500</td><td>500</td><td>500</td><td>500</td><td>500</td></tr>
-<tr><td><strong>收入(万元)</strong></td><td>0</td><td>1000</td><td>1200</td><td>1400</td><td>1600</td></tr>
+<tr>
+<td><strong>成本(万元)</strong></td>
+<td>1500</td>
+<td>500</td>
+<td>500</td>
+<td>500</td>
+<td>500</td>
+</tr>
+<tr>
+<td><strong>收入(万元)</strong></td>
+<td>0</td>
+<td>1000</td>
+<td>1200</td>
+<td>1400</td>
+<td>1600</td>
+</tr>
 </tbody>
 </table>
 <p>A、2.3<br />
