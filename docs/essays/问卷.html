@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个性化定制问卷 · 论文复习</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.7;
+  }
+  .toolbar {
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .toolbar a { color: #8b949e; text-decoration: none; font-size: 14px; }
+  .toolbar a:hover { color: #fff; }
+  .hero {
+    background: linear-gradient(135deg, #6e40c9 0%, #9a3412 100%);
+    color: #fff;
+    text-align: center;
+    padding: 36px 20px 30px;
+  }
+  .hero h1 { font-size: 1.6em; margin-bottom: 6px; }
+  .hero p { opacity: .85; font-size: 14px; }
+  .container { max-width: 760px; margin: 28px auto; padding: 0 20px 60px; }
+  .card { background: #fff; border: 1px solid #d0d7de; border-radius: 8px; padding: 24px 28px; margin-bottom: 20px; }
+  .card h2 { font-size: 1.05em; color: #0550ae; margin-bottom: 16px; border-bottom: 1px solid #e1e4e8; padding-bottom: 8px; }
+  label { display: block; font-size: 14px; font-weight: 600; color: #24292e; margin-bottom: 5px; margin-top: 14px; }
+  label:first-of-type { margin-top: 0; }
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #f6f8fa;
+    transition: border-color .15s;
+  }
+  input[type=text]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #0550ae;
+    background: #fff;
+  }
+  textarea { resize: vertical; min-height: 70px; }
+  .hint { font-size: 12px; color: #57606a; margin-top: 4px; }
+  .btn-gen {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #6e40c9, #9a3412);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: opacity .2s;
+  }
+  .btn-gen:hover { opacity: .9; }
+  .result { display: none; }
+  .result.show { display: block; }
+  .result-card {
+    background: #f0f9ff;
+    border: 1px solid #b6d9f7;
+    border-left: 4px solid #0550ae;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+  }
+  .result-card h3 { font-size: 14px; font-weight: 700; color: #0550ae; margin-bottom: 10px; }
+  .result-card .item { font-size: 13px; color: #24292e; margin: 6px 0; line-height: 1.5; }
+  .result-card .item strong { color: #9a3412; }
+  .copy-btn {
+    float: right;
+    font-size: 11px;
+    padding: 2px 9px;
+    border: 1px solid #b6d9f7;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    color: #0550ae;
+    transition: background .15s;
+  }
+  .copy-btn:hover { background: #dbeafe; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #9a3412;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 8px;
+  }
+  .abstract-preview {
+    background: #fff8f5;
+    border: 1px solid #fca5a5;
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.85;
+    color: #374151;
+    white-space: pre-wrap;
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回首页</a>
+  <span style="color:#444;font-size:13px">|</span>
+  <a href="index.html">📋 论文目录</a>
+</div>
+<div class="hero">
+  <h1>📋 个性化定制问卷</h1>
+  <p>填写你的实际项目经历，生成专属论文关键参数</p>
+</div>
+<div class="container">
+  <div class="card">
+    <h2>🏢 你的项目基本信息</h2>
+    <label for="pname">项目名称</label>
+    <input type="text" id="pname" placeholder="例：XX公司供应链管理系统研发项目">
+    <label for="pmethd">开发方式</label>
+    <select id="pmethd">
+      <option value="scrum">Scrum敏捷开发（2周Sprint）</option>
+      <option value="kanban">看板（Kanban）敏捷</option>
+      <option value="waterfall">传统瀑布式</option>
+      <option value="hybrid">混合（敏捷+传统）</option>
+    </select>
+    <label for="pbudget">项目总预算（万元）</label>
+    <input type="text" id="pbudget" placeholder="例：680">
+    <label for="pduration">建设周期（月）</label>
+    <input type="text" id="pduration" placeholder="例：14">
+    <label for="pteam">团队规模（人）</label>
+    <input type="text" id="pteam" placeholder="例：16">
+    <label for="prole">你的角色</label>
+    <input type="text" id="prole" placeholder="例：项目经理 / 系统分析师">
+    <label for="pstart">项目时间段</label>
+    <input type="text" id="pstart" placeholder="例：2023年4月至2024年5月">
+    <label for="pgoal">项目目标（一句话）</label>
+    <textarea id="pgoal" placeholder="例：整合ERP、CRM等系统，构建统一的数字化业务中台"></textarea>
+    <label for="presult">项目结果（关键数据）</label>
+    <textarea id="presult" placeholder="例：按期交付，系统上线首月故障率低于0.1%，甲方满意度4.8分"></textarea>
+  </div>
+
+  <div class="card">
+    <h2>🎯 选择你要写的论文主题</h2>
+    <label for="ptopic">论文主题</label>
+    <select id="ptopic">
+      <option value="整合管理">整合管理（最高概率）</option>
+      <option value="成本管理">成本管理（含EVM）</option>
+      <option value="进度管理">进度管理</option>
+      <option value="风险管理">风险管理</option>
+    </select>
+
+    <label for="pchallenge">你在该管理领域遇到的主要挑战（1-3条）</label>
+    <textarea id="pchallenge" placeholder="例：
+1. 遗留系统接口文档缺失，技术集成复杂度高
+2. 多部门协调难度大，需求变更频繁
+3. 关键技术人员流失风险"></textarea>
+
+    <label for="pmeasure">你采取的主要措施（1-3条）</label>
+    <textarea id="pmeasure" placeholder="例：
+1. 建立Sprint迭代管理机制，宏观Release计划+微观Sprint计划
+2. 制定整体变更控制流程，批准28项变更，拒绝9项
+3. 建立项目Wiki知识库，沉淀86条经验教训"></textarea>
+  </div>
+
+  <button class="btn-gen" onclick="generate()">✨ 生成我的论文关键参数</button>
+
+  <div class="result" id="result">
+    <div class="result-card" style="margin-top:20px">
+      <h3>📋 项目信息速查表 <button class="copy-btn" onclick="copyText('info-table')">复制</button></h3>
+      <div id="info-table"></div>
+    </div>
+    <div class="result-card">
+      <h3>📝 摘要（约300字，可直接使用） <button class="copy-btn" onclick="copyText('abstract-text')">复制</button></h3>
+      <div class="abstract-preview" id="abstract-text"></div>
+    </div>
+    <div class="result-card">
+      <h3>💡 写作提示</h3>
+      <div id="writing-tips"></div>
+    </div>
+  </div>
+</div>
+<script>
+const TOPIC_DATA = {
+  "整合管理": {
+    challenges: "多系统整合技术复杂度高、需求变更频繁、多部门协调难度大",
+    measures: "制定项目章程获取正式授权、建立宏观发布计划与Sprint双层计划体系、实施整体变更控制流程",
+    sections: "整合管理计划制定、指导与管理项目执行、整体变更控制、监控项目工作、项目收尾",
+    tips: [
+      "必须提到：制定项目章程 → 获取正式授权（在政务/集团项目中尤其重要）",
+      "核心亮点：整体变更控制流程（变更申请→影响评估→CCB审议→执行→记录）",
+      "给出具体数字：共收到变更XX项，批准XX项，拒绝XX项",
+      "提到知识管理：建立Wiki知识库，记录经验教训XX条",
+      "结尾体现整合思维：'整合管理不是约束，是平衡灵活性与可控性'",
+    ]
+  },
+  "成本管理": {
+    challenges: "遗留系统集成复杂度难以准确估算、敏捷环境下成本基准易被侵蚀、成本超支风险",
+    measures: "采用故事点+自下而上估算双轨法、运用EVM挣值管理监控成本绩效、严格执行变更成本评估",
+    sections: "成本管理计划制定、成本估算（双轨法）、成本基准建立（S曲线）、挣值管理应用",
+    tips: [
+      "必须有EVM计算数据：EV、AC、PV、CV、CPI、SPI、EAC",
+      "CPI要低于0.9（触发预警，说明你有监控机制）",
+      "写出具体纠偏措施：优化技术方案/强化变更管控/调整资源/动用储备",
+      "结尾：实际成本低于预算，体现成本绩效良好",
+      "注意区分应急储备（应对已知风险）和管理储备（应对未知风险）",
+    ]
+  },
+  "进度管理": {
+    challenges: "遗留系统接口文档缺失导致工期不确定、甲方里程碑固定延期代价高、需求持续演进冲击进度基准",
+    measures: "建立宏观Release计划+微观Sprint双层进度管理、使用燃尽图和速度图监控进度偏差、灵活运用赶工与快速跟进技术",
+    sections: "进度管理计划制定、Release计划与Sprint计划建立、进度监控（燃尽图/速度图）、进度偏差纠正、进度压缩技术",
+    tips: [
+      "敏捷亮点：燃尽图（Burndown Chart）和速度图（Velocity Chart）",
+      "给出触发预警的具体数据：第X个Sprint速度=XX，SPI=0.87",
+      "写清楚纠偏措施：赶工（增加资源）+ 范围重新优先化 + 快速跟进",
+      "提到PERT三点估算：处理技术不确定性高的活动",
+      "体现甲方节点固定的背景，说明进度管理的必要性",
+    ]
+  },
+  "风险管理": {
+    challenges: "遗留系统技术风险/接口文档缺失、关键人员流失风险、多部门配合不确定性",
+    measures: "建立完整风险识别机制（头脑风暴+检查单+每日站会）、定性定量分析优先级、制定四类应对策略",
+    sections: "风险管理计划、风险识别（多方法）、定性与定量分析、风险应对规划（四策略）、风险监督",
+    tips: [
+      "识别出明确数量的风险：总共XX项，高风险X项",
+      "四种应对策略：规避、减轻、转移、接受，每种策略对应一个具体风险案例",
+      "定量分析要有数字：某风险概率35%，触发后损失约XX万元",
+      "敏捷亮点：每日站会阻碍清单 = 实时风险监控，Sprint回顾 = 过程风险复盘",
+      "说明应急储备使用情况：动用XX万，将影响控制在XX范围内",
+    ]
+  }
+};
+
+function generate() {
+  const pname = document.getElementById('pname').value || 'XX集团数字化业务中台建设项目';
+  const pmethd = document.getElementById('pmethd');
+  const methdText = pmethd.options[pmethd.selectedIndex].text;
+  const pbudget = document.getElementById('pbudget').value || '680';
+  const pduration = document.getElementById('pduration').value || '14';
+  const pteam = document.getElementById('pteam').value || '16';
+  const prole = document.getElementById('prole').value || '项目经理';
+  const pstart = document.getElementById('pstart').value || '2023年4月至2024年5月';
+  const pgoal = document.getElementById('pgoal').value || '整合集团内部分散系统，构建统一的数字化业务中台';
+  const presult = document.getElementById('presult').value || '按期交付，系统上线首月故障率低于0.1%，甲方满意度4.8分（满分5分）';
+
+  const ptopic = document.getElementById('ptopic');
+  const topic = ptopic.value;
+  const pchallenge = document.getElementById('pchallenge').value;
+  const pmeasure = document.getElementById('pmeasure').value;
+
+  const td = TOPIC_DATA[topic];
+  const challengeText = pchallenge.trim() || td.challenges;
+  const measureText = pmeasure.trim() || td.measures;
+
+  // 信息速查表
+  const infoEl = document.getElementById('info-table');
+  infoEl.innerHTML = [
+    `<div class="item">📌 <strong>项目名称：</strong>${pname}</div>`,
+    `<div class="item">🔧 <strong>开发方式：</strong>${methdText}</div>`,
+    `<div class="item">💰 <strong>总预算：</strong>${pbudget}万元</div>`,
+    `<div class="item">📅 <strong>建设周期：</strong>${pduration}个月（${pstart}）</div>`,
+    `<div class="item">👥 <strong>团队规模：</strong>${pteam}人</div>`,
+    `<div class="item">🎯 <strong>我的角色：</strong>${prole}</div>`,
+    `<div class="item">🚀 <strong>项目目标：</strong>${pgoal}</div>`,
+    `<div class="item">✅ <strong>项目结果：</strong>${presult}</div>`,
+  ].join('');
+
+  // 摘要
+  const abstract = `本文以${pname}为例，结合本人担任${prole}的实践经验，论述了${topic}在信息化项目中的全过程应用。该项目旨在${pgoal}。项目总预算${pbudget}万元，建设周期${pduration}个月，项目团队共${pteam}人，采用${methdText}。
+
+在项目实施过程中，本人面临${challengeText}等挑战。为此，本人采取了${measureText}等措施。通过科学的${topic}实践，${presult}。
+
+本文将从${td.sections}等方面，对本项目${topic}的实践进行系统总结，期望对同类项目的管理工作有所借鉴。`;
+
+  document.getElementById('abstract-text').textContent = abstract;
+
+  // 写作提示
+  const tipsEl = document.getElementById('writing-tips');
+  tipsEl.innerHTML = td.tips.map(t => `<div class="item">✔️ ${t}</div>`).join('');
+
+  document.getElementById('result').classList.add('show');
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function copyText(id) {
+  const el = document.getElementById(id);
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = el.parentNode.querySelectorAll('.copy-btn');
+    btns.forEach(b => { b.textContent = '✅ 已复制'; setTimeout(() => { b.textContent = '复制'; }, 2000); });
+  });
+}
+</script>
+</body>
+</html>

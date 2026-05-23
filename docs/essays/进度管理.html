@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>进度管理 · 论文复习</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.9;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar .sep { color: #444; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-print { background: #6e40c9; color: #fff; margin-left: auto; }
+  .btn-print:hover { background: #5a32a3; }
+  .layout {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 700px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+  .content {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 36px 44px;
+  }
+  @media print {
+    .toolbar, .sidebar { display: none !important; }
+    .layout { display: block; max-width: 100%; margin: 0; padding: 0; }
+    .content { border: none; padding: 20px; }
+  }
+  h1 { font-size: 1.55em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.18em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; color: #0550ae; }
+  h3 { font-size: 1.02em; margin: 20px 0 8px; color: #0969da; }
+  h4 { font-size: .95em; margin: 16px 0 6px; color: #57606a; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 5px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #9a3412;
+    margin: 12px 0;
+    padding: 8px 16px;
+    color: #57606a;
+    background: #fff8f5;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+  }
+  strong { color: #1a1a1a; }
+  .abstract-box {
+    background: #f0f9ff;
+    border: 1px solid #b6d9f7;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 16px 0 24px;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .abstract-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0550ae;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  /* sidebar */
+  .sidebar {
+    position: sticky;
+    top: 60px;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+  .sidebar-card h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0550ae;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+    color: #9a3412;
+  }
+  .sidebar-card ul {
+    padding-left: 16px;
+    color: #57606a;
+  }
+  .sidebar-card li { margin: 5px 0; line-height: 1.5; }
+  .prob-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 5px 0;
+    font-size: 12px;
+    color: #57606a;
+  }
+  .prob-fill {
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #cf222e, #ff9800);
+  }
+  .nav-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .nav-btns a {
+    flex: 1;
+    text-align: center;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #24292e;
+    font-size: 13px;
+    transition: border-color .2s;
+  }
+  .nav-btns a:hover { border-color: #9a3412; color: #9a3412; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回首页</a>
+  <span class="sep">|</span>
+  <a href="index.html">📋 论文目录</a>
+  <span class="sep">|</span><a href="成本管理.html">◀ 成本管理</a> <span class="sep">|</span><a href="风险管理.html">风险管理 ▶</a>
+  <button class="btn btn-print" onclick="window.print()">🖨️ 打印/保存PDF</button>
+</div>
+<div class="layout">
+  <div class="content">
+<h1>论文三：进度管理（2026年次高概率命题）</h1>
+<blockquote>
+<p>⭐⭐ 强推背诵！2023年已考过，但进度管理是每年案例分析都考的核心内容。<br />
+在敏捷项目背景下，进度管理有独特的工具（燃尽图、速度图）可以写，内容充实。</p>
+</blockquote>
+<hr />
+<h2>摘要（约300字）</h2>
+<p>本文以XX集团数字化业务中台建设项目为例，结合本人担任项目经理的实践经验，论述了进度管理在敏捷信息化项目中的应用。该项目由XX制造集团发起，旨在整合集团内部分散的ERP、CRM、WMS、OA等多个异构系统，构建统一的数字化业务中台。项目总预算680万元，建设周期14个月，项目团队共16人，采用Scrum敏捷开发框架，以2周为一个Sprint迭代交付。</p>
+<p>在项目实施过程中，本人面临遗留系统接口技术复杂度导致工期不确定性高、多业务部门协调节奏不一、甲方对阶段性成果可见度要求高等挑战。为此，本人建立了"宏观发布计划+微观Sprint计划"双层进度管理体系，综合运用燃尽图、速度图、PERT三点估算等工具进行进度监控与调整。通过科学的进度管理，项目最终于2024年5月按计划顺利完成三个Release的全部交付，甲方满意度评分4.8分（满分5分）。</p>
+<p>本文将从进度计划制定、Sprint进度执行、进度监控与偏差纠正、进度压缩技术应用等方面进行系统总结。</p>
+<hr />
+<h2>正文</h2>
+<h3>一、项目概述</h3>
+<p>2023年4月，本人受命担任XX集团数字化业务中台建设项目的项目经理。该项目旨在整合集团内部分散的ERP、CRM、WMS、OA等系统，构建统一的数字化业务中台。项目总预算680万元，建设周期14个月，团队由16名成员组成，采用Scrum敏捷框架，以2周为一个Sprint迭代交付，共规划约28个Sprint。</p>
+<p>本项目进度管理面临以下主要挑战：一是遗留系统接口技术复杂度较高，部分接口无文档，工期存在较大不确定性；二是14个月工期固定（甲方集团战略节点），延期代价高昂；三是业务需求在项目执行中持续演进，可能对进度基准产生冲击；四是甲方业务部门对项目进展可见度要求高，需要及时展示阶段性成果。</p>
+<h3>二、进度管理的实施过程</h3>
+<h4>（一）制定进度管理计划</h4>
+<p>在项目启动阶段，本人制定了进度管理计划，确定以下核心内容：</p>
+<p>进度计划分两层：宏观发布计划（Release Plan）将14个月划分为三个Release，固定关键里程碑节点；微观Sprint计划（Sprint Plan）由团队在每个Sprint开始时自主制定，在宏观框架内保持灵活性。</p>
+<p>进度基准变更规则：Release里程碑变更超过1周，须提交CCB审批；Sprint内部任务调整无需走变更流程，由团队自主决策。</p>
+<p>进度报告机制：每个Sprint结束时向甲方干系人提交Sprint评审报告；每月向项目指导委员会提交进度绩效报告（含燃尽图、速度趋势）。</p>
+<h4>（二）建立进度基准</h4>
+<p><strong>宏观发布计划（Release Plan）</strong>：本人与产品负责人和甲方代表共同制定Release Plan，将项目分为三个发布阶段：<br />
+- Release 1（第1-4个月）：完成基础数据中台架构和ERP集成，交付核心主数据管理功能；<br />
+- Release 2（第5-10个月）：完成CRM、WMS集成，交付全渠道订单管理和库存协同功能；<br />
+- Release 3（第11-14个月）：完成OA集成，交付流程协同和数据分析看板，系统全面上线。</p>
+<p>对工期不确定性较高的技术模块（如旧系统接口逆向分析），采用PERT三点估算评估工期范围，为进度计划预留合理缓冲。</p>
+<p><strong>微观Sprint计划</strong>：每个Sprint开始时，团队召开Sprint计划会，从Product Backlog中选取优先级最高的用户故事，估算Story Point，分解为具体任务，形成Sprint Backlog，确保每个成员清楚自己在这2周内的工作目标。</p>
+<h4>（三）进度监控与控制</h4>
+<p>本人建立了多层次的进度监控机制：</p>
+<p><strong>每日站会（Daily Scrum）</strong>：每天晨会15分钟，每位成员同步昨日完成情况、今日计划、当前阻碍（Impediment）。本人重点关注阻碍清单，当天下班前必须清除所有阻碍，避免问题积压影响进度。</p>
+<p><strong>Sprint燃尽图</strong>：每日更新Sprint燃尽图，横轴为Sprint天数，纵轴为剩余Story Points。通过实际燃尽线与理想燃尽线的对比，直观判断当前Sprint是否按计划推进。</p>
+<p><strong>Release速度图（Velocity Chart）</strong>：记录每个Sprint实际完成的Story Points（即团队速度），通过速度趋势预测Release交付时间。当速度连续2个Sprint低于基准速度（40点/Sprint）时，启动进度预警。</p>
+<p><strong>第8个月进度预警</strong>：通过速度图发现，Sprint 14和Sprint 15的速度分别为31点和29点，连续低于基准。深入分析原因：WMS接口文档严重缺失，团队需要大量时间进行逆向工程解析，实际工作量比估算高出约50%。此时进度绩效指数 SPI = EV/PV = 0.87，已低于预警阈值0.9。</p>
+<p>本人采取以下纠偏措施：</p>
+<p><strong>第一，资源赶工（Crashing）</strong>。与甲方协商，由WMS系统厂商派出1名接口技术支持工程师驻场协助，直接减少了团队逆向解析的工作量，将Sprint 16的速度提升至43点，接口对接问题得到有效解决。</p>
+<p><strong>第二，范围重新优先化</strong>。与产品负责人重新评估Release 2的Backlog，将非关键的"库存预测分析"功能从Release 2调整至Release 3（不影响核心交付，仅调整优先级），释放了约2个Sprint的工作量缓解进度压力。</p>
+<p><strong>第三，快速跟进（Fast Tracking）</strong>。将Release 2末尾的系统联调测试与Release 3部分基础模块开发并行推进，在可控风险范围内将整体工期压缩约1.5周。</p>
+<h4>（四）进度压缩技术的应用</h4>
+<p>除上述第8个月的快速跟进外，本人在项目第12个月还面临Release 3进度压力。本人主导了赶工决策：评估赶工对质量的影响（通过增加代码评审频率缓解），向甲方申请额外引入1名DevOps工程师，将持续集成/持续部署（CI/CD）流水线优化，使自动化测试时间从3小时缩短至45分钟，间接提升了团队每Sprint的有效开发时间，最终确保Release 3按期完成。</p>
+<h3>三、项目成果与体会</h3>
+<p>经过团队的共同努力，三个Release全部按计划交付，项目于2024年5月顺利完成。系统上线首月故障率低于0.1%，甲方满意度评分4.8分（满分5分）。</p>
+<p>通过本项目的实践，本人深刻认识到：在敏捷项目中，进度管理需要"宏观坚守、微观灵活"——宏观Release里程碑不能轻易变动，但Sprint内部的任务安排必须允许团队自主调整。燃尽图和速度图是敏捷进度管理的核心工具，能够提供比甘特图更直观的迭代交付趋势信息，帮助项目经理在偏差刚出现时就采取行动，避免问题累积到无法挽回的地步。进度管理的关键不是预测未来，而是建立快速感知偏差、快速响应的机制。</p>
+<p>在今后的项目管理实践中，本人将继续深化"双层进度管理"模式的应用，不断提升在不确定环境中维持项目节奏的能力。</p>
+  </div>
+  <aside class="sidebar">
+<div class="sidebar-card"><h4>📊 2026命中概率</h4><div class="prob-bar">  <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#57606a">    <div class="prob-fill" style="width:45px;height:8px;border-radius:4px"></div>    <span>45%</span>  </div></div></div>
+<div class="sidebar-card"><h4>📌 关键数据速查</h4><ul><li>双层计划：Release计划+Sprint计划</li><li>PERT三点估算 → 技术不确定模块</li><li>Sprint速度基准：40点/Sprint</li><li>第8月SPI=0.87触发预警</li><li>赶工：引入WMS厂商技术支持</li><li>快速跟进：Release间并行推进</li></ul></div>
+<div class="sidebar-card"><h4>🔗 快速导航</h4><div class="nav-btns"><a href="问卷.html">📋 填写问卷</a><a href="敏捷项目背景.html">🏢 项目背景</a></div></div>
+  </aside>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>信息系统项目管理师 · 近五年真题练习</title>
+<title>信息系统项目管理师 · 备考复习</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -21,7 +21,42 @@
   }
   .hero h1 { font-size: 1.9em; margin-bottom: 8px; }
   .hero p { opacity: .85; font-size: 15px; }
+  .hero .nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .hero .nav-tab {
+    background: rgba(255,255,255,.2);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 20px;
+    padding: 6px 18px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .2s;
+  }
+  .hero .nav-tab:hover, .hero .nav-tab.active { background: rgba(255,255,255,.35); }
   .container { max-width: 860px; margin: 30px auto; padding: 0 20px 40px; }
+  .section-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #24292e;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #0550ae, transparent);
+    margin-left: 10px;
+  }
   .year-group { margin-bottom: 28px; }
   .year-group h2 {
     font-size: 1.1em;
@@ -32,7 +67,7 @@
   }
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 12px;
   }
   .card {
@@ -43,6 +78,7 @@
     text-decoration: none;
     color: #24292e;
     transition: border-color .2s, box-shadow .2s;
+    display: block;
   }
   .card:hover { border-color: #0550ae; box-shadow: 0 3px 10px rgba(0,0,0,.08); }
   .card .type {
@@ -54,7 +90,13 @@
   }
   .card .type.zh { color: #2ea44f; }
   .card .type.al { color: #0550ae; }
+  .card .type.lw { color: #9a3412; }
+  .card .type.wj { color: #6e40c9; }
+  .card .type.bg { color: #0969da; }
   .card .name { font-size: 15px; font-weight: 600; }
+  .card .desc { font-size: 12px; color: #57606a; margin-top: 4px; }
+  .card.essay-card { border-left: 3px solid #9a3412; }
+  .card.essay-card:hover { border-color: #7c2d12; box-shadow: 0 3px 10px rgba(154,52,18,.15); }
   .tip {
     background: #fff8c5;
     border: 1px solid #f0c800;
@@ -64,14 +106,49 @@
     font-size: 14px;
     color: #633c00;
   }
+  .tip.red {
+    background: #fff0f0;
+    border-color: #ff8080;
+    color: #7d1a1a;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge.hot { background: #ffecec; color: #cf222e; border: 1px solid #ffb3b3; }
+  .badge.warm { background: #fff8e0; color: #9a6700; border: 1px solid #ffd966; }
 </style>
 </head>
 <body>
 <div class="hero">
-  <h1>📚 信息系统项目管理师 · 近五年真题</h1>
-  <p>答案默认折叠 · 支持逐题展开 · 支持一键展开/收起全部</p>
+  <h1>📚 信息系统项目管理师 · 备考复习</h1>
+  <p>近五年真题 · 论文范文 · 个性化定制</p>
+  <div class="nav-tabs">
+    <a class="nav-tab active" href="#exam">📝 真题练习</a>
+    <a class="nav-tab" href="#essays">✍️ 论文复习</a>
+  </div>
 </div>
 <div class="container">
+  <div class="tip red">
+    🔥 <strong>2026考前押题：</strong>
+    整合管理（概率最高）、成本管理、进度管理、风险管理 ——
+    <a href="essays/index.html" style="color:#7d1a1a;font-weight:700;">点击进入论文复习 →</a>
+  </div>
+
+  <div id="essays" class="section-title">✍️ 论文复习</div>
+<div class="card-grid"><a class="card essay-card" href="essays/整合管理.html"><div class="type lw">论文范文</div><div class="name">整合管理</div><div class="desc">2026年最高概率（约65%），整合管理是核心知识域，近年新版教材重点调整领域…</div></a>
+<a class="card essay-card" href="essays/成本管理.html"><div class="type lw">论文范文</div><div class="name">成本管理</div><div class="desc">2022年考过，距今4年，再考概率高。EVM挣值管理是亮点，记住计算公式…</div></a>
+<a class="card essay-card" href="essays/进度管理.html"><div class="type lw">论文范文</div><div class="name">进度管理</div><div class="desc">2023年考过，进度管理是案例分析常考点，敏捷的燃尽图/速度图有独特亮点…</div></a>
+<a class="card essay-card" href="essays/风险管理.html"><div class="type lw">论文范文</div><div class="name">风险管理</div><div class="desc">2023年考过，应对策略套路化（规避/减轻/转移/接受），练熟后写作较快…</div></a>
+</div>
+
+
+  <div id="exam" class="section-title">📝 近五年真题练习</div>
   <div class="tip">
     💡 <strong>使用方法：</strong>
     点击题目页面顶部工具栏的 <strong>「展开全部答案」</strong> / <strong>「收起全部答案」</strong> 按钮，

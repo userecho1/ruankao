@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成本管理 · 论文复习</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f6f8fa;
+    color: #24292e;
+    line-height: 1.9;
+  }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #24292e;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .toolbar a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .toolbar a:hover { color: #fff; }
+  .toolbar .sep { color: #444; font-size: 13px; }
+  .btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .15s;
+  }
+  .btn-print { background: #6e40c9; color: #fff; margin-left: auto; }
+  .btn-print:hover { background: #5a32a3; }
+  .layout {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 700px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+  .content {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 36px 44px;
+  }
+  @media print {
+    .toolbar, .sidebar { display: none !important; }
+    .layout { display: block; max-width: 100%; margin: 0; padding: 0; }
+    .content { border: none; padding: 20px; }
+  }
+  h1 { font-size: 1.55em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px; }
+  h2 { font-size: 1.18em; margin: 28px 0 12px; border-bottom: 1px solid #e1e4e8; padding-bottom: 6px; color: #0550ae; }
+  h3 { font-size: 1.02em; margin: 20px 0 8px; color: #0969da; }
+  h4 { font-size: .95em; margin: 16px 0 6px; color: #57606a; }
+  p { margin: 8px 0; }
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin: 5px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th { background: #f6f8fa; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  blockquote {
+    border-left: 4px solid #9a3412;
+    margin: 12px 0;
+    padding: 8px 16px;
+    color: #57606a;
+    background: #fff8f5;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+  }
+  strong { color: #1a1a1a; }
+  .abstract-box {
+    background: #f0f9ff;
+    border: 1px solid #b6d9f7;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 16px 0 24px;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .abstract-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0550ae;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  hr { border: none; border-top: 1px solid #e1e4e8; margin: 20px 0; }
+  /* sidebar */
+  .sidebar {
+    position: sticky;
+    top: 60px;
+  }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+  .sidebar-card h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0550ae;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+    color: #9a3412;
+  }
+  .sidebar-card ul {
+    padding-left: 16px;
+    color: #57606a;
+  }
+  .sidebar-card li { margin: 5px 0; line-height: 1.5; }
+  .prob-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 5px 0;
+    font-size: 12px;
+    color: #57606a;
+  }
+  .prob-fill {
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #cf222e, #ff9800);
+  }
+  .nav-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .nav-btns a {
+    flex: 1;
+    text-align: center;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #24292e;
+    font-size: 13px;
+    transition: border-color .2s;
+  }
+  .nav-btns a:hover { border-color: #9a3412; color: #9a3412; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">⬅ 返回首页</a>
+  <span class="sep">|</span>
+  <a href="index.html">📋 论文目录</a>
+  <span class="sep">|</span><a href="整合管理.html">◀ 整合管理</a> <span class="sep">|</span><a href="进度管理.html">进度管理 ▶</a>
+  <button class="btn btn-print" onclick="window.print()">🖨️ 打印/保存PDF</button>
+</div>
+<div class="layout">
+  <div class="content">
+<h1>论文二：成本管理（2026年次高概率命题）</h1>
+<blockquote>
+<p>⭐⭐ 必背！含EVM挣值管理计算，是论文里最有"干货"的一篇。<br />
+2022年考过，距今已过4年，2026年再考概率高。</p>
+</blockquote>
+<hr />
+<h2>摘要（约300字）</h2>
+<p>本文以XX集团数字化业务中台建设项目为例，结合本人担任项目经理的实践经验，论述了成本管理在敏捷信息化项目中的全过程应用。该项目由XX制造集团发起，旨在整合集团内部分散的ERP、CRM、WMS、OA等多个异构系统，构建统一的数字化业务中台。项目总预算680万元，建设周期14个月，项目团队共16人，采用Scrum敏捷开发框架。</p>
+<p>在项目实施过程中，本人面临遗留系统集成复杂度难以准确估算、敏捷环境下成本基准易受需求变更侵蚀、多Release并行推进导致成本波动较大等挑战。为此，本人采取了基于故事点（Story Point）的敏捷估算法结合自下而上估算校验、将挣值管理（EVM）与敏捷速度指标相融合进行成本监控、以及严格的变更成本评估等措施。通过科学的成本管理，项目最终在预算范围内顺利完成，实际成本较预算节约约2.8%，甲方满意度评分4.8分（满分5分）。</p>
+<p>本文将从成本管理计划制定、成本估算方法、挣值分析应用、成本控制措施等方面进行系统总结。</p>
+<hr />
+<h2>正文</h2>
+<h3>一、项目概述</h3>
+<p>2023年4月，本人受命担任XX集团数字化业务中台建设项目的项目经理。该项目旨在整合集团内部分散的ERP、CRM、WMS、OA等系统，构建统一的数字化业务中台。项目总预算680万元，建设周期14个月，团队由16名成员组成，采用Scrum敏捷框架，以2周为一个Sprint迭代交付。</p>
+<p>本项目成本管理面临以下主要挑战：一是遗留系统数据接口文档不完整，技术复杂度难以在项目初期准确估算，成本存在较大不确定性；二是敏捷环境下业务需求允许在Sprint间调整，若成本管控不到位，极易导致范围蔓延引发超支；三是团队成员来自不同技术背景，人力成本结构复杂，需要精细化的成本追踪机制。</p>
+<h3>二、成本管理的实施过程</h3>
+<h4>（一）制定成本管理计划</h4>
+<p>在项目规划阶段，本人制定了成本管理计划，明确以下核心内容：成本估算采用故事点敏捷估算结合自下而上估算双轨校验；成本绩效基准以Release为单位制定，三个Release预算分别为220万元、230万元、180万元，管理储备30万元；成本绩效监控采用挣值管理（EVM），预警阈值设定为CPI&lt;0.9时启动成本预警；成本变更控制规定单笔超出Sprint预算10%以上的资源调整须提交CCB审批；成本报告频率为每月一次，通过项目状态报告向指导委员会汇报。</p>
+<h4>（二）成本估算</h4>
+<p>本项目采用"故事点估算+自下而上估算"双轨估算方法：</p>
+<p><strong>故事点估算（敏捷层面）</strong>：在产品Backlog梳理会上，团队使用规划扑克（Planning Poker）对用户故事进行故事点估算。结合历史项目数据，初步确定团队速度（Velocity）约为每Sprint完成40个故事点，全项目估算总量约1100个故事点，对应约28个Sprint。</p>
+<p><strong>自下而上估算（成本精算）</strong>：将故事点映射为对应工时，结合各岗位日费率，计算出人力成本约占总预算65%，约为442万元。其余包括云服务器及基础设施租用费约占10%（68万元）、软件授权费约占8%（54万元）、外包测试与安全评估约占7%（48万元）、应急储备约占5%（34万元）、管理储备约占4.4%（30万元）。</p>
+<p>估算完成后，本人邀请1位曾主导类似中台建设项目的公司技术总监进行同行评审，对工时估算偏低的关键模块进行了上调修正，提升了估算可信度。</p>
+<h4>（三）制定成本基准</h4>
+<p>将经批准的成本估算按三个Release进行时间段分配，形成成本绩效基准（S曲线）。S曲线展示了14个月内各时间点的累计计划支出，作为后续挣值分析的参照基准。成本绩效基准经项目指导委员会批准后正式生效。</p>
+<h4>（四）成本控制与挣值管理应用</h4>
+<p>项目执行阶段，本人每月收集一次实际成本数据，运用挣值管理进行绩效分析。在敏捷项目中，"已完成工作的预算价值（EV）"以当前Sprint为止已验收的故事点所对应的计划成本来计算。</p>
+<p><strong>第9个月挣值分析</strong>：</p>
+<p>计划价值 PV = 440万元（对应第9个月应完成工作的预算价值）；<br />
+已完成故事点对应挣值 EV = 410万元；<br />
+实际成本 AC = 455万元。</p>
+<p>成本偏差 CV = EV - AC = 410 - 455 = <strong>-45万元</strong>（成本超支）；<br />
+成本绩效指数 CPI = EV / AC = 410 / 455 ≈ <strong>0.902</strong>，低于预警阈值0.9边界，触发成本预警。</p>
+<p>进度偏差 SV = EV - PV = 410 - 440 = <strong>-30万元</strong>（进度略有滞后）；<br />
+进度绩效指数 SPI = EV / PV = 410 / 440 ≈ <strong>0.932</strong>。</p>
+<p>完工估算 EAC = BAC / CPI = 680 / 0.902 ≈ <strong>754万元</strong>（超出预算约74万元），存在超支风险。</p>
+<p>深入分析发现，成本超支主要来自两方面：其一，ERP接口对接技术难度远超预估，额外投入约30个工日；其二，因甲方业务需求变更导致已开发功能模块两次返工，产生额外成本约20万元。</p>
+<p>针对上述情况，本人采取了以下成本控制措施：</p>
+<p><strong>第一，优化技术方案</strong>。与架构师重新审视ERP接口对接方案，将原本计划自研的适配层改为采用成熟的中间件产品（已有商业授权），将技术实现工作量从约40工日压缩至18工日，节约人力成本约13万元。</p>
+<p><strong>第二，强化变更成本评估</strong>。在后续的变更申请中，强制要求提交方同步提供成本影响估算，CCB审议时将成本影响纳入决策因素，将与核心目标关联度低的3项功能变更延至二期，规避了约25万元的潜在超支。</p>
+<p><strong>第三，优化团队资源配置</strong>。对任务负荷分析后，将2名在当前Sprint任务较少的前端工程师临时调配支援测试工作，减少了外包测试的费用支出，节约约8万元。</p>
+<p><strong>第四，动用部分应急储备</strong>。经CCB审批，动用应急储备24万元，解决了ERP接口对接超支问题，未动用管理储备。</p>
+<p>通过上述措施，项目后续阶段CPI逐步回升至1.05以上，成功扭转了超支趋势。</p>
+<h3>三、项目成果与体会</h3>
+<p>项目最终于2024年5月按期完成交付，实际总成本约661万元，较批准预算680万元节约约19万元（节约率约2.8%），成本绩效良好。系统上线后首月故障率低于0.1%，甲方满意度评分4.8分（满分5分）。</p>
+<p>通过本项目的实践，本人深刻认识到：在敏捷项目中，成本管理不能因为"需求允许灵活变化"就放弃成本基准的约束。挣值管理在敏捷环境中同样适用，只需将"已验收的故事点价值"作为EV的计量标准即可。成本管理与变更控制必须紧密配合——每一个未经成本评估的需求变更，都是潜在的超支隐患。精细化的成本追踪和数据驱动的预警机制，是项目经理主动管理而非被动应对成本问题的关键。</p>
+<p>在今后的项目管理实践中，本人将持续深化成本管理能力，在敏捷与规范化成本控制之间找到最优平衡，为组织持续交付高价值、高性价比的项目成果。</p>
+  </div>
+  <aside class="sidebar">
+<div class="sidebar-card"><h4>📊 2026命中概率</h4><div class="prob-bar">  <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#57606a">    <div class="prob-fill" style="width:50px;height:8px;border-radius:4px"></div>    <span>50%</span>  </div></div></div>
+<div class="sidebar-card"><h4>📌 关键数据速查</h4><ul><li>EV=410, AC=455, PV=440</li><li>CV = EV-AC = -45万（超支）</li><li>CPI = 0.902（低于预警0.9）</li><li>SPI = 0.932（进度略滞后）</li><li>EAC = BAC/CPI ≈ 754万</li><li>最终实际成本661万，节约19万</li></ul></div>
+<div class="sidebar-card"><h4>🔗 快速导航</h4><div class="nav-btns"><a href="问卷.html">📋 填写问卷</a><a href="敏捷项目背景.html">🏢 项目背景</a></div></div>
+  </aside>
+</div>
+</body>
+</html>
