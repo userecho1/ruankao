@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "resource/近五年真题_文字版整理/**"
+      - "resource/论文/**"
       - "scripts/build_html.py"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
